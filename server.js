@@ -22,11 +22,11 @@ axios({
 })
   .then(function (response) {
     // handle success
-    console.log(response.data);
+    // console.log(response.data);
   })
   .catch(function (error) {
     // handle error
-    console.log(error);
+    // console.log(error);
   });
 
 // log for search by book
@@ -38,11 +38,11 @@ axios({
 })
   .then(function (response) {
     // handle success
-    console.log(response.data);
+    // console.log(response.data);
   })
   .catch(function (error) {
     // handle error
-    console.log(error);
+    // console.log(error);
   });
 // .then((response) => console.log(response.data));
 
@@ -56,12 +56,12 @@ app.engine(
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-// require("./routes/html-routes.js")(app);
+require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
-app.get("/", (req, res) => {
-  res.render("index");
-});
+// app.get("/", (req, res) => {
+//   res.render("index");
+// });
 
 db.sequelize.sync({ force: true }).then(function () {
   app.listen(PORT, function () {
