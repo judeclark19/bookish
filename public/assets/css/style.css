@@ -26,7 +26,7 @@
 #value-prop-card {
   background-color: rgba(128, 128, 128, 0.7);
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 10px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -64,6 +64,9 @@
   /* top: 50%;
   left: 50%; */
   /* transform: translate(-50%, -50%); */
+}
+.d-block {
+  border-radius: 10px !important;
 }
 
 footer {
