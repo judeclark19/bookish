@@ -1,14 +1,18 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": "DonaldDuck50!",
+=======
+    "password": "brucieboy727",
+>>>>>>> 905a62374f1787933a47897ed1408229121edd82
     "database": "bookish_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "Braves2020",
+    "password": "brucieboy727",
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
