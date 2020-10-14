@@ -45,10 +45,10 @@
 #value-prop-card {
   right: 0;
   background-color: rgba(128, 128, 128, 0.7);
-  padding: 20px;
+  padding: 50px;
   border-radius: 10px;
-  height: 200px;
-  width: 500px;
+  min-height: 300px;
+  max-width: 700px;
   display: flex;
   flex-direction: column;
   box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 1);
