@@ -3,6 +3,7 @@ const app = express();
 const exphbs = require("express-handlebars");
 const handlebars = require("handlebars");
 const db = require("./models");
+
 const {
   allowInsecurePrototypeAccess,
 } = require("@handlebars/allow-prototype-access");
@@ -30,7 +31,7 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-db.sequelize.sync().then(function () {
+db.sequelize.sync({force: true}).then(function () {
   app.listen(PORT, function () {
     console.log(`Server listening on http://localhost:${PORT}`);
   });
