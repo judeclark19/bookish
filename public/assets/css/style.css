@@ -8,6 +8,7 @@
 }
 
 .columns {
+  width: 100%;
   margin: 0 !important;
   padding: 0 !important;
   align-self: center;
@@ -19,6 +20,7 @@
 
 #landing-sign-up {
   background-color: gray;
+  padding: 50px;
 }
 
 #landing-carousel {
