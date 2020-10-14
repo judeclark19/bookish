@@ -18,8 +18,9 @@
 </head>
 
 <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-dark" role=" navigation" aria-label="main navigation">
         <div class="navbar-brand">
+            {{!-- Link logo to homepage --}}
             <a class="navbar-item"><strong>Bookish</strong>
             </a>
 
@@ -37,7 +38,7 @@
                     <a class="button is-primary">
                         <strong>Sign up</strong>
                     </a>
-                    <a class="button is-light">
+                    <a class="button" id="nav-login-btn">
                         Log in
                     </a>
                 </div>
@@ -47,14 +48,6 @@
 
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-end">
-                <a class="navbar-item">
-                    Home
-                </a>
-
-                <a class="navbar-item">
-                    Trending
-                </a>
-
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
                         Clubs
@@ -73,6 +66,16 @@
                         </a>
                     </div>
                 </div>
+
+                <a class="navbar-item">
+                    Trending
+                </a>
+                <a class="navbar-item">
+                    My Account
+                </a>
+
+
+
                 <div class="field has-addons">
                     <div class="control search-bar">
                         <input class="input" type="text" placeholder="search by title, author, genre, or ISBN">
@@ -87,7 +90,7 @@
     <div id="body-wrapper">
         {{{body}}}
     </div>
-    <footer class="footer">
+    <footer class="footer is-dark">
         <div class="content has-text-centered">
             <p>
                 <strong>Bookish</strong> by <a href="https://github.com/CodyBonsma">Cody Bonsma</a>, <a
