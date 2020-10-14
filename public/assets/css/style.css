@@ -49,6 +49,7 @@
   max-width: 150px;
 }
 #landing-carousel {
+  /* visibility: hidden; */
   background-color: transparent;
   position: relative;
   align-items: center;
