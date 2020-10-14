@@ -19,12 +19,37 @@
 }
 
 #landing-sign-up {
-  background-color: gray;
-  padding: 75px;
+  background-color: transparent;
+  /* padding: 75px; */
 }
 
+#value-prop-card {
+  background-color: rgba(128, 128, 128, 0.7);
+  padding: 20px;
+  border-radius: 5px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+#value-prop-title {
+  /* font-size: 45px; */
+  color: white;
+  /* -webkit-text-stroke: 1px black; */
+}
+
+#value-prop-body {
+  /* font-size: 45px; */
+  color: white;
+  /* -webkit-text-stroke: 1px black; */
+}
+#landing-action-btn {
+  max-width: 150px;
+}
 #landing-carousel {
-  background-color: lightgray;
+  background-color: transparent;
   position: relative;
   align-items: center;
   justify-content: center;
