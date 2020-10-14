@@ -1,7 +1,9 @@
 #body-wrapper {
-  border: 2px solid hotpink;
+  /* border: 2px solid hotpink; */
   display: block;
-  min-height: calc(100vh - 56px - 168px);
+  min-height: calc(100vh - 56px - 120px);
+  background-image: url("../img/pexels-janko-ferlic-590493.jpg");
+  background-size: cover;
 }
 
 footer {
@@ -10,5 +12,6 @@ footer {
   bottom: 0;
   width: 100%;
   display: block;
+  padding: 3rem 1.5rem 3rem !important;
   /* text-align: center; */
 }
