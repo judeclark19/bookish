@@ -1,5 +1,3 @@
-console.log("main js loaded");
-
 document.addEventListener("DOMContentLoaded", () => {
   // Get all "navbar-burger" elements
   const $navbarBurgers = Array.prototype.slice.call(
