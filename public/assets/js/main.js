@@ -1,7 +1,4 @@
 console.log("main js loaded");
-const axios = require("axios");
-
-axios.get(('https://www.goodreads.com/search.xml?key=qGI3Eq75NKfNsWW5hCRSw&q=Ender%27s+Game'))
 
 document.addEventListener("DOMContentLoaded", () => {
   // Get all "navbar-burger" elements
