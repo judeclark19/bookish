@@ -1,17 +1,32 @@
 #body-wrapper {
   /* border: 2px solid hotpink; */
-  display: block;
-  min-height: calc(100vh - 56px - 120px);
+  color: white;
+  min-height: calc(100vh - 56px - 72px);
   background-image: url("../img/pexels-janko-ferlic-590493.jpg");
   background-size: cover;
+  position: relative;
+}
+
+.columns {
+  margin: 0 !important;
+  padding: 0 !important;
+  align-self: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#landing-sign-up {
+  background-color: gray;
+}
+
+#landing-carousel {
+  background-color: lightgray;
 }
 
 footer {
-  /* color: red !important; */
-  /* position: absolute; */
   bottom: 0;
   width: 100%;
-  display: block;
-  padding: 3rem 1.5rem 3rem !important;
-  /* text-align: center; */
+  padding: 1.5rem 1.5rem 1.5rem !important;
 }
