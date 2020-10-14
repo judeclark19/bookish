@@ -1,12 +1,19 @@
+// dependencies
+const path = require("path");
+
 module.exports = function (app) {
   app.get("/", function (req, res) {
     // If the user already has an account send them to the members page
     res.render("index");
   });
 
-  app.get("/login", function(req, res) {
+  app.get("/login.handlebars", function (req, res) {
     // If the user already has an account send them to the members page
-    res.render("login")
+    if (req.user) {
+      res.redirect("/");
+    }
+    res.render(path.join(__dirname, "../views/login.handlebars"));
+    // res.render("login");
     // if (req.user) {
     //   res.redirect("/members");
     // }
