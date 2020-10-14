@@ -7,6 +7,10 @@
   position: relative;
 }
 
+.search-bar {
+  width: 23vw;
+}
+
 .columns {
   width: 100%;
   margin: 0 !important;
