@@ -2,6 +2,10 @@
   color: #363636;
 }
 
+.bookish-primary {
+  background-color: #a85e4a;
+}
+
 .navbar-dropdown {
   background-color: #363636;
 }
@@ -44,7 +48,7 @@
 
 #value-prop-card {
   right: 0;
-  background-color: rgba(128, 128, 128, 0.7);
+  background-color: rgba(54, 54, 54, 0.6);
   padding: 50px;
   border-radius: 10px;
   min-height: 300px;
@@ -68,6 +72,9 @@
 }
 #landing-action-btn {
   max-width: 150px;
+  background-color: #a85e4a;
+  color: white;
+  border-color: white;
 }
 #landing-carousel {
   /* border: 2px solid yellow; */

@@ -22,11 +22,11 @@ axios({
 })
   .then(function (response) {
     // handle success
-    console.log(response.data);
+    // console.log(response.data);
   })
   .catch(function (error) {
     // handle error
-    console.log(error);
+    // console.log(error);
   });
 
 // log for search by book
@@ -38,11 +38,11 @@ axios({
 })
   .then(function (response) {
     // handle success
-    console.log(response.data);
+    // console.log(response.data);
   })
   .catch(function (error) {
     // handle error
-    console.log(error);
+    // console.log(error);
   });
 // .then((response) => console.log(response.data));
 
