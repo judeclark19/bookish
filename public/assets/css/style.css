@@ -24,6 +24,7 @@
 
 #landing-sign-up {
   background-color: transparent;
+  border: 2px solid red;
   /* padding: 75px; */
 }
 
@@ -53,6 +54,7 @@
   max-width: 150px;
 }
 #landing-carousel {
+  border: 2px solid yellow;
   /* visibility: hidden; */
   background-color: transparent;
   position: relative;
@@ -62,6 +64,7 @@
 }
 
 #carousel {
+  border: 2px dashed green;
   /* align-self: center;
   justify-self: center;
   position: absolute; */
