@@ -1,5 +1,6 @@
 // Requiring our models and passport as we've configured it
-// var db = require("../models");
+var db = require("../models");
+const axios = require("axios");
 // var passport = require("../config/passport");
 
 module.exports = function (app) {
@@ -11,20 +12,32 @@ module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
-  //   app.post("/api/login", passport.authenticate("local"), function (req, res) {
-  //     res.json(req.user);
-  //   });
+    // app.post("/api/login", passport.authenticate("local"), function (req, res) {
+    //   res.json(req.user);
+    // });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
-  // otherwise send back an error
+
+
+  app.post("/api/search", function(req,res){
+    console.log(req.body);
+    axios
+  .get(
+    "https://v1.nocodeapi.com/icecicle04/gr/LrsOCSqWhlpBqsfr/searchAuthor?q=J.%20K.%20Rowling"
+  )
+  .then((response) => res.json(response.data));
+  })
+
+
   app.post("/api/signup", function (req, res) {
     db.User.create({
+      username: req.body.username,
       email: req.body.email,
       password: req.body.password,
     })
       .then(function () {
-        res.redirect(307, "/api/login");
+        res.redirect("/login");
       })
       .catch(function (err) {
         res.status(401).json(err);
