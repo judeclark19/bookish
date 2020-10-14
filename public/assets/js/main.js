@@ -1,4 +1,67 @@
+// Dummy data
+// ===============================================================================================================
+const allClubs = [
+  {
+    id: 1,
+    name: "Outdoorsy Club",
+    currentBookTitle: "Call of the Wild",
+    members: 8,
+    active: true,
+  },
+  {
+    id: 2,
+    name: "Tiny Fey Lovers",
+    currentBookTitle: "Bossypants",
+    members: 6,
+    active: true,
+  },
+  {
+    id: 3,
+    name: "Scotland Yard",
+    currentBookTitle: "The Sign of Four",
+    members: 10,
+    active: true,
+  },
+  {
+    id: 4,
+    name: "Romance Novels Club",
+    currentBookTitle: "Troubles in Paradise",
+    members: 5,
+    active: true,
+  },
+  {
+    id: 5,
+    name: "Self Help Club",
+    currentBookTitle: "Self Help Book",
+    members: 10,
+    active: false,
+  },
+  {
+    id: 6,
+    name: "Science Fiction",
+    currentBookTitle: "Dune",
+    members: 10,
+    active: true,
+  },
+  {
+    id: 7,
+    name: "Comedy Club",
+    currentBookTitle: "Me Talk Pretty One Day",
+    members: 7,
+    active: true,
+  },
+  {
+    id: 8,
+    name: "History Club",
+    currentBookTitle: "Hamilton",
+    members: 8,
+    active: false,
+  },
+];
+
 document.addEventListener("DOMContentLoaded", () => {
+  // hamburger toggle, code from Bulma
+  // ===============================================================================================================
   // Get all "navbar-burger" elements
   const $navbarBurgers = Array.prototype.slice.call(
     document.querySelectorAll(".navbar-burger"),
@@ -20,4 +83,5 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+  // ===============================================================================================================
 });

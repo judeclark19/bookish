@@ -13,7 +13,12 @@
   background-color: #363636;
 }
 
+.navbar-dropdown .navbar-item {
+  color: white;
+}
+
 .navbar-dropdown .navbar-item:hover {
+  color: white !important;
   background-color: #292929 !important;
 }
 
