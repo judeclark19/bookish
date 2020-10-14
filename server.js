@@ -13,11 +13,21 @@ const PORT = process.env.PORT || 8080;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
+
+//log for search by Author
 axios
   .get(
     "https://v1.nocodeapi.com/icecicle04/gr/LrsOCSqWhlpBqsfr/searchAuthor?q=J.%20K.%20Rowling"
   )
-  .then((response) => console.log(response.data));
+  .then((res) => console.log(res.data));
+
+// log for search by book
+
+axios
+  .get(
+    "https://v1.nocodeapi.com/icecicle04/gr/LrsOCSqWhlpBqsfr/search?q=Harry%20Potter"
+  )
+  .then((res) => console.log(res.data));
 // .then((response) => console.log(response.data));
 
 app.engine(
@@ -37,7 +47,7 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-db.sequelize.sync({force: true}).then(function () {
+db.sequelize.sync({ force: true }).then(function () {
   app.listen(PORT, function () {
     console.log(`Server listening on http://localhost:${PORT}`);
   });
