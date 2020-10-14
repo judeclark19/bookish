@@ -12,23 +12,47 @@ module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
-    // app.post("/api/login", passport.authenticate("local"), function (req, res) {
-    //   res.json(req.user);
-    // });
+  // app.post("/api/login", passport.authenticate("local"), function (req, res) {
+  //   res.json(req.user);
+  // });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
 
-
-  app.post("/api/search", function(req,res){
+  app.post("/api/searchByAuthor", function (req, res) {
     console.log(req.body);
-    axios
-  .get(
-    "https://v1.nocodeapi.com/icecicle04/gr/LrsOCSqWhlpBqsfr/searchAuthor?q=J.%20K.%20Rowling"
-  )
-  .then((response) => res.json(response.data));
-  })
+    axios({
+      method: "get",
+      url:
+        "https://v1.nocodeapi.com/icecicle04/gr/LrsOCSqWhlpBqsfr/searchAuthor",
+      params: { q: "<q>" },
+    })
+      .then(function (response) {
+        // handle success
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      });
+  });
 
+  app.post("/api/searchByBook", function (req, res) {
+    console.log(req.body);
+    axios({
+      method: "get",
+      url: "https://v1.nocodeapi.com/icecicle04/gr/LrsOCSqWhlpBqsfr/search",
+      params: { q: "<q>" },
+    })
+      .then(function (response) {
+        // handle success
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      });
+  });
 
   app.post("/api/signup", function (req, res) {
     db.User.create({
