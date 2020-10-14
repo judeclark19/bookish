@@ -4,9 +4,9 @@ module.exports = function (app) {
     res.render("index");
   });
 
-  app.get("/login", function(req, res) {
+  app.get("/login", function (req, res) {
     // If the user already has an account send them to the members page
-    res.render("login")
+    res.render("login");
     // if (req.user) {
     //   res.redirect("/members");
     // }
