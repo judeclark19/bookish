@@ -1,5 +1,12 @@
+/* MAIN.HANDLEBARS */
+/* ======================================================================= */
 #nav-login-btn {
   color: #363636;
+}
+
+/* Primary button styling */
+.bookish-primary {
+  background-color: #a85e4a;
 }
 
 .navbar-dropdown {
@@ -10,6 +17,10 @@
   background-color: #292929 !important;
 }
 
+.search-bar {
+  width: 23vw;
+}
+
 #body-wrapper {
   /* border: 2px solid hotpink; */
   color: white;
@@ -17,10 +28,6 @@
   background-image: url("../img/pexels-janko-ferlic-590493.jpg");
   background-size: cover;
   position: relative;
-}
-
-.search-bar {
-  width: 23vw;
 }
 
 .columns {
@@ -34,6 +41,8 @@
   transform: translate(-50%, -50%);
 }
 
+/* INDEX.HANDLEBARS
+=========================================================================== */
 #landing-sign-up {
   background-color: transparent;
   /* border: 2px solid red; */
@@ -44,11 +53,11 @@
 
 #value-prop-card {
   right: 0;
-  background-color: rgba(128, 128, 128, 0.7);
-  padding: 20px;
+  background-color: rgba(54, 54, 54, 0.6);
+  padding: 50px;
   border-radius: 10px;
-  height: 200px;
-  width: 500px;
+  min-height: 300px;
+  max-width: 700px;
   display: flex;
   flex-direction: column;
   box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 1);
@@ -68,6 +77,9 @@
 }
 #landing-action-btn {
   max-width: 150px;
+  background-color: #a85e4a;
+  color: white;
+  border-color: white;
 }
 #landing-carousel {
   /* border: 2px solid yellow; */

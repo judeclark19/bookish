@@ -7,6 +7,7 @@ module.exports = function (app) {
     res.render("index");
   });
 
+<<<<<<< HEAD
   app.get("/login.handlebars", function (req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
@@ -14,6 +15,11 @@ module.exports = function (app) {
     }
     res.render(path.join(__dirname, "../views/login.handlebars"));
     // res.render("login");
+=======
+  app.get("/login", function (req, res) {
+    // If the user already has an account send them to the members page
+    res.render("login");
+>>>>>>> e4e217c5dd2c6fdd8db7ac63cd19b9a37af7e608
     // if (req.user) {
     //   res.redirect("/members");
     // }
