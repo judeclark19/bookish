@@ -1,7 +1,7 @@
 #body-wrapper {
   /* border: 2px solid hotpink; */
   color: white;
-  min-height: calc(100vh - 56px - 72px);
+  min-height: calc(100vh - 56px - 105px);
   background-image: url("../img/pexels-janko-ferlic-590493.jpg");
   background-size: cover;
   position: relative;
@@ -20,14 +20,28 @@
 
 #landing-sign-up {
   background-color: gray;
-  padding: 50px;
+  padding: 75px;
 }
 
 #landing-carousel {
   background-color: lightgray;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+#carousel {
+  /* align-self: center;
+  justify-self: center;
+  position: absolute; */
+  /* top: 50%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
 }
 
 footer {
+  /* background-color: black !important; */
   bottom: 0;
   width: 100%;
   padding: 1.5rem 1.5rem 1.5rem !important;
