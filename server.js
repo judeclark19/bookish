@@ -15,19 +15,35 @@ app.use(express.json());
 app.use(express.static("public"));
 
 //log for search by Author
-axios
-  .get(
-    "https://v1.nocodeapi.com/icecicle04/gr/LrsOCSqWhlpBqsfr/searchAuthor?q=J.%20K.%20Rowling"
-  )
-  .then((res) => console.log(res.data));
+axios({
+  method: "get",
+  url: "https://v1.nocodeapi.com/icecicle04/gr/LrsOCSqWhlpBqsfr/searchAuthor",
+  params: { q: "<q>" },
+})
+  .then(function (response) {
+    // handle success
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  });
 
 // log for search by book
 
-axios
-  .get(
-    "https://v1.nocodeapi.com/icecicle04/gr/LrsOCSqWhlpBqsfr/search?q=Harry%20Potter"
-  )
-  .then((res) => console.log(res.data));
+axios({
+  method: "get",
+  url: "https://v1.nocodeapi.com/icecicle04/gr/LrsOCSqWhlpBqsfr/search",
+  params: { q: "<q>" },
+})
+  .then(function (response) {
+    // handle success
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  });
 // .then((response) => console.log(response.data));
 
 app.engine(

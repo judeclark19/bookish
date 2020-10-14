@@ -21,20 +21,37 @@ module.exports = function (app) {
 
   app.post("/api/searchByAuthor", function (req, res) {
     console.log(req.body);
-    axios
-      .get(
-        "https://v1.nocodeapi.com/icecicle04/gr/LrsOCSqWhlpBqsfr/searchAuthor?q=J.%20K.%20Rowling"
-      )
-      .then((response) => res.json(response.data));
+    axios({
+      method: "get",
+      url:
+        "https://v1.nocodeapi.com/icecicle04/gr/LrsOCSqWhlpBqsfr/searchAuthor",
+      params: { q: "<q>" },
+    })
+      .then(function (response) {
+        // handle success
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      });
   });
 
   app.post("/api/searchByBook", function (req, res) {
     console.log(req.body);
-    axios
-      .get(
-        "https://v1.nocodeapi.com/icecicle04/gr/LrsOCSqWhlpBqsfr/search?q=Harry%20Potter"
-      )
-      .then((response) => res.json(response.data));
+    axios({
+      method: "get",
+      url: "https://v1.nocodeapi.com/icecicle04/gr/LrsOCSqWhlpBqsfr/search",
+      params: { q: "<q>" },
+    })
+      .then(function (response) {
+        // handle success
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      });
   });
 
   app.post("/api/signup", function (req, res) {
