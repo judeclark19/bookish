@@ -1,7 +1,19 @@
+#nav-login-btn {
+  color: #363636;
+}
+
+.navbar-dropdown {
+  background-color: #363636;
+}
+
+.navbar-dropdown .navbar-item:hover {
+  background-color: #292929 !important;
+}
+
 #body-wrapper {
   /* border: 2px solid hotpink; */
   color: white;
-  min-height: calc(100vh - 56px - 105px);
+  min-height: calc(100vh - 56px - 104px);
   background-image: url("../img/pexels-janko-ferlic-590493.jpg");
   background-size: cover;
   position: relative;
@@ -24,10 +36,10 @@
 
 #landing-sign-up {
   background-color: transparent;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 #value-prop-card {
@@ -35,16 +47,12 @@
   background-color: rgba(128, 128, 128, 0.7);
   padding: 20px;
   border-radius: 10px;
-  height: 50%;
-  width: 50%;
+  height: 200px;
+  width: 500px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  border: 2px dashed green;
-  /* position: absolute;
-  left: 0; */
-  /* right: 150px; */
-  /* align-items: center; */
+  box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 1);
+  /* border: 2px dashed green; */
 }
 
 #value-prop-title {
@@ -62,31 +70,37 @@
   max-width: 150px;
 }
 #landing-carousel {
-  border: 2px solid yellow;
+  /* border: 2px solid yellow; */
   /* visibility: hidden; */
   background-color: transparent;
-  position: relative;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  margin: auto;
 }
 
 #carousel {
-  border: 2px dashed green;
-  /* align-self: center;
-  justify-self: center;
-  position: absolute; */
-  /* top: 50%;
-  left: 50%; */
-  /* transform: translate(-50%, -50%); */
+  /* border: 2px dashed green; */
+  width: 80%;
+  box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 1);
 }
-.d-block {
-  border-radius: 10px !important;
+
+.carousel-img {
+  border-radius: 10px;
+  /* max-width: 500px; */
+  max-height: 400px;
+  object-fit: cover;
 }
 
 footer {
-  /* background-color: black !important; */
+  background-color: #363636 !important;
+  color: white !important;
   bottom: 0;
   width: 100%;
   padding: 1.5rem 1.5rem 1.5rem !important;
+}
+footer strong {
+  color: white;
+}
+
+footer a {
+  color: lightskyblue;
 }
