@@ -1,7 +1,10 @@
+/* MAIN.HANDLEBARS */
+/* ======================================================================= */
 #nav-login-btn {
   color: #363636;
 }
 
+/* Primary button styling */
 .bookish-primary {
   background-color: #a85e4a;
 }
@@ -14,6 +17,10 @@
   background-color: #292929 !important;
 }
 
+.search-bar {
+  width: 23vw;
+}
+
 #body-wrapper {
   /* border: 2px solid hotpink; */
   color: white;
@@ -21,10 +28,6 @@
   background-image: url("../img/pexels-janko-ferlic-590493.jpg");
   background-size: cover;
   position: relative;
-}
-
-.search-bar {
-  width: 23vw;
 }
 
 .columns {
@@ -38,6 +41,8 @@
   transform: translate(-50%, -50%);
 }
 
+/* INDEX.HANDLEBARS
+=========================================================================== */
 #landing-sign-up {
   background-color: transparent;
   /* border: 2px solid red; */
