@@ -40,9 +40,21 @@
   text-decoration: underline;
 }
 
-#body-wrapper {
+.body-wrapper {
+  /* color: white; */
+  min-height: calc(100vh - 90px - 72px);
+  /* background-image: url("../img/pexels-janko-ferlic-590493.jpg"); */
+  /* background-color: #cc937b; */
+  background-color: #fde2d1;
+  /* background-size: cover; */
+  position: relative;
+  /* border: 2px solid hotpink; */
+}
+
+.index-body-wrapper {
   color: white;
-  min-height: calc(100vh - 56px - 92px);
+  min-height: calc(100vh - 90px - 72px);
+  background-color: #fbcead;
   background-image: url("../img/pexels-janko-ferlic-590493.jpg");
   background-size: cover;
   position: relative;
@@ -134,11 +146,12 @@ p {
   /* visibility: hidden; */
   background-color: transparent;
   display: flex;
-  align-items: center;
+  /* text-align: center; */
 }
 
 #carousel {
   /* border: 2px dashed green; */
+  margin: auto;
   width: 80%;
   box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 1);
 }
@@ -215,5 +228,5 @@ footer a {
 }
 
 .column {
-  border: 1px solid hotpink;
+  /* border: 1px solid hotpink; */
 }
