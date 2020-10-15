@@ -15,6 +15,17 @@ $(".login").on("submit", function(event){
     
     console.log("You clicked the submit button @login page");
     console.log("login information: ", loggedInUser);
+
+    $.ajax("/api/login", {
+        type: "POST",
+        data: loggedInUser
+    }).then(function(){
+        window.location.replace("/my-account");
+        console.log("Succesfully logged in")
+    }).catch((err) =>{
+        if(err) throw err;
+        // location.reload();
+    })
 });
 
 // create a post request -- see how to authenticate user information and continue to log in
