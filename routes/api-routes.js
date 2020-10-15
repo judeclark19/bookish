@@ -56,7 +56,7 @@ module.exports = function (app) {
 
   app.post("/api/signup", function (req, res) {
     db.User.create({
-      username: req.body.username,
+      // username: req.body.username,
       email: req.body.email,
       password: req.body.password,
     })
@@ -67,6 +67,12 @@ module.exports = function (app) {
         res.status(401).json(err);
       });
   });
+
+  app.post("/api/login", function(req,res){
+    console.log(req.body);
+    console.log(res.body);
+    console.log(req.params);
+  })
 
   // Route for logging user out
   app.get("/logout", function (req, res) {
