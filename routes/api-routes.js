@@ -2,7 +2,6 @@
 var db = require("../models");
 const axios = require("axios");
 // var passport = require("../config/passport");
-require("dotenv").config();
 
 module.exports = function (app) {
   app.get("/api/config", (req, res) => {
@@ -20,33 +19,46 @@ module.exports = function (app) {
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
 
-  app.post("/api/searchByAuthor", function (req, res) {
-    console.log(req.body);
-    axios({
-      method: "get",
-      url: `https://v1.nocodeapi.com/icecicle04/gr/${process.env.GOODREADS_KEY}/searchAuthor`,
-      params: { q: "<q>" },
-    })
-      .then(function (response) {
-        // handle success
-        console.log(response.data);
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      });
-  });
+  // app.post("/api/searchByAuthor", function (req, res) {
+  //   console.log(req.body);
+  //   axios({
+  //     method: "get",
+  //     url:
+  //       "https://v1.nocodeapi.com/icecicle04/gr/LrsOCSqWhlpBqsfr/searchAuthor",
+  //     params: { q: "<q>" },
+  //   })
+  //   .then(function (response) {
+  //       res.redirect("search/results")
+  // .then(function (response) {
+  //   // handle success
+  //   console.log(response.data);
+  // })
+  // .catch(function (error) {
+  //   // handle error
+  //   console.log(error);
+  // });
+  // });
 
-  app.post("/api/searchByBook", function (req, res) {
+  // $(function () {
+  //   // connect with the signup form to capture values on 'submit'
+  //   $("#nav-search-btn").on("submit", function (event) {
+  //     event.preventDefault();
+  //     // create a newUser variable to store the information
+  //     newSearch = {
+  //       name: $("#nav-search-btn").val().trim(),
+  //     };
+  //   });
+  // });
+  app.post("/api/search-results", function (req, res) {
     console.log(req.body);
     axios({
       method: "get",
-      url: `https://v1.nocodeapi.com/icecicle04/gr/${process.env.GOODREADS_KEY}/search`,
-      params: { q: "<q>" },
+      url: "https://v1.nocodeapi.com/icecicle04/gr/LrsOCSqWhlpBqsfr/search",
+      params: { q: req },
     })
       .then(function (response) {
         // handle success
-        console.log(response.data);
+        post(response.data);
       })
       .catch(function (error) {
         // handle error
