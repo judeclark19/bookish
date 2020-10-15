@@ -1,6 +1,7 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
 const axios = require("axios");
+const bcrypt = require("bcryptjs");
 // var passport = require("../config/passport");
 require("dotenv").config();
 
@@ -69,10 +70,30 @@ module.exports = function (app) {
   });
 
   app.post("/api/login", function (req, res) {
-    console.log(req.body);
-    console.log(res.body);
-    console.log(req.params);
+    db.User.findOne({
+      email: req.body.email
+    }).then(function (foundUser) {
+      console.log(foundUser);
+      const hashedPassword = bcrypt.compare(
+        req.body.password, foundUser.password);
+
+      if (foundUser.email === req.body.email && hashedPassword) {
+        // create a route for logged in users to be sent to (what happens next?)
+        res.redirect("/api/afterlogin");
+      } else {
+        res.redirect("/api/login");
+      }
+    }).catch((err) =>{
+      if(err) throw err;
+    })
+
   });
+  // practice route for POSTMAN 
+  app.get("/api/afterlogin", function (req, res) {
+    res.json({
+      message: "You logged in!"
+    })
+  })
 
   // Route for logging user out
   app.get("/logout", function (req, res) {
