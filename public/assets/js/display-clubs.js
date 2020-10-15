@@ -1,11 +1,12 @@
 // Dummy data
 // ===============================================================================================================
-console.log("ALL CLUBS JS IS RUNNING");
+
 const allClubs = [
   {
     id: 1,
     name: "Outdoorsy Club",
     currentBookTitle: "Call of the Wild",
+    currentBookId: 1,
     progress: 25,
     members: 8,
     active: true,
@@ -14,6 +15,7 @@ const allClubs = [
     id: 2,
     name: "Tiny Fey Lovers",
     currentBookTitle: "Bossypants",
+    currentBookId: 1,
     progress: 42,
     members: 6,
     active: true,
@@ -22,6 +24,7 @@ const allClubs = [
     id: 3,
     name: "Scotland Yard",
     currentBookTitle: "The Sign of Four",
+    currentBookId: 2,
     progress: 66,
     members: 10,
     active: true,
@@ -30,6 +33,7 @@ const allClubs = [
     id: 4,
     name: "Romance Novels Club",
     currentBookTitle: "Troubles in Paradise",
+    currentBookId: 2,
     progress: 6,
     members: 5,
     active: true,
@@ -38,6 +42,7 @@ const allClubs = [
     id: 5,
     name: "Self Help Club",
     currentBookTitle: "Self Help Book",
+    currentBookId: 3,
     progress: 41,
     members: 10,
     active: false,
@@ -46,6 +51,7 @@ const allClubs = [
     id: 6,
     name: "Science Fiction",
     currentBookTitle: "Dune",
+    currentBookId: 4,
     progress: 61,
     members: 10,
     active: true,
@@ -54,6 +60,7 @@ const allClubs = [
     id: 7,
     name: "Comedy Club",
     currentBookTitle: "Me Talk Pretty One Day",
+    currentBookId: 5,
     progress: 88,
     members: 7,
     active: true,
@@ -62,6 +69,7 @@ const allClubs = [
     id: 8,
     name: "History Club",
     currentBookTitle: "Hamilton",
+    currentBookId: 5,
     progress: 100,
     members: 8,
     active: false,
@@ -74,7 +82,7 @@ $(document).ready(function () {
   allClubs.forEach((club) => {
     if (club.active) {
       const clubCard = $("<div class='club-card columns'>");
-      $(".body-mat").append(clubCard);
+      $("#clubs-body-mat").append(clubCard);
 
       const bookInfoDiv = $("<div class='column is-one-fourth book-info-div'>");
       const bookCoverImg = $("<img class='book-cover'>").attr(

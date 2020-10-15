@@ -220,5 +220,18 @@ footer a {
 }
 
 .column {
-  /* border: 1px solid hotpink; */
+  border: 1px solid hotpink;
+}
+
+/* Books
+================================================================ */
+
+.book-card {
+  border: 2px dashed red;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  padding: 20px;
+  overflow: auto;
 }
