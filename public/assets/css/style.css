@@ -7,13 +7,19 @@
 /* Primary button styling */
 .bookish-primary {
   background-color: #a85e4a;
+  color: white;
 }
 
 .navbar-dropdown {
   background-color: #363636;
 }
 
+.navbar-dropdown .navbar-item {
+  color: white;
+}
+
 .navbar-dropdown .navbar-item:hover {
+  color: white !important;
   background-color: #292929 !important;
 }
 
@@ -22,15 +28,42 @@
 }
 
 #body-wrapper {
-  /* border: 2px solid hotpink; */
   color: white;
-  min-height: calc(100vh - 56px - 104px);
+  min-height: calc(100vh - 56px - 92px);
   background-image: url("../img/pexels-janko-ferlic-590493.jpg");
   background-size: cover;
   position: relative;
+  /* border: 2px solid hotpink; */
 }
 
-.columns {
+.title {
+  color: white !important;
+}
+
+p {
+  margin: 0;
+}
+
+.page-title {
+  /* border: 2px solid yellow; */
+  font-size: 50px;
+  padding: 20px;
+}
+
+.body-mat {
+  /* border: 2px solid green; */
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: calc(100vh - 56px - 92px);
+  text-align: center;
+  /* background-color: #363636; */
+  background-color: rgba(54, 54, 54, 0.9);
+}
+
+/* INDEX.HANDLEBARS
+=========================================================================== */
+.index-columns {
   width: 100%;
   margin: 0 !important;
   padding: 0 !important;
@@ -41,8 +74,6 @@
   transform: translate(-50%, -50%);
 }
 
-/* INDEX.HANDLEBARS
-=========================================================================== */
 #landing-sign-up {
   background-color: transparent;
   /* border: 2px solid red; */
