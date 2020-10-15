@@ -152,4 +152,10 @@ footer a {
 =========================================================================== */
 .signup {
   text-align: center;
+  justify-content: center;
+}
+
+.form-group {
+  /* width: 28vw; */
+  justify-content: center;
 }
