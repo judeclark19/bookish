@@ -1,12 +1,12 @@
 $(function () {
   // connect with the search form to capture values on 'submit'
-  $("#nav-search-btn").on("submit", function (event) {
+  $("#nav-search-btn").on("click", function (event) {
+    event.preventDefault();
     console.log("Clicked!");
     // create a newSearch
-    newSearch = {
+    const newSearch = {
       name: $("#newSearchValue").val().trim(),
     };
-
     console.log("Search has been triggered");
     console.log("Search information: ", newSearch);
 
@@ -16,7 +16,7 @@ $(function () {
       data: newSearch,
     })
       .then(function () {
-        window.location.replace("/");
+        window.location.replace("/search-results");
         console.log("Successfully sent POST request");
       })
       .catch((err) => {

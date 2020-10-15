@@ -49,8 +49,9 @@ module.exports = function (app) {
   //     };
   //   });
   // });
-  app.post("/api/search", function (req, res) {
+  app.post("/api/search-results", function (req, res) {
     console.log(req.body);
+    res.json(req.body);
     // axios({
     //   method: "get",
     //   url: "https://v1.nocodeapi.com/icecicle04/gr/LrsOCSqWhlpBqsfr/search",
