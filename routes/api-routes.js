@@ -2,6 +2,7 @@
 var db = require("../models");
 const axios = require("axios");
 // var passport = require("../config/passport");
+require("dotenv").config();
 
 module.exports = function (app) {
   app.get("/api/config", (req, res) => {
@@ -23,8 +24,7 @@ module.exports = function (app) {
     console.log(req.body);
     axios({
       method: "get",
-      url:
-        "https://v1.nocodeapi.com/icecicle04/gr/LrsOCSqWhlpBqsfr/searchAuthor",
+      url: `https://v1.nocodeapi.com/icecicle04/gr/${process.env.GOODREADS_KEY}/searchAuthor`,
       params: { q: "<q>" },
     })
       .then(function (response) {
@@ -41,7 +41,7 @@ module.exports = function (app) {
     console.log(req.body);
     axios({
       method: "get",
-      url: "https://v1.nocodeapi.com/icecicle04/gr/LrsOCSqWhlpBqsfr/search",
+      url: `https://v1.nocodeapi.com/icecicle04/gr/${process.env.GOODREADS_KEY}/search`,
       params: { q: "<q>" },
     })
       .then(function (response) {
@@ -68,11 +68,11 @@ module.exports = function (app) {
       });
   });
 
-  app.post("/api/login", function(req,res){
+  app.post("/api/login", function (req, res) {
     console.log(req.body);
     console.log(res.body);
     console.log(req.params);
-  })
+  });
 
   // Route for logging user out
   app.get("/logout", function (req, res) {
