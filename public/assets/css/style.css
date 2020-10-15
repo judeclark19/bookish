@@ -32,6 +32,9 @@
   background-color: #292929 !important;
 }
 
+.nav-search-div {
+  margin-left: 20px;
+}
 .search-bar {
   width: 23vw;
 }
@@ -40,11 +43,14 @@
   text-decoration: underline;
 }
 
+.nohoverstyle:hover {
+  text-decoration: none;
+  cursor: auto;
+}
+
 .body-wrapper {
-  /* color: white; */
   min-height: calc(100vh - 90px - 72px);
   /* background-image: url("../img/pexels-janko-ferlic-590493.jpg"); */
-  /* background-color: #cc937b; */
   background-color: #fde2d1;
   /* background-size: cover; */
   position: relative;
