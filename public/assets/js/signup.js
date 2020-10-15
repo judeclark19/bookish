@@ -23,7 +23,7 @@ $(function(){
             type: "POST",
             data: newUser
         }).then(function(){
-            window.location.replace("/");
+            window.location.replace("/login");
             console.log("Successfully sent POST request");
         }).catch((err) =>{
             if (err) throw err;
