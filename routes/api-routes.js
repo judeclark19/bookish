@@ -24,7 +24,9 @@ module.exports = function (app) {
   //   axios({
   //     method: "get",
   //     url:
-  //       "https://v1.nocodeapi.com/icecicle04/gr/LrsOCSqWhlpBqsfr/searchAuthor",
+  //       "https://v1.nocodeapi.com/alikhan/gr/YlnbmmylJYAoEILJ/searchAuthor?q=J.%20K.%20Rowling",
+
+  // ​/alikhan​/gr​/YlnbmmylJYAoEILJ​/searchAuthor
   //     params: { q: "<q>" },
   //   })
   //   .then(function (response) {
@@ -52,19 +54,19 @@ module.exports = function (app) {
   app.post("/api/search-results", function (req, res) {
     console.log(req.body);
     res.json(req.body);
-    // axios({
-    //   method: "get",
-    //   url: "https://v1.nocodeapi.com/icecicle04/gr/LrsOCSqWhlpBqsfr/search",
-    //   params: { q: req },
-    // })
-    //   .then(function (response) {
-    //     // handle success
-    //     post(response.data);
-    //   })
-    //   .catch(function (error) {
-    //     // handle error
-    //     console.log(error);
-    //   });
+    axios({
+      method: "get",
+      url: "/alikhan/gr/YlnbmmylJYAoEILJ/search",
+      params: { q: req },
+    })
+      .then(function (response) {
+        // handle success
+        post(response.data);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      });
   });
 
   app.post("/api/signup", function (req, res) {
