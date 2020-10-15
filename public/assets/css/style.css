@@ -4,10 +4,19 @@
   color: #363636;
 }
 
+#bookish-link {
+  font-family: "Abril Fatface", cursive;
+  font-size: 32px;
+}
+
 /* Primary button styling */
 .bookish-primary {
   background-color: #a85e4a;
   color: white;
+}
+
+.navbar {
+  font-family: "Roboto Slab", serif;
 }
 
 .navbar-dropdown {
@@ -27,13 +36,17 @@
   width: 23vw;
 }
 
+#nav-search-btn:hover {
+  text-decoration: underline;
+}
+
 #body-wrapper {
   color: white;
   min-height: calc(100vh - 56px - 92px);
   background-image: url("../img/pexels-janko-ferlic-590493.jpg");
   background-size: cover;
   position: relative;
-  /* border: 2px solid hotpink; */
+  font-family: "Roboto Slab", serif;
 }
 
 .title {
@@ -112,6 +125,10 @@ p {
   color: white;
   border-color: white;
 }
+
+#landing-action-btn:hover {
+  text-decoration: underline;
+}
 #landing-carousel {
   /* border: 2px solid yellow; */
   /* visibility: hidden; */
@@ -139,6 +156,7 @@ footer {
   bottom: 0;
   width: 100%;
   padding: 1.5rem 1.5rem 1.5rem !important;
+  font-family: "Roboto Slab", serif;
 }
 footer strong {
   color: white;
@@ -146,4 +164,18 @@ footer strong {
 
 footer a {
   color: lightskyblue;
+}
+
+/* SIGNUP.HANDLEBARS
+=========================================================================== */
+#signup-header {
+  padding-top: 45px;
+}
+.signup {
+  text-align: center;
+  margin-top: 55px;
+}
+
+#signup-button {
+  justify-content: center;
 }
