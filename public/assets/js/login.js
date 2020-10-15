@@ -1,6 +1,5 @@
 $(function(){
 
-
 // connect with the login route and capture user input
 $(".login").on("submit", function(event){
     event.preventDefault();
@@ -10,7 +9,6 @@ $(".login").on("submit", function(event){
         password: $("#password-input").val().trim()
     };
 
-    
     if (!loggedInUser.email || !loggedInUser.password) {
         return;
       }
@@ -18,6 +16,8 @@ $(".login").on("submit", function(event){
     console.log("You clicked the submit button @login page");
     console.log("login information: ", loggedInUser);
 });
+
+// create a post request -- see how to authenticate user information and continue to log in
 
 });
 
