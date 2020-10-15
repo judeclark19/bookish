@@ -147,3 +147,9 @@ footer strong {
 footer a {
   color: lightskyblue;
 }
+
+/* SIGNUP.HANDLEBARS
+=========================================================================== */
+.signup {
+  text-align: center;
+}
