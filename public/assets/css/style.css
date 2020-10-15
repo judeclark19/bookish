@@ -121,15 +121,11 @@ p {
 }
 
 #value-prop-title {
-  /* font-size: 45px; */
   color: white;
-  /* -webkit-text-stroke: 1px black; */
 }
 
 #value-prop-body {
-  /* font-size: 45px; */
   color: white;
-  /* -webkit-text-stroke: 1px black; */
 }
 #landing-action-btn {
   max-width: 150px;
@@ -143,10 +139,8 @@ p {
 }
 #landing-carousel {
   /* border: 2px solid yellow; */
-  /* visibility: hidden; */
   background-color: transparent;
   display: flex;
-  /* text-align: center; */
 }
 
 #carousel {
@@ -202,21 +196,13 @@ footer a {
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
-  /* margin-bottom: 20px; */
-  /* display: flex; */
   padding: 20px;
   overflow: auto;
-  /* background-color: #fbfaf6; */
 }
 
-.book-info-div {
-  /* background-color: white; */
-}
 .book-cover {
   max-height: 200px;
   float: left;
-  /* padding: 10px;*/
-  /* padding-right: 50px; */
 }
 
 .club-name {
