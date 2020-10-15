@@ -4,6 +4,11 @@
   color: #363636;
 }
 
+#bookish-link {
+  font-family: "Abril Fatface", cursive;
+  font-size: 32px;
+}
+
 /* Primary button styling */
 .bookish-primary {
   background-color: #a85e4a;
@@ -33,7 +38,7 @@
   background-image: url("../img/pexels-janko-ferlic-590493.jpg");
   background-size: cover;
   position: relative;
-  /* border: 2px solid hotpink; */
+  font-family: "Roboto Slab", serif;
 }
 
 .title {
