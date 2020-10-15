@@ -29,13 +29,19 @@
 #body-wrapper {
   /* border: 2px solid hotpink; */
   color: white;
-  min-height: calc(100vh - 56px - 104px);
+  min-height: calc(100vh - 56px - 92px);
   background-image: url("../img/pexels-janko-ferlic-590493.jpg");
   background-size: cover;
   position: relative;
 }
 
-.columns {
+.title {
+  color: white !important;
+}
+
+/* INDEX.HANDLEBARS
+=========================================================================== */
+.index-columns {
   width: 100%;
   margin: 0 !important;
   padding: 0 !important;
@@ -46,8 +52,6 @@
   transform: translate(-50%, -50%);
 }
 
-/* INDEX.HANDLEBARS
-=========================================================================== */
 #landing-sign-up {
   background-color: transparent;
   /* border: 2px solid red; */

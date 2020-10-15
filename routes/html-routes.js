@@ -13,8 +13,36 @@ module.exports = function (app) {
     // res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
+  app.get("/signup", function (req, res) {
+    res.render("signup");
+  });
+
   app.get("/all-clubs", function (req, res) {
     res.render("all-clubs");
+  });
+
+  app.get("/active-clubs", function (req, res) {
+    res.render("active-clubs");
+  });
+
+  app.get("/my-clubs", function (req, res) {
+    res.render("my-clubs");
+  });
+
+  app.get("/create-new-club", function (req, res) {
+    res.render("create-new-club");
+  });
+
+  app.get("/trending", function (req, res) {
+    res.render("trending");
+  });
+
+  app.get("/my-account", function (req, res) {
+    res.render("my-account");
+  });
+
+  app.get("/search-results", function (req, res) {
+    res.render("search-results");
   });
 
   // // Here we've add our isAuthenticated middleware to this route.

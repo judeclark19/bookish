@@ -60,6 +60,10 @@ const allClubs = [
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
+  $("#nav-search-btn").click(function () {
+    console.log("clicked search button");
+    window.location.replace("/search-results");
+  });
   // hamburger toggle, code from Bulma
   // ===============================================================================================================
   // Get all "navbar-burger" elements
