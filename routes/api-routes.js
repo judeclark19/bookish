@@ -49,21 +49,21 @@ module.exports = function (app) {
   //     };
   //   });
   // });
-  app.post("/api/search-results", function (req, res) {
+  app.post("/api/search", function (req, res) {
     console.log(req.body);
-    axios({
-      method: "get",
-      url: "https://v1.nocodeapi.com/icecicle04/gr/LrsOCSqWhlpBqsfr/search",
-      params: { q: req },
-    })
-      .then(function (response) {
-        // handle success
-        post(response.data);
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      });
+    // axios({
+    //   method: "get",
+    //   url: "https://v1.nocodeapi.com/icecicle04/gr/LrsOCSqWhlpBqsfr/search",
+    //   params: { q: req },
+    // })
+    //   .then(function (response) {
+    //     // handle success
+    //     post(response.data);
+    //   })
+    //   .catch(function (error) {
+    //     // handle error
+    //     console.log(error);
+    //   });
   });
 
   app.post("/api/signup", function (req, res) {
