@@ -2,6 +2,7 @@
 var db = require("../models");
 const axios = require("axios");
 const bcrypt = require("bcryptjs");
+require("dotenv").config();
 // var passport = require("../config/passport");
 require("dotenv").config();
 
@@ -89,15 +90,16 @@ module.exports = function (app) {
       }
     }).catch((err) =>{
       if(err) throw err;
-    })
-
+    
+      });
   });
-  // practice route for POSTMAN 
+  
+  // practice route for POSTMAN
   app.get("/api/afterlogin", function (req, res) {
     res.json({
-      message: "You logged in!"
-    })
-  })
+      message: "You logged in!",
+    });
+  });
 
   // Route for logging user out
   app.get("/logout", function (req, res) {
