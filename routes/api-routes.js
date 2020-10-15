@@ -71,8 +71,8 @@ module.exports = function (app) {
 
   app.post("/api/login", function (req, res) {
     console.log(req.body);
-    db.User.findOne({
-      email: req.body.email
+    db.User.findOne({ where:
+      {email: req.body.email}
     }).then(function (foundUser) {
       console.log(foundUser);
       const hashedPassword = bcrypt.compare(
@@ -81,7 +81,8 @@ module.exports = function (app) {
       if (foundUser.email === req.body.email && hashedPassword) {
         // create a route for logged in users to be sent to (what happens next?)
         // think through which routes should be accessible for the users -- 'My account' page?
-        res.redirect("/api/afterlogin");
+        console.log(req.session)
+        res.render("my-account", {sessionInfo: req.session});
         console.log("Succesfully logged in user!");
       } else {
         res.redirect("/api/login");
