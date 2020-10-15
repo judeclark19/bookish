@@ -37,9 +37,14 @@ const someBooks = [
     genre: "genre 5",
     year: 2020,
   },
+  {
+    id: 6,
+    title: "Sixth Title",
+    author: "Sixth Author",
+    genre: "genre 6",
+    year: 2010,
+  },
 ];
-
-console.log(allClubs);
 
 $(document).ready(function () {
   someBooks.forEach((book) => {
@@ -64,11 +69,18 @@ $(document).ready(function () {
     );
 
     const clubsReadingThis = $("<div class='column clubs-reading-this'>");
-    const joinClubButton = $("<button class='button'>").text("Join Club");
-    const clubFullMsg = $("<p class='club-full-msg'>").text("Club FULL");
-    const clubInactiveMsg = $("<p class='club-inactive-msg'>").text(
-      "This club is inactive"
+
+    allClubs.forEach((club) => {
+      if (club.currentBookId === book.id) {
+        console.log(club.name);
+        const clubName = $("<p>").text(club.name);
+        clubsReadingThis.append(clubName);
+      }
+    });
+    const createNewClubBtn = $("<button class='button'>").text(
+      "Create New Club"
     );
+    clubsReadingThis.append(createNewClubBtn);
 
     bookCard.append(bookInfoDiv, clubsReadingThis);
   });
