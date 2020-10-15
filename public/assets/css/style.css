@@ -158,8 +158,6 @@ footer a {
   margin-top: 55px;
 }
 
-/* #signup-button {
-  background-color: #a85e4a;
-  color: white;
-  border: #a85e4a;
-} */
+#signup-button {
+  justify-content: center;
+}
