@@ -179,3 +179,41 @@ footer a {
 #signup-button {
   justify-content: center;
 }
+
+/* CLUBS
+================================================================ */
+
+.club-card {
+  border: 2px dashed red;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  /* margin-bottom: 20px; */
+  /* display: flex; */
+  padding: 20px;
+  overflow: auto;
+  /* background-color: #fbfaf6; */
+}
+
+.book-info-div {
+  /* background-color: white; */
+}
+.book-cover {
+  max-height: 200px;
+  float: left;
+  /* padding: 10px;*/
+  /* padding-right: 50px; */
+}
+
+.club-name {
+  margin-bottom: 30px;
+}
+
+.progress-bar-label {
+  margin-bottom: 20px;
+}
+
+.column {
+  border: 1px solid hotpink;
+}
