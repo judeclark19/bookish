@@ -58,7 +58,7 @@ $("#submit-message-btn").click(function () {
 
   const newMsgObj = { user: "TODO", message: newMsgBody };
 
-  console.log(newMsgObj);
-
   dummyMessages.push(newMsgObj);
+  console.log(dummyMessages);
+  //   location.reload();
 });
