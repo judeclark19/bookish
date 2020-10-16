@@ -1,33 +1,36 @@
-$(function(){
+// $(function(){
 
-    // turn this into an ajax get request to feed back user info on to the account page
-    // connect with the signup form to capture values on 'submit'
-    $(".signup").on("submit", function(event){
-        event.preventDefault();
-        // create a newUser variable to store the information
-        newUser = {
-            email: $("#email-input").val().trim(),
-            password: $("#password-input").val().trim()
-        };
+//     // connect with the login route and capture user input
+//     $(".login-form").on("submit", function(event){
+//         event.preventDefault();
+//         // create a loggedInUser variable to store the information
+//         loggedInUser = {
+//             email: $("#email-input").val().trim(),
+//             password: $("#password-input").val().trim()
+//         };
     
-        if (!newUser.email || !newUser.password) {
-            return;
-          }
+//         if (!loggedInUser.email || !loggedInUser.password) {
+//             return;
+//           }
         
-        console.log("New user sign up has been triggered");
-        console.log("newUser information: ", newUser);
-
-        
-         // Send POST request to create new user
-        $.ajax("/api/signup", {
-            type: "POST",
-            data: newUser
-        }).then(function(){
-            window.location.replace("/login");
-            console.log("Successfully sent POST request");
-        }).catch((err) =>{
-            if (err) throw err;
-        })
-    });
+//         console.log("You clicked the submit button @login page");
+//         console.log("login information: ", loggedInUser);
     
-    });
+//         $.ajax("/api/login", {
+//             type: "POST",
+//             data: loggedInUser
+//         }).then(function(){
+//             window.location.replace("/my-account");
+//             console.log("Succesfully logged in", loggedInUser);
+    
+            
+    
+//         }).catch((err) =>{
+//             if(err) throw err;
+//             // location.reload();
+//         })
+//     });
+    
+//     // create a post request -- see how to authenticate user information and continue to log in
+    
+//     });

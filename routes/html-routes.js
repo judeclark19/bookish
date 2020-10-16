@@ -38,6 +38,7 @@ module.exports = function (app) {
   });
 
   app.get("/my-account", function (req, res) {
+    // console.log();
     res.render("my-account");
   });
 

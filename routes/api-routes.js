@@ -85,7 +85,7 @@ module.exports = function (app) {
        if (foundUser.email === req.body.email && result === true) {
         // create a route for logged in users to be sent to (what happens next?)
         // think through which routes should be accessible for the users -- 'My account' page?
-        console.log(req.session)
+        console.log(req.body)
         res.render("my-account", {email: req.body.email});
         console.log("Succesfully logged in user!");
       } else {
@@ -101,7 +101,7 @@ module.exports = function (app) {
   });
 
 app.get("/my-account", function(req,res){
-  console.log(req.body);
+  // console.log(req.body);
 })
 
 
