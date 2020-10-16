@@ -63,7 +63,24 @@
 .index-body-wrapper {
   color: white;
   min-height: calc(100vh - 90px - 72px);
-  background-color: #fbcead;
+  background-image: url("../img/pexels-janko-ferlic-590493.jpg");
+  background-size: cover;
+  position: relative;
+  font-family: "Roboto Slab", serif;
+}
+
+.signup-body-wrapper {
+  color: white;
+  min-height: calc(100vh - 90px - 72px);
+  background-image: url("../img/pexels-janko-ferlic-590493.jpg");
+  background-size: cover;
+  position: relative;
+  font-family: "Roboto Slab", serif;
+}
+
+.login-body-wrapper {
+  color: white;
+  min-height: calc(100vh - 90px - 72px);
   background-image: url("../img/pexels-janko-ferlic-590493.jpg");
   background-size: cover;
   position: relative;
@@ -137,7 +154,6 @@ p {
   color: white;
 }
 #landing-action-btn {
-  max-width: 150px;
   background-color: #a85e4a;
   color: white;
   border-color: white;
@@ -193,6 +209,21 @@ footer a {
 }
 
 #signup-button {
+  justify-content: center;
+}
+
+/* LOGIN.HANDLEBARS
+=========================================================================== */
+#login-header {
+  padding-top: 45px;
+}
+
+.login {
+  text-align: center;
+  margin-top: 55px;
+}
+
+#login-button {
   justify-content: center;
 }
 
