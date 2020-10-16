@@ -45,12 +45,12 @@ module.exports = function (app) {
     res.render("my-account");
   });
 
-  app.get("/search-results", function (req, res) {
-    res.render("search-results", {
-      books: response.data.results,
-      testprop: "This is a test",
-    });
-  });
+  // app.get("/search-results", function (req, res) {
+  //   res.render("search-results", {
+  //     books: response.data.results,
+  //     testprop: "This is a test",
+  //   });
+  // });
 
   // // Here we've add our isAuthenticated middleware to this route.
   // // If a user who is not logged in tries to access this route they will be redirected to the signup page
