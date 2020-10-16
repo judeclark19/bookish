@@ -1,7 +1,7 @@
 $(function(){
 
 // connect with the login route and capture user input
-$(".login").on("submit", function(event){
+$(".login-form").on("submit", function(event){
     event.preventDefault();
     // create a loggedInUser variable to store the information
     loggedInUser = {
@@ -19,9 +19,12 @@ $(".login").on("submit", function(event){
     $.ajax("/api/login", {
         type: "POST",
         data: loggedInUser
-    }).then(function(){
+    }).then(function(result){
         window.location.replace("/my-account");
         console.log("Succesfully logged in", loggedInUser);
+        console.log(result);
+        
+
     }).catch((err) =>{
         if(err) throw err;
         // location.reload();

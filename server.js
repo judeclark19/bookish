@@ -19,8 +19,8 @@ app.use(express.static("public"));
 app.use(session({
   key: 'user_sid',
   secret: 'moonwalking',
-  resave: false,
-  saveUninitialized: false,
+  resave: true,
+  saveUninitialized: true,
   // cookie:{
   //   expires: 600000
   // }
