@@ -52,15 +52,6 @@
   cursor: auto;
 }
 
-/* .body-wrapper {
-  min-height: calc(100vh - 90px - 72px);
-  /* background-image: url("../img/pexels-janko-ferlic-590493.jpg"); */
-/* background-color: antiquewhite; */
-/* background-size: cover; */
-/* position: relative; */
-/* border: 2px solid hotpink; */
-/* } */
-
 .body-wrapper {
   color: white;
   min-height: calc(100vh - 90px - 72px);
@@ -89,19 +80,16 @@ p a:hover {
 }
 
 .page-title {
-  /* border: 2px solid yellow; */
   font-size: 50px;
   padding: 20px;
 }
 
 .body-mat {
-  /* border: 2px solid green; */
   width: 70%;
   margin-left: auto;
   margin-right: auto;
   min-height: calc(100vh - 56px - 92px);
   text-align: center;
-  /* background-color: #363636; */
   background-color: rgba(54, 54, 54, 0.9);
 }
 
@@ -120,7 +108,6 @@ p a:hover {
 
 #landing-sign-up {
   background-color: transparent;
-  /* border: 2px solid red; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -136,7 +123,6 @@ p a:hover {
   display: flex;
   flex-direction: column;
   box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 1);
-  /* border: 2px dashed green; */
 }
 
 #value-prop-title {
@@ -151,7 +137,6 @@ p a:hover {
   background-color: #a85e4a;
   color: white;
   border-color: white;
-  /* width: 200px; */
 }
 
 #landing-action-btn:hover {
@@ -159,13 +144,11 @@ p a:hover {
 }
 
 #landing-carousel {
-  /* border: 2px solid yellow; */
   background-color: transparent;
   display: flex;
 }
 
 #carousel {
-  /* border: 2px dashed green; */
   margin: auto;
   width: 80%;
   box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 1);
@@ -173,7 +156,6 @@ p a:hover {
 
 .carousel-img {
   border-radius: 10px;
-  /* max-width: 500px; */
   max-height: 400px;
   object-fit: cover;
 }
@@ -203,10 +185,6 @@ footer a:hover {
 
 /* SIGNUP.HANDLEBARS
 =========================================================================== */
-/* #signup-header {
-  padding-top: 45px;
-} */
-
 .centered-card {
   position: absolute;
   top: 53%;
@@ -231,10 +209,6 @@ footer a:hover {
 
 /* LOGIN.HANDLEBARS
 =========================================================================== */
-/* #login-header {
-  padding-top: 45px;
-} */
-
 .login-form {
   text-align: center;
   margin-top: 20px;
@@ -261,8 +235,6 @@ footer a:hover {
 #ptag-signup {
   font-weight: bolder;
   font-size: large;
-  /* color: #292929; */
-  /* margin-top: 25px; */
 }
 
 /* ALL CLUBS
@@ -291,10 +263,6 @@ footer a:hover {
   margin-bottom: 20px;
 }
 
-/* .column {
-  border: 1px solid hotpink;
-} */
-
 /* MY CLUBS
 ================================================================ */
 
@@ -302,7 +270,6 @@ footer a:hover {
   background-color: antiquewhite;
   color: #292929;
   min-height: calc(100vh - 90px - 72px);
-  /* background-size: cover; */
   position: relative;
   font-family: "Roboto Slab", serif;
 }
