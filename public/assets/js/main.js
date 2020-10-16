@@ -8,6 +8,13 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("clicked get started button");
     window.location.replace("/signup");
   });
+
+  $("#create-new-club-btn").click(function (event) {
+    event.preventDefault();
+    console.log("clicked cnc button");
+    window.location.replace("/active-clubs");
+  });
+
   // hamburger toggle, code from Bulma
   // ===============================================================================================================
   // Get all "navbar-burger" elements
