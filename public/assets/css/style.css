@@ -145,9 +145,10 @@ p a:hover {
   background-color: #a85e4a;
   color: white;
   border-color: white;
+  width: 150px;
 }
 
-#landing-action-btn:hover {
+#get-started-btn:hover {
   text-decoration: underline;
 }
 
@@ -280,6 +281,7 @@ footer a:hover {
   min-height: calc(100vh - 90px - 72px);
   position: relative;
   font-family: "Roboto Slab", serif;
+  /* overflow: auto; */
 }
 
 /* Books
