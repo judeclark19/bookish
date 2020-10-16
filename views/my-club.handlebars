@@ -1,6 +1,8 @@
-<div class="body-wrapper" id="my-club-wrapper">
-    <div class="body-mat" id="my-club-mat">
+<div class="body-wrapper-with-mat">
+    <div class="body-mat">
+        {{!-- this can be dynamically populated with the club name --}}
         <h1 class="page-title">My club</h1>
+
         <div class="columns club-columns">
             <div class="column club-column"><img class="book-cover" src="https://via.placeholder.com/450x720.png">
                 <h2>Currently reading:</h2>
@@ -40,7 +42,7 @@
                 <button class="button hidden" id="invite-btn">Invite new member</button>
             </div>
         </div>
-        <div class="columns club-columns">
+        <div class="columns club-columns myclub-bottom-section">
             <div class="column club-column" id="my-club-discussion">
                 <h2>Message Board</h2>
                 <br />

@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   $("#create-new-club-btn").click(function (event) {
     event.preventDefault();
-    console.log("clicked cnc button");
+    console.log("clicked create button");
     window.location.replace("/active-clubs");
   });
 

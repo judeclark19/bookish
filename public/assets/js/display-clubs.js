@@ -120,6 +120,7 @@ $(document).ready(function () {
       }
 
       clubCard.append(bookInfoDiv, clubInfoDiv, joinClubDiv);
+      $("#club-card-container").append(clubCard);
     }
   });
 });
