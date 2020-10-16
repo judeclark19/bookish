@@ -1,4 +1,4 @@
-const dummyMembers;
+// const dummyMembers;
 
 
 $(function () {
