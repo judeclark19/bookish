@@ -142,7 +142,7 @@ p a:hover {
   justify-content: center;
 }
 
-#value-prop-card {
+.transparent-gray-card {
   right: 0;
   background-color: rgba(54, 54, 54, 0.6);
   padding: 50px;
@@ -218,8 +218,15 @@ footer a:hover {
 
 /* SIGNUP.HANDLEBARS
 =========================================================================== */
-#signup-header {
+/* #signup-header {
   padding-top: 45px;
+} */
+
+#signup-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .signup {
   text-align: center;
