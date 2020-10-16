@@ -153,6 +153,7 @@ p {
 #value-prop-body {
   color: white;
 }
+
 #landing-action-btn {
   background-color: #a85e4a;
   color: white;
@@ -162,6 +163,7 @@ p {
 #landing-action-btn:hover {
   text-decoration: underline;
 }
+
 #landing-carousel {
   /* border: 2px solid yellow; */
   background-color: transparent;
@@ -212,6 +214,10 @@ footer a {
   justify-content: center;
 }
 
+#signup-button:hover {
+  text-decoration: underline;
+}
+
 /* LOGIN.HANDLEBARS
 =========================================================================== */
 #login-header {
@@ -240,7 +246,6 @@ footer a {
   margin-top: 5px;
   background-color: white;
   width: 25vw;
-  justify-content: center;
 }
 
 /* CLUBS
