@@ -294,6 +294,11 @@ footer a:hover {
 .club-column {
   border: 2px solid green;
 }
+
+.members-table,
+.members-table th {
+  color: white !important;
+}
 /* Books
 ================================================================ */
 
