@@ -1,36 +1,43 @@
-// $(function(){
+$(function () {
+  console.log("my acccount.js ready");
+  $("#edit-username-btn").click(function () {
+    $("#edit-username-btn").addClass("hidden");
+    $("#save-username-btn").removeClass("hidden");
+    $("#username-span").addClass("hidden");
+    $("#edit-username-input").removeClass("hidden");
+  });
 
-//     // connect with the login route and capture user input
-//     $(".login-form").on("submit", function(event){
-//         event.preventDefault();
-//         // create a loggedInUser variable to store the information
-//         loggedInUser = {
-//             email: $("#email-input").val().trim(),
-//             password: $("#password-input").val().trim()
-//         };
-    
-//         if (!loggedInUser.email || !loggedInUser.password) {
-//             return;
-//           }
-        
-//         console.log("You clicked the submit button @login page");
-//         console.log("login information: ", loggedInUser);
-    
-//         $.ajax("/api/login", {
-//             type: "POST",
-//             data: loggedInUser
-//         }).then(function(){
-//             window.location.replace("/my-account");
-//             console.log("Succesfully logged in", loggedInUser);
-    
-            
-    
-//         }).catch((err) =>{
-//             if(err) throw err;
-//             // location.reload();
-//         })
-//     });
-    
-//     // create a post request -- see how to authenticate user information and continue to log in
-    
-//     });
+  $("#save-username-btn").click(function () {
+    $("#save-username-btn").addClass("hidden");
+    $("#edit-username-btn").removeClass("hidden");
+    $("#username-span").removeClass("hidden");
+    $("#edit-username-input").addClass("hidden");
+  });
+
+  $("#edit-email-btn").click(function () {
+    $("#edit-email-btn").addClass("hidden");
+    $("#save-email-btn").removeClass("hidden");
+    $("#email-span").addClass("hidden");
+    $("#edit-email-input").removeClass("hidden");
+  });
+
+  $("#save-email-btn").click(function () {
+    $("#save-email-btn").addClass("hidden");
+    $("#edit-email-btn").removeClass("hidden");
+    $("#email-span").removeClass("hidden");
+    $("#edit-email-input").addClass("hidden");
+  });
+  $("#edit-pw-btn").click(function () {
+    $("#edit-pw-btn").addClass("hidden");
+    $("#save-pw-btn").removeClass("hidden");
+    $("#pw-span").addClass("hidden");
+    $("#edit-pw-input").removeClass("hidden");
+  });
+
+  $("#save-pw-btn").click(function () {
+    $("#save-pw-btn").addClass("hidden");
+    $("#edit-pw-btn").removeClass("hidden");
+    $("#pw-span").removeClass("hidden");
+    $("#edit-pw-input").addClass("hidden");
+  });
+});

@@ -78,12 +78,14 @@
 
 
                 <div class="field has-addons nav-search-div">
-                    <form class="control search-bar">
-                        <input class="input" id="newSearchValue" type="text" placeholder="search by title or author">
+                    <form class="control search-bar" method="POST" action="/api/search-results">
+                        <input name="name" class="input" id="newSearchValue" type="text"
+                            placeholder="search by title or author">
+                        <button class="button bookish-primary" id="nav-search-btn">
+                            <strong>Search</strong>
+                        </button>
                     </form>
-                    <button class="button bookish-primary" id="nav-search-btn">
-                        <strong>Search</strong>
-                        </a>
+
                 </div>
                 <a class="button" id="nav-login-btn" href="/login">
                     <strong>Log in</strong>
@@ -107,7 +109,7 @@
 <script type="text/javascript" src="/assets/js/signup.js"></script>
 <script type="text/javascript" src="/assets/js/main.js"></script>
 <script type="text/javascript" src="/assets/js/login.js"></script>
-<script type="text/javascript" src="/assets/js/search-results.js"></script>
+{{!-- <script type="text/javascript" src="/assets/js/search-results.js"></script> --}}
 <script type="text/javascript" src="/assets/js/display-clubs.js"></script>
 <script type="text/javascript" src="/assets/js/trending.js"></script>
 <script type="text/javascript" src="/assets/js/my-account.js"></script>

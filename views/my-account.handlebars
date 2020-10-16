@@ -7,19 +7,43 @@
                     <tbody>
                         <tr>
                             <th>Username</th>
-                            <td>(username here)</td>
-                            <td>Edit</td>
+                            <td id="username-cell">
+                                <span id="username-span">(username here)</span>
+
+                                <input class="input hidden" type="text" placeholder="Enter new username"
+                                    id="edit-username-input">
+                            </td>
+                            <td><button class="button is-small " id="edit-username-btn">Edit</button>
+                                <button class="button is-small hidden" id="save-username-btn">Save</button></td>
                         </tr>
 
                         <tr>
                             <th>Email</th>
+<<<<<<< HEAD
                             <td id="logged-email">{{email}}</td>
                             <td>Edit</td>
+=======
+                            <td id="email-cell">
+                                <span id="email-span">
+                                    (email here)
+                                </span>
+                                <input class="input hidden" type="text" placeholder="Enter new email"
+                                    id="edit-email-input">
+                            </td>
+                            <td><button class="button is-small" id="edit-email-btn">Edit</button><button
+                                    class="button is-small hidden" id="save-email-btn">Save</button></td>
+>>>>>>> 5620ba6dd97d10453e88cfd437ccdc72a7a87ae7
                         </tr>
                         <tr>
                             <th>Password</th>
-                            <td>(pw here)</td>
-                            <td>Edit</td>
+                            <td id="pw-cell">
+                                <span id="pw-span">(pw here)</span>
+                                <input class="input hidden" type="text" placeholder="Enter new password"
+                                    id="edit-pw-input">
+
+                            </td>
+                            <td><button class="button is-small" id="edit-pw-btn">Edit</button><button
+                                    class="button is-small hidden" id="save-pw-btn">Save</button></td>
                         </tr>
 
                     </tbody>
