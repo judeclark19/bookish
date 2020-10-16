@@ -123,6 +123,7 @@ p a:hover {
   display: flex;
   flex-direction: column;
   box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 1);
+  color: white;
 }
 
 #value-prop-title {
