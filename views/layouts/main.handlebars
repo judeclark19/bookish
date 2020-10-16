@@ -53,13 +53,14 @@
             <div class="navbar-end">
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
-                        Book Clubs</a>
+                        Book Clubs
+                    </a>
                     <div class="navbar-dropdown">
                         <a class="navbar-item" href="/active-clubs">
                             View all clubs
                         </a>
-                        <a class="navbar-item" href="/my-clubs">
-                            My clubs
+                        <a class="navbar-item" href="/my-club">
+                            My club
                         </a>
                         <hr class="navbar-divider">
                         <a class="navbar-item" href="create-new-club">
@@ -78,7 +79,7 @@
 
 
                 <div class="field has-addons nav-search-div">
-                    <form class="control search-bar" method="POST" action="/api/search-results">
+                    <form id="nav-search-form" class="control search-bar" method="POST" action="/api/search-results">
                         <input name="name" class="input" id="newSearchValue" type="text"
                             placeholder="search by title or author">
                         <button class="button bookish-primary" id="nav-search-btn">
@@ -113,6 +114,7 @@
 <script type="text/javascript" src="/assets/js/display-clubs.js"></script>
 <script type="text/javascript" src="/assets/js/trending.js"></script>
 <script type="text/javascript" src="/assets/js/my-account.js"></script>
+<script type="text/javascript" src="/assets/js/my-club.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
