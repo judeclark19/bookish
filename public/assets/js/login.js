@@ -19,10 +19,10 @@ $(".login-form").on("submit", function(event){
     $.ajax("/api/login", {
         type: "POST",
         data: loggedInUser
-    }).then(function(){
+    }).then(function(result){
         window.location.replace("/my-account");
         console.log("Succesfully logged in", loggedInUser);
-
+        console.log(result);
         
 
     }).catch((err) =>{

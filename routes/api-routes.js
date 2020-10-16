@@ -62,6 +62,7 @@ module.exports = function (app) {
 
   // route to create new users and store data in the db
   app.post("/api/signup", function (req, res) {
+    // console.log(req.body);
     db.User.create({
       // username: req.body.username,
       email: req.body.email,
@@ -82,16 +83,18 @@ module.exports = function (app) {
     db.User.findOne({ where:
       {email: req.body.email}
     }).then(function (foundUser) {
-      // console.log(foundUser);
+      console.log(foundUser.dataValues.email);
       // compare the saved/hashed password with the password put in on the page 
      bcrypt.compare(req.body.password, foundUser.password).then(function(result){
      
        if (foundUser.email === req.body.email && result === true) {
         // create a route for logged in users to be sent to (what happens next?)
         // think through which routes should be accessible for the users -- 'My account' page?
-        console.log(req.body)
-        res.render("my-account", {email: req.body.email});
+        req.session.loggedin = true;
+        req.session.username = foundUser.email;
+        res.redirect("/my-account");
         console.log("Succesfully logged in user!");
+        console.log(req.session);
       } else {
         res.redirect("/api/login");
         console.log("Invalid email or password");
@@ -104,9 +107,6 @@ module.exports = function (app) {
       });
   });
 
-app.get("/my-account", function(req,res){
-  // console.log(req.body);
-})
 
 
 
