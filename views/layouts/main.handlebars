@@ -75,12 +75,14 @@
 
 
                 <div class="field has-addons nav-search-div">
-                    <form class="control search-bar">
-                        <input class="input" id="newSearchValue" type="text" placeholder="search by title or author">
+                    <form class="control search-bar" method="POST" action="/api/search-results">
+                        <input name="name" class="input" id="newSearchValue" type="text"
+                            placeholder="search by title or author">
+                        <button class="button bookish-primary" id="nav-search-btn">
+                            <strong>Search</strong>
+                        </button>
                     </form>
-                    <button class="button bookish-primary" id="nav-search-btn">
-                        <strong>Search</strong>
-                        </a>
+
                 </div>
                 <a class="button" id="nav-login-btn" href="/login">
                     <strong>Log in</strong>
