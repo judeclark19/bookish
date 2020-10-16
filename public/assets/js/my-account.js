@@ -1,5 +1,9 @@
 $(function () {
+<<<<<<< Updated upstream
   // console.log("my acccount.js ready");
+=======
+  console.log("my acccount.js ready");
+>>>>>>> Stashed changes
   $("#edit-username-btn").click(function () {
     $("#edit-username-btn").addClass("hidden");
     $("#save-username-btn").removeClass("hidden");
