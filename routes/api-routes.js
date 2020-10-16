@@ -22,7 +22,7 @@ module.exports = function (app) {
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
 
-  app.post("/api/search-results", function (req, res) {
+  app.post("/search-results", function (req, res) {
     console.log(req.body);
     axios({
       method: "get",
@@ -80,33 +80,31 @@ module.exports = function (app) {
   // route to log users in
   app.post("/api/login", function (req, res) {
     console.log(req.body);
-    db.User.findOne({ where:
-      {email: req.body.email}
-    }).then(function (foundUser) {
-      console.log(foundUser.dataValues.email);
-      // compare the saved/hashed password with the password put in on the page 
-     bcrypt.compare(req.body.password, foundUser.password).then(function(result){
-     
-       if (foundUser.email === req.body.email && result === true) {
-        // create a route for logged in users to be sent to (what happens next?)
-        // think through which routes should be accessible for the users -- 'My account' page?
-        req.session.loggedin = true;
-        req.session.username = foundUser.email;
-        res.redirect("/my-account");
-        console.log("Succesfully logged in user!");
-        console.log(req.session);
-      } else {
-        res.redirect("/api/login");
-        console.log("Invalid email or password");
-      }
-     })
-      
-    }).catch((err) =>{
-      if(err) throw err;
-    
+    db.User.findOne({ where: { email: req.body.email } })
+      .then(function (foundUser) {
+        console.log(foundUser.dataValues.email);
+        // compare the saved/hashed password with the password put in on the page
+        bcrypt
+          .compare(req.body.password, foundUser.password)
+          .then(function (result) {
+            if (foundUser.email === req.body.email && result === true) {
+              // create a route for logged in users to be sent to (what happens next?)
+              // think through which routes should be accessible for the users -- 'My account' page?
+              req.session.loggedin = true;
+              req.session.username = foundUser.email;
+              res.redirect("/my-account");
+              console.log("Succesfully logged in user!");
+              console.log(req.session);
+            } else {
+              res.redirect("/api/login");
+              console.log("Invalid email or password");
+            }
+          });
+      })
+      .catch((err) => {
+        if (err) throw err;
       });
   });
-
 
   // Route for logging user out
   app.get("/logout", function (req, res) {
