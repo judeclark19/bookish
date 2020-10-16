@@ -254,7 +254,7 @@ footer a:hover {
 ================================================================ */
 
 .club-card {
-  border: 2px dashed red;
+  border: 2px dashed antiquewhite;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
@@ -282,6 +282,13 @@ footer a:hover {
   border: 2px solid yellow;
 }
 
+/* .myclubs-body-wrapper {
+  background-color: antiquewhite;
+  color: #292929;
+  min-height: calc(100vh - 90px - 72px);
+  position: relative;
+  font-family: "Roboto Slab", serif;
+} */
 #my-club-mat {
   border: 2px dashed hotpink;
 }
@@ -303,7 +310,7 @@ footer a:hover {
 ================================================================ */
 
 .book-card {
-  border: 2px dashed red;
+  border: 2px dashed antiquewhite;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
