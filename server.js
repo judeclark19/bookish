@@ -26,37 +26,37 @@ app.use(session({
   // }
 }));
 
-//log for search by Author
-axios({
-  method: "get",
-  url: "https://v1.nocodeapi.com/icecicle04/gr/LrsOCSqWhlpBqsfr/searchAuthor",
-  params: { q: "<q>" },
-})
-  .then(function (response) {
-    // handle success
-    // console.log(response.data);
-  })
-  .catch(function (error) {
-    // handle error
-    // console.log(error);
-  });
+// //log for search by Author
+// axios({
+//   method: "get",
+//   url: "https://v1.nocodeapi.com/icecicle04/gr/LrsOCSqWhlpBqsfr/searchAuthor",
+//   params: { q: "<q>" },
+// })
+//   .then(function (response) {
+//     // handle success
+//     // console.log(response.data);
+//   })
+//   .catch(function (error) {
+//     // handle error
+//     // console.log(error);
+//   });
 
-// log for search by book
+// // log for search by book
 
-axios({
-  method: "get",
-  url: "https://v1.nocodeapi.com/icecicle04/gr/LrsOCSqWhlpBqsfr/search",
-  params: { q: "<q>" },
-})
-  .then(function (response) {
-    // handle success
-    // console.log(response.data);
-  })
-  .catch(function (error) {
-    // handle error
-    // console.log(error);
-  });
-// .then((response) => console.log(response.data));
+// axios({
+//   method: "get",
+//   url: "https://v1.nocodeapi.com/icecicle04/gr/LrsOCSqWhlpBqsfr/search",
+//   params: { q: "<q>" },
+// })
+//   .then(function (response) {
+//     // handle success
+//     // console.log(response.data);
+//   })
+//   .catch(function (error) {
+//     // handle error
+//     // console.log(error);
+//   });
+// // .then((response) => console.log(response.data));
 
 app.engine(
   "handlebars",
