@@ -56,6 +56,7 @@ module.exports = function (app) {
       });
   });
 
+  // route to create new users and store data in the db
   app.post("/api/signup", function (req, res) {
     db.User.create({
       // username: req.body.username,
@@ -70,16 +71,17 @@ module.exports = function (app) {
       });
   });
 
+  // route to log users in
   app.post("/api/login", function (req, res) {
     console.log(req.body);
     db.User.findOne({ where:
       {email: req.body.email}
     }).then(function (foundUser) {
-      console.log(foundUser);
-      const hashedPassword = bcrypt.compare(
-        req.body.password, foundUser.password);
-
-      if (foundUser.email === req.body.email && hashedPassword) {
+      // console.log(foundUser);
+      // compare the saved/hashed password with the password put in on the page 
+     bcrypt.compare(req.body.password, foundUser.password).then(function(result){
+     
+       if (foundUser.email === req.body.email && result === true) {
         // create a route for logged in users to be sent to (what happens next?)
         // think through which routes should be accessible for the users -- 'My account' page?
         console.log(req.session)
@@ -87,18 +89,14 @@ module.exports = function (app) {
         console.log("Succesfully logged in user!");
       } else {
         res.redirect("/api/login");
+        console.log("Invalid email or password");
       }
+     })
+      
     }).catch((err) =>{
       if(err) throw err;
     
       });
-  });
-  
-  // practice route for POSTMAN
-  app.get("/api/afterlogin", function (req, res) {
-    res.json({
-      message: "You logged in!",
-    });
   });
 
   // Route for logging user out
