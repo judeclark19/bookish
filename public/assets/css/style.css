@@ -55,12 +55,13 @@
 .body-wrapper {
   min-height: calc(100vh - 90px - 72px);
   /* background-image: url("../img/pexels-janko-ferlic-590493.jpg"); */
-  background-color: #fde2d1;
+  background-color: antiquewhite;
   /* background-size: cover; */
   position: relative;
   /* border: 2px solid hotpink; */
 }
 
+/* These three are the same let's think of one name for them */
 .index-body-wrapper {
   color: white;
   min-height: calc(100vh - 90px - 72px);
@@ -163,10 +164,11 @@ p a:hover {
   color: white;
 }
 
-#landing-action-btn {
+#get-started-btn {
   background-color: #a85e4a;
   color: white;
   border-color: white;
+  /* width: 200px; */
 }
 
 #landing-action-btn:hover {
@@ -249,9 +251,9 @@ footer a:hover {
   padding-top: 45px;
 } */
 
-.login {
+.login-form {
   text-align: center;
-  margin-top: 55px;
+  margin-top: 20px;
   justify-content: center;
 }
 
@@ -316,7 +318,7 @@ footer a:hover {
   background-color: antiquewhite;
   color: #292929;
   min-height: calc(100vh - 90px - 72px);
-  background-size: cover;
+  /* background-size: cover; */
   position: relative;
   font-family: "Roboto Slab", serif;
 }
