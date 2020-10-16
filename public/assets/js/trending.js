@@ -76,7 +76,7 @@ $(document).ready(function () {
         clubsReadingThis.append(clubName);
       }
     });
-    const createNewClubBtn = $("<button class='button'>").text(
+    const createNewClubBtn = $("<button class='button bookish-primary'>").text(
       "Create New Club"
     );
     clubsReadingThis.append(createNewClubBtn);
