@@ -37,12 +37,9 @@
         <div class="navbar-start">
             <div class="navbar-item">
                 <div class="buttons">
-                    <a class="button bookish-primary" href="/signup">
+                    {{!-- <a class="button bookish-primary" href="/signup">
                         <strong>Sign up</strong>
-                    </a>
-                    <a class="button" id="nav-login-btn" href="/login">
-                        Log in
-                    </a>
+                    </a> --}}
                 </div>
             </div>
         </div>
@@ -53,22 +50,22 @@
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link nohoverstyle" href="/active-clubs">
                         Book Clubs
-                    <a class="navbar-link" href="/all-clubs">
-                        Clubs
-                    </a>
+                        {{!-- <a class="navbar-link" href="/all-clubs">
+                            Clubs
+                        </a> --}}
 
-                    <div class="navbar-dropdown">
-                        <a class="navbar-item" href="/active-clubs">
-                            View active clubs
-                        </a>
-                        <a class="navbar-item" href="/my-clubs">
-                            My clubs
-                        </a>
-                        <hr class="navbar-divider">
-                        <a class="navbar-item" href="create-new-club">
-                            Create a new club
-                        </a>
-                    </div>
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item" href="/active-clubs">
+                                View all clubs
+                            </a>
+                            <a class="navbar-item" href="/my-clubs">
+                                My clubs
+                            </a>
+                            <hr class="navbar-divider">
+                            <a class="navbar-item" href="create-new-club">
+                                Create a new club
+                            </a>
+                        </div>
                 </div>
 
                 <a class="navbar-item" href="/trending">
@@ -86,8 +83,11 @@
                     </form>
                     <button class="button bookish-primary" id="nav-search-btn">
                         <strong>Search</strong>
-                    </a>
+                        </a>
                 </div>
+                <a class="button" id="nav-login-btn" href="/login">
+                    <strong>Log in</strong>
+                </a>
             </div>
         </div>
     </nav>
