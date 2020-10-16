@@ -31,10 +31,8 @@ module.exports = function (app) {
     })
       .then(function (response) {
         // handle success
-        console.log(response.data.results);
         res.render("search-results", {
           books: response.data.results,
-          testprop: "This is a test",
         });
       })
       .catch(function (error) {
