@@ -278,13 +278,6 @@ footer a:hover {
 
 /* MY CLUB
 ================================================================ */
-#my-club-wrapper {
-  border: 2px solid yellow;
-}
-
-#my-club-mat {
-  border: 2px dashed hotpink;
-}
 
 .club-columns {
   width: 90%;
@@ -292,13 +285,42 @@ footer a:hover {
 }
 
 .club-column {
-  border: 2px solid green;
+  border: 2px dashed gray;
 }
 
 .members-table,
 .members-table th {
   color: white !important;
 }
+
+.members-table {
+  width: 70%;
+  margin: auto;
+}
+
+#my-club-discussion {
+  margin-bottom: 70px;
+  padding: 20px;
+}
+
+#messages-container,
+#new-message-div {
+  width: 70%;
+  margin: auto;
+  border: 2px dashed gray;
+}
+
+#messages-container {
+  min-height: 300px;
+  max-height: 500px;
+  overflow: scroll;
+}
+
+#new-message-div {
+  /* border: 2px dashed gray; */
+  margin-top: 20px;
+}
+
 /* Books
 ================================================================ */
 
