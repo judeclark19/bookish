@@ -208,6 +208,7 @@ footer a {
 .signup {
   text-align: center;
   margin-top: 55px;
+  font-weight: bold;
 }
 
 #signup-button {
@@ -243,9 +244,10 @@ footer a {
 }
 
 #ptag-signup {
-  margin-top: 5px;
-  background-color: white;
-  width: 25vw;
+  font-weight: bolder;
+  font-size: large;
+  color: #292929;
+  margin-top: 25px;
 }
 
 /* CLUBS
