@@ -23,7 +23,11 @@
     <nav class="navbar is-dark" role=" navigation" aria-label="main navigation">
         <div class="navbar-brand">
 
-            <a class="navbar-item" id="bookish-link" href="/"><strong>Bookish.</strong>
+            <a class="navbar-item" id="bookish-link" href="/"><strong>Bookish.&nbsp;&nbsp;<svg width="1em" height="1em"
+                        viewBox="0 0 16 11" class="bi bi-book" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M1 2.828v9.923c.918-.35 2.107-.692 3.287-.81 1.094-.111 2.278-.039 3.213.492V2.687c-.654-.689-1.782-.886-3.112-.752-1.234.124-2.503.523-3.388.893zm7.5-.141v9.746c.935-.53 2.12-.603 3.213-.493 1.18.12 2.37.461 3.287.811V2.828c-.885-.37-2.154-.769-3.388-.893-1.33-.134-2.458.063-3.112.752zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
+                    </svg></strong>
             </a>
 
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
@@ -37,12 +41,9 @@
         <div class="navbar-start">
             <div class="navbar-item">
                 <div class="buttons">
-                    <a class="button bookish-primary" href="/signup">
+                    {{!-- <a class="button bookish-primary" href="/signup">
                         <strong>Sign up</strong>
-                    </a>
-                    <a class="button" id="nav-login-btn" href="/login">
-                        Log in
-                    </a>
+                    </a> --}}
                 </div>
             </div>
         </div>
@@ -51,15 +52,11 @@
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-end">
                 <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link nohoverstyle" href="/active-clubs">
+                    <a class="navbar-link">
                         Book Clubs
-                        <a class="navbar-link" href="/all-clubs">
-                            Clubs
-                        </a>
-
                         <div class="navbar-dropdown">
                             <a class="navbar-item" href="/active-clubs">
-                                View active clubs
+                                View all clubs
                             </a>
                             <a class="navbar-item" href="/my-clubs">
                                 My clubs
@@ -88,6 +85,9 @@
                         <strong>Search</strong>
                         </a>
                 </div>
+                <a class="button" id="nav-login-btn" href="/login">
+                    <strong>Log in</strong>
+                </a>
             </div>
         </div>
     </nav>
@@ -97,11 +97,9 @@
     <footer class="footer is-dark">
         <div class="content has-text-centered">
             <p>
-                <strong>Bookish</strong> by <a href="https://github.com/CodyBonsma">Cody Bonsma</a>, <a
-                    href="https://github.com/judeclark19">Jude Clark</a>, <a href="https://github.com/icecicle04">Ali
-                    Khan</a>, and <a href="https://github.com/a-westin">Amanda Westin</a>. The source code is
-                licensed
-                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+                <strong>Bookish.</strong>&copy;&nbsp;2020&nbsp;<a href="https://github.com/CodyBonsma">Cody Bonsma</a>,
+                <a href="https://github.com/judeclark19">Jude Clark</a>, <a href="https://github.com/icecicle04">Ali
+                    Khan</a>, and <a href="https://github.com/a-westin">Amanda Westin</a>
             </p>
         </div>
     </footer>
