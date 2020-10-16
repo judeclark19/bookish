@@ -2,6 +2,9 @@
 /* ======================================================================= */
 #nav-login-btn {
   color: #363636;
+  margin-left: 15px;
+  background-color: #a85e4a;
+  color: white;
 }
 
 #bookish-link {
@@ -41,6 +44,7 @@
 
 #nav-search-btn:hover {
   text-decoration: underline;
+  color: white;
 }
 
 .nohoverstyle:hover {
@@ -60,7 +64,24 @@
 .index-body-wrapper {
   color: white;
   min-height: calc(100vh - 90px - 72px);
-  background-color: #fbcead;
+  background-image: url("../img/pexels-janko-ferlic-590493.jpg");
+  background-size: cover;
+  position: relative;
+  font-family: "Roboto Slab", serif;
+}
+
+.signup-body-wrapper {
+  color: white;
+  min-height: calc(100vh - 90px - 72px);
+  background-image: url("../img/pexels-janko-ferlic-590493.jpg");
+  background-size: cover;
+  position: relative;
+  font-family: "Roboto Slab", serif;
+}
+
+.login-body-wrapper {
+  color: white;
+  min-height: calc(100vh - 90px - 72px);
   background-image: url("../img/pexels-janko-ferlic-590493.jpg");
   background-size: cover;
   position: relative;
@@ -73,6 +94,14 @@
 
 p {
   margin: 0;
+}
+
+p a {
+  color: #a85e4a;
+}
+
+p a:hover {
+  color: white;
 }
 
 .page-title {
@@ -133,8 +162,8 @@ p {
 #value-prop-body {
   color: white;
 }
+
 #landing-action-btn {
-  max-width: 150px;
   background-color: #a85e4a;
   color: white;
   border-color: white;
@@ -143,6 +172,7 @@ p {
 #landing-action-btn:hover {
   text-decoration: underline;
 }
+
 #landing-carousel {
   /* border: 2px solid yellow; */
   background-color: transparent;
@@ -176,7 +206,14 @@ footer strong {
 }
 
 footer a {
-  color: lightskyblue;
+  color: white;
+}
+
+a:link {
+  color: white;
+}
+footer a:hover {
+  color: #a85e4a;
 }
 
 /* SIGNUP.HANDLEBARS
@@ -187,13 +224,55 @@ footer a {
 .signup {
   text-align: center;
   margin-top: 55px;
+  font-weight: bold;
 }
 
 #signup-button {
   justify-content: center;
 }
 
-/* CLUBS
+#signup-button:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+/* LOGIN.HANDLEBARS
+=========================================================================== */
+#login-header {
+  padding-top: 45px;
+}
+
+.login {
+  text-align: center;
+  margin-top: 55px;
+  justify-content: center;
+}
+
+#login-button {
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#login-button :hover {
+  text-decoration: underline;
+  color: white;
+}
+
+.form-group {
+  width: 23vw;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#ptag-signup {
+  font-weight: bolder;
+  font-size: large;
+  color: #292929;
+  margin-top: 25px;
+}
+
+/* ALL CLUBS
 ================================================================ */
 
 .club-card {
@@ -219,8 +298,20 @@ footer a {
   margin-bottom: 20px;
 }
 
-.column {
+/* .column {
   border: 1px solid hotpink;
+} */
+
+/* MY CLUBS
+================================================================ */
+
+.myclubs-body-wrapper {
+  background-color: antiquewhite;
+  color: #292929;
+  min-height: calc(100vh - 90px - 72px);
+  background-size: cover;
+  position: relative;
+  font-family: "Roboto Slab", serif;
 }
 
 /* Books
