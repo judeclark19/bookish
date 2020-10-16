@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-// const dummyMembers;
-=======
 const dummyMembers = [
   "member 1",
   "member 2",
@@ -13,7 +10,6 @@ const dummyMembers = [
   //   "member 9",
   //   "member 10",
 ];
->>>>>>> eb30332ce8eb7bd72708715048ee52b547195a12
 
 const dummyMessages = [
   {

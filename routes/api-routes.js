@@ -62,12 +62,15 @@ module.exports = function (app) {
 
   // POST rout to create clubs and store the data
   app.post("/api/create-new-club", function (req, res) {
+    console.log(req.body);
     db.Club.create({
       club_name: req.body.club_name,
+      book_name: req.body.book_name,
       userId: req.sessions.userId
       // add club members?
     }).then(function () {
       console.log(req.body);
+      console.log("Successfully created new club!")
     }).catch(function (err) {
       res.status(401).json(err);
     });
