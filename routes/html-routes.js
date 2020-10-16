@@ -46,10 +46,11 @@ module.exports = function (app) {
   });
 
   // app.get("/search-results", function (req, res) {
-  //   res.render("search-results", {
-  //     books: response.data.results,
-  //     testprop: "This is a test",
-  //   });
+  //   // res.render("search-results", {
+  //   //   books: response.data.results,
+  //   //   testprop: "This is a test",
+  //   // });
+  //   res.render("search-results");
   // });
 
   // // Here we've add our isAuthenticated middleware to this route.

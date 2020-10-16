@@ -49,6 +49,10 @@
   width: 23vw;
 }
 
+#nav-search-form {
+  display: flex;
+}
+
 #nav-search-btn:hover {
   text-decoration: underline;
   color: white;
