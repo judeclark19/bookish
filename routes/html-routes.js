@@ -1,3 +1,5 @@
+const { response } = require("express");
+
 module.exports = function (app) {
   app.get("/", function (req, res) {
     // If the user already has an account send them to the members page
@@ -14,7 +16,9 @@ module.exports = function (app) {
   });
 
   app.get("/signup", function (req, res) {
-    res.render("signup");
+    res.render("signup", {
+      blah: "this is a test",
+    });
   });
 
   app.get("/all-clubs", function (req, res) {
@@ -42,7 +46,10 @@ module.exports = function (app) {
   });
 
   app.get("/search-results", function (req, res) {
-    res.render("search-results");
+    res.render("search-results", {
+      books: response.data.results,
+      testprop: "This is a test",
+    });
   });
 
   // // Here we've add our isAuthenticated middleware to this route.

@@ -4,16 +4,16 @@ $(function () {
     event.preventDefault();
     console.log("Clicked!");
     // create a newSearch
-    const newSearch = {
+    const newSearchValue = {
       name: $("#newSearchValue").val().trim(),
     };
     console.log("Search has been triggered");
-    console.log("Search information: ", newSearch);
+    console.log("Search information: ", newSearchValue);
 
     // Send POST request to create new DOM
     $.ajax("/api/search-results", {
       type: "POST",
-      data: newSearch,
+      data: newSearchValue,
     })
       .then(function () {
         window.location.replace("/search-results");
