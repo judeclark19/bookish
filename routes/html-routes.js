@@ -25,8 +25,8 @@ module.exports = function (app) {
     res.render("active-clubs");
   });
 
-  app.get("/my-clubs", function (req, res) {
-    res.render("my-clubs");
+  app.get("/my-club", function (req, res) {
+    res.render("my-club");
   });
 
   app.get("/create-new-club", function (req, res) {

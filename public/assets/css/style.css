@@ -272,18 +272,24 @@ footer a:hover {
   margin-bottom: 20px;
 }
 
-/* MY CLUBS
+/* MY CLUB
 ================================================================ */
-
-.myclubs-body-wrapper {
-  background-color: antiquewhite;
-  color: #292929;
-  min-height: calc(100vh - 90px - 72px);
-  position: relative;
-  font-family: "Roboto Slab", serif;
-  /* overflow: auto; */
+#my-club-wrapper {
+  border: 2px solid yellow;
 }
 
+#my-club-mat {
+  border: 2px dashed hotpink;
+}
+
+.club-columns {
+  width: 90%;
+  margin: auto;
+}
+
+.club-column {
+  border: 2px solid green;
+}
 /* Books
 ================================================================ */
 
