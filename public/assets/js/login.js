@@ -21,7 +21,7 @@ $(".login").on("submit", function(event){
         data: loggedInUser
     }).then(function(){
         window.location.replace("/my-account");
-        console.log("Succesfully logged in")
+        console.log("Succesfully logged in", loggedInUser);
     }).catch((err) =>{
         if(err) throw err;
         // location.reload();
