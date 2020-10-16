@@ -29,27 +29,31 @@ module.exports = function (app) {
     res.render("active-clubs");
   });
 
-  app.get("/my-clubs", function (req, res) {
-    res.render("my-clubs");
+  app.get("/my-club", function (req, res) {
+    res.render("my-club");
   });
 
   app.get("/create-new-club", function (req, res) {
     res.render("create-new-club");
   });
 
-  app.get("/trending", function (req, res) {
-    res.render("trending");
-  });
+  // app.get("/trending", function (req, res) {
+  //   res.render("trending");
+  // });
 
   app.get("/my-account", function (req, res) {
-    res.render("my-account");
+    console.log(req.session);
+    res.render("my-account", {
+      email: req.session.username
+    });
   });
 
   // app.get("/search-results", function (req, res) {
-  //   res.render("search-results", {
-  //     books: response.data.results,
-  //     testprop: "This is a test",
-  //   });
+  //   // res.render("search-results", {
+  //   //   books: response.data.results,
+  //   //   testprop: "This is a test",
+  //   // });
+  //   res.render("search-results");
   // });
 
   // // Here we've add our isAuthenticated middleware to this route.
