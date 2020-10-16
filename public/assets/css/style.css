@@ -197,7 +197,14 @@ footer strong {
 }
 
 footer a {
-  color: lightskyblue;
+  color: white;
+}
+
+a:link {
+  color: white;
+}
+a:hover {
+  color: #a85e4a;
 }
 
 /* SIGNUP.HANDLEBARS
