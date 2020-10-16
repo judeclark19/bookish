@@ -44,6 +44,7 @@
 
 #nav-search-btn:hover {
   text-decoration: underline;
+  color: white;
 }
 
 .nohoverstyle:hover {
@@ -211,7 +212,7 @@ footer a {
 a:link {
   color: white;
 }
-a:hover {
+footer a:hover {
   color: #a85e4a;
 }
 
@@ -232,6 +233,7 @@ a:hover {
 
 #signup-button:hover {
   text-decoration: underline;
+  color: white;
 }
 
 /* LOGIN.HANDLEBARS
@@ -251,6 +253,11 @@ a:hover {
   margin-top: 20px;
 }
 
+#login-button :hover {
+  text-decoration: underline;
+  color: white;
+}
+
 .form-group {
   width: 23vw;
   justify-content: center;
@@ -265,7 +272,7 @@ a:hover {
   margin-top: 25px;
 }
 
-/* CLUBS
+/* ALL CLUBS
 ================================================================ */
 
 .club-card {
@@ -294,6 +301,18 @@ a:hover {
 /* .column {
   border: 1px solid hotpink;
 } */
+
+/* MY CLUBS
+================================================================ */
+
+.myclubs-body-wrapper {
+  background-color: antiquewhite;
+  color: #292929;
+  min-height: calc(100vh - 90px - 72px);
+  background-size: cover;
+  position: relative;
+  font-family: "Roboto Slab", serif;
+}
 
 /* Books
 ================================================================ */
