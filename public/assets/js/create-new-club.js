@@ -21,7 +21,7 @@ $(function () {
         data: newClub,
       })
         .then(function (result) {
-        //   window.location.replace("/active-clubs");
+        
         console.log(result);
           console.log("Successfully sent POST request for new club");
         })
