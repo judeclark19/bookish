@@ -63,7 +63,7 @@
   cursor: auto;
 }
 
-.body-wrapper {
+.body-wrapper-no-mat {
   color: white;
   min-height: calc(100vh - 90px - 72px);
   background-image: url("../img/pexels-janko-ferlic-590493.jpg");
@@ -72,6 +72,18 @@
   font-family: "Roboto Slab", serif;
   min-height: calc(100vh - 90px - 72px);
   position: relative;
+}
+.body-wrapper-with-mat {
+  color: white;
+  min-height: calc(100vh - 90px - 72px);
+  background-image: url("../img/pexels-janko-ferlic-590493.jpg");
+  background-size: cover;
+  position: relative;
+  font-family: "Roboto Slab", serif;
+  min-height: calc(100vh - 90px - 72px);
+  position: relative;
+  display: grid;
+  place-items: center;
 }
 
 .title {
@@ -96,12 +108,15 @@ p a:hover {
 }
 
 .body-mat {
+  border: 1px dashed gray;
   width: 70%;
   margin-left: auto;
   margin-right: auto;
-  min-height: calc(100vh - 56px - 92px);
+  /* subtract the upper and lower "padding" you want from the total height */
+  height: calc(100% - 100px);
   text-align: center;
   background-color: rgba(54, 54, 54, 0.9);
+  overflow: hidden;
 }
 
 /* INDEX.HANDLEBARS
@@ -200,7 +215,7 @@ footer a:hover {
 =========================================================================== */
 .centered-card {
   position: absolute;
-  top: 53%;
+  top: 50%;
   left: 50%;
   bottom: auto;
   transform: translate(-50%, -50%);
@@ -252,9 +267,11 @@ footer a:hover {
 
 /* ALL CLUBS
 ================================================================ */
-
+#club-card-container {
+  padding-bottom: 170px;
+}
 .club-card {
-  border: 2px dashed red;
+  border: 2px dashed antiquewhite;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
@@ -278,13 +295,6 @@ footer a:hover {
 
 /* MY CLUB
 ================================================================ */
-#my-club-wrapper {
-  border: 2px solid yellow;
-}
-
-#my-club-mat {
-  border: 2px dashed hotpink;
-}
 
 .club-columns {
   width: 90%;
@@ -292,18 +302,56 @@ footer a:hover {
 }
 
 .club-column {
-  border: 2px solid green;
+  border: 2px dashed gray;
 }
 
 .members-table,
 .members-table th {
   color: white !important;
 }
+
+.members-table {
+  width: 70%;
+  margin: auto;
+}
+
+#my-club-discussion {
+  margin-bottom: 70px;
+  padding: 20px;
+}
+
+#messages-container,
+#new-message-div {
+  width: 70%;
+  margin: auto;
+  border: 2px dashed gray;
+}
+
+#messages-container {
+  min-height: 300px;
+  max-height: 500px;
+  overflow: scroll;
+}
+
+#new-message-div {
+  /* border: 2px dashed gray; */
+  margin-top: 20px;
+}
+
+.myclub-bottom-section {
+  padding-bottom: 100px;
+}
+
+/* TRENDING.HANDLEBARS
+================================================================ */
+#trending-body-mat {
+  padding-bottom: 150px;
+}
 /* Books
 ================================================================ */
 
 .book-card {
-  border: 2px dashed red;
+  border: 2px dashed antiquewhite;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
@@ -311,9 +359,6 @@ footer a:hover {
   padding: 20px;
   overflow: auto;
 }
-
-/* Books
-================================================================ */
 
 .table,
 .table th {

@@ -1,6 +1,8 @@
-<div class="body-wrapper" id="my-club-wrapper">
-    <div class="body-mat" id="my-club-mat">
+<div class="body-wrapper-with-mat">
+    <div class="body-mat">
+        {{!-- this can be dynamically populated with the club name --}}
         <h1 class="page-title">My club</h1>
+
         <div class="columns club-columns">
             <div class="column club-column"><img class="book-cover" src="https://via.placeholder.com/450x720.png">
                 <h2>Currently reading:</h2>
@@ -19,30 +21,51 @@
             <div class="column club-column">
                 <h2>Member list</h2>
                 <table class="table members-table">
-                    <tbody>
+                    <tbody id="member-table-body">
                         <thead>
                             <tr>
                                 <th>Member Name</th>
-                                <th>something else</th>
+                                <th>something else... poke?</th>
                             </tr>
                         </thead>
                         <tr>
 
-                            <td>Hard coded</td>
+                            {{!-- <td>member name</td>
                             </td>
-                            <td>hard coded</td>
+                            <td>poke</td> --}}
                         </tr>
 
 
 
                     </tbody>
                 </table>
-
+                <button class="button hidden" id="invite-btn">Invite new member</button>
             </div>
         </div>
-        <div class="columns club-columns">
-            <div class="column club-column">
-                <h2>Discussion</h2>
+        <div class="columns club-columns myclub-bottom-section">
+            <div class="column club-column" id="my-club-discussion">
+                <h2>Message Board</h2>
+                <br />
+                <p>Most recent messages appear at the top. Scroll down to see older messages.</p>
+                <br />
+                <div id="messages-container">
+                    <article class="message is-dark">
+                        <div class="message-header">
+                            Hard-Coded
+                        </div>
+                        <div class="message-body">
+                            This message is hard coded. Remove before deployment.
+                        </div>
+                    </article>
+
+                </div>
+                <div id="new-message-div">Post a new message<textarea class="textarea" id="new-msg-body"
+                        placeholder="Type your message here"></textarea>
+                    <div class="control">
+                        <button class="button" id="submit-message-btn">Submit</button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
