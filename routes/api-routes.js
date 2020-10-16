@@ -4,7 +4,6 @@ const axios = require("axios");
 const bcrypt = require("bcryptjs");
 require("dotenv").config();
 // var passport = require("../config/passport");
-require("dotenv").config();
 
 module.exports = function (app) {
   app.get("/api/config", (req, res) => {
