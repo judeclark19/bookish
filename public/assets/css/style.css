@@ -282,7 +282,6 @@ footer a:hover {
   border: 2px solid yellow;
 }
 
-<<<<<<< HEAD
 /* .myclubs-body-wrapper {
   background-color: antiquewhite;
   color: #292929;
@@ -290,11 +289,9 @@ footer a:hover {
   position: relative;
   font-family: "Roboto Slab", serif;
 } */
-=======
 #my-club-mat {
   border: 2px dashed hotpink;
 }
->>>>>>> ac573eb6bcbbb169ef53d2d1a76ff2936644e636
 
 .club-columns {
   width: 90%;

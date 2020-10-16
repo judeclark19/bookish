@@ -5,6 +5,17 @@
             <table class="table">
                 <table class="table" id="logged-table">
                     <tbody>
+                        <tr>
+                            <th>Username</th>
+                            <td id="username-cell">
+                                <span id="username-span">(username here)</span>
+
+                                <input class="input hidden" type="text" placeholder="Enter new username"
+                                    id="edit-username-input">
+                            </td>
+                            <td><button class="button is-small " id="edit-username-btn">Edit</button>
+                                <button class="button is-small hidden" id="save-username-btn">Save</button></td>
+                        </tr>
 
                         <tr>
                             <th>Email</th>
@@ -15,7 +26,7 @@
                                 <input class="input hidden" type="text" placeholder="Enter new email"
                                     id="edit-email-input">
                             </td>
-                            <td><button class="button is-small bookish-primary" id="edit-email-btn">Edit</button><button
+                            <td><button class="button is-small" id="edit-email-btn">Edit</button><button
                                     class="button is-small hidden" id="save-email-btn">Save</button></td>
                         </tr>
                         <tr>
@@ -26,7 +37,7 @@
                                     id="edit-pw-input">
 
                             </td>
-                            <td><button class="button is-small bookish-primary" id="edit-pw-btn">Edit</button><button
+                            <td><button class="button is-small" id="edit-pw-btn">Edit</button><button
                                     class="button is-small hidden" id="save-pw-btn">Save</button></td>
                         </tr>
 
