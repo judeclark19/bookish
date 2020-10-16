@@ -62,12 +62,14 @@ module.exports = function (app) {
 
   // route to create new users and store data in the db
   app.post("/api/signup", function (req, res) {
+    // console.log(req.body);
     db.User.create({
       // username: req.body.username,
       email: req.body.email,
       password: req.body.password,
     })
       .then(function () {
+        console.log(req.body);
         res.redirect("/login");
       })
       .catch(function (err) {
@@ -78,29 +80,33 @@ module.exports = function (app) {
   // route to log users in
   app.post("/api/login", function (req, res) {
     console.log(req.body);
-    db.User.findOne({ where: { email: req.body.email } })
-      .then(function (foundUser) {
-        // console.log(foundUser);
-        // compare the saved/hashed password with the password put in on the page
-        bcrypt
-          .compare(req.body.password, foundUser.password)
-          .then(function (result) {
-            if (foundUser.email === req.body.email && result === true) {
-              // create a route for logged in users to be sent to (what happens next?)
-              // think through which routes should be accessible for the users -- 'My account' page?
-              console.log(req.session);
-              res.render("my-account", { email: req.body.email });
-              console.log("Succesfully logged in user!");
-            } else {
-              res.redirect("/api/login");
-              console.log("Invalid email or password");
-            }
-          });
-      })
-      .catch((err) => {
-        if (err) throw err;
+    db.User.findOne({ where:
+      {email: req.body.email}
+    }).then(function (foundUser) {
+      console.log(foundUser.dataValues.email);
+      // compare the saved/hashed password with the password put in on the page 
+     bcrypt.compare(req.body.password, foundUser.password).then(function(result){
+     
+       if (foundUser.email === req.body.email && result === true) {
+        // create a route for logged in users to be sent to (what happens next?)
+        // think through which routes should be accessible for the users -- 'My account' page?
+        req.session.loggedin = true;
+        req.session.username = foundUser.email;
+        res.redirect("/my-account");
+        console.log("Succesfully logged in user!");
+        console.log(req.session);
+      } else {
+        res.redirect("/api/login");
+        console.log("Invalid email or password");
+      }
+     })
+      
+    }).catch((err) =>{
+      if(err) throw err;
+    
       });
   });
+
 
   // Route for logging user out
   app.get("/logout", function (req, res) {

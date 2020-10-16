@@ -3,6 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("clicked search button");
     window.location.replace("/search-results");
   });
+
+  $("#get-started-btn").click(function () {
+    console.log("clicked get started button");
+    window.location.replace("/signup");
+  });
   // hamburger toggle, code from Bulma
   // ===============================================================================================================
   // Get all "navbar-burger" elements

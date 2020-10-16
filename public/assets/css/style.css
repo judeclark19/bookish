@@ -49,6 +49,10 @@
   width: 23vw;
 }
 
+#nav-search-form {
+  display: flex;
+}
+
 #nav-search-btn:hover {
   text-decoration: underline;
   color: white;
@@ -145,9 +149,10 @@ p a:hover {
   background-color: #a85e4a;
   color: white;
   border-color: white;
+  width: 150px;
 }
 
-#landing-action-btn:hover {
+#get-started-btn:hover {
   text-decoration: underline;
 }
 
@@ -271,9 +276,13 @@ footer a:hover {
   margin-bottom: 20px;
 }
 
-/* MY CLUBS
+/* MY CLUB
 ================================================================ */
+#my-club-wrapper {
+  border: 2px solid yellow;
+}
 
+<<<<<<< HEAD
 /* .myclubs-body-wrapper {
   background-color: antiquewhite;
   color: #292929;
@@ -281,7 +290,25 @@ footer a:hover {
   position: relative;
   font-family: "Roboto Slab", serif;
 } */
+=======
+#my-club-mat {
+  border: 2px dashed hotpink;
+}
+>>>>>>> ac573eb6bcbbb169ef53d2d1a76ff2936644e636
 
+.club-columns {
+  width: 90%;
+  margin: auto;
+}
+
+.club-column {
+  border: 2px solid green;
+}
+
+.members-table,
+.members-table th {
+  color: white !important;
+}
 /* Books
 ================================================================ */
 
