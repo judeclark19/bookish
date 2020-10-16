@@ -85,7 +85,7 @@ module.exports = function (app) {
         // create a route for logged in users to be sent to (what happens next?)
         // think through which routes should be accessible for the users -- 'My account' page?
         console.log(req.session)
-        res.render("my-account", {sessionInfo: req.session});
+        res.render("my-account", {email: req.body.email});
         console.log("Succesfully logged in user!");
       } else {
         res.redirect("/api/login");
