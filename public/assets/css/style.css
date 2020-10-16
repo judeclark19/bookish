@@ -52,41 +52,24 @@
   cursor: auto;
 }
 
-.body-wrapper {
+/* .body-wrapper {
   min-height: calc(100vh - 90px - 72px);
   /* background-image: url("../img/pexels-janko-ferlic-590493.jpg"); */
-  background-color: antiquewhite;
-  /* background-size: cover; */
-  position: relative;
-  /* border: 2px solid hotpink; */
-}
+/* background-color: antiquewhite; */
+/* background-size: cover; */
+/* position: relative; */
+/* border: 2px solid hotpink; */
+/* } */
 
-/* These three are the same let's think of one name for them */
-.index-body-wrapper {
+.body-wrapper {
   color: white;
   min-height: calc(100vh - 90px - 72px);
   background-image: url("../img/pexels-janko-ferlic-590493.jpg");
   background-size: cover;
   position: relative;
   font-family: "Roboto Slab", serif;
-}
-
-.signup-body-wrapper {
-  color: white;
   min-height: calc(100vh - 90px - 72px);
-  background-image: url("../img/pexels-janko-ferlic-590493.jpg");
-  background-size: cover;
   position: relative;
-  font-family: "Roboto Slab", serif;
-}
-
-.login-body-wrapper {
-  color: white;
-  min-height: calc(100vh - 90px - 72px);
-  background-image: url("../img/pexels-janko-ferlic-590493.jpg");
-  background-size: cover;
-  position: relative;
-  font-family: "Roboto Slab", serif;
 }
 
 .title {
@@ -98,11 +81,11 @@ p {
 }
 
 p a {
-  color: #a85e4a;
+  color: white;
 }
 
 p a:hover {
-  color: white;
+  color: #a85e4a;
 }
 
 .page-title {
@@ -226,8 +209,9 @@ footer a:hover {
 
 .centered-card {
   position: absolute;
-  top: 50%;
+  top: 53%;
   left: 50%;
+  bottom: auto;
   transform: translate(-50%, -50%);
 }
 .signup {
