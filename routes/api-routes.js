@@ -64,6 +64,7 @@ module.exports = function (app) {
       password: req.body.password,
     })
       .then(function () {
+        console.log(req.body);
         res.redirect("/login");
       })
       .catch(function (err) {
@@ -98,6 +99,12 @@ module.exports = function (app) {
     
       });
   });
+
+app.get("/my-account", function(req,res){
+  console.log(req.body);
+})
+
+
 
   // Route for logging user out
   app.get("/logout", function (req, res) {

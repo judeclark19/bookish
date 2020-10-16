@@ -72,7 +72,7 @@ $(document).ready(function () {
 
     allClubs.forEach((club) => {
       if (club.currentBookId === book.id) {
-        console.log(club.name);
+        // console.log(club.name);
         const clubName = $("<p>").text(club.name);
         clubsReadingThis.append(clubName);
       }
