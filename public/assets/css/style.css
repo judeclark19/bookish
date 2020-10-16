@@ -342,3 +342,8 @@ footer a:hover {
   padding: 20px;
   overflow: auto;
 }
+
+.table,
+.table th {
+  color: white;
+}
