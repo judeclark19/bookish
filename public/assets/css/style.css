@@ -95,6 +95,14 @@ p {
   margin: 0;
 }
 
+p a {
+  color: #a85e4a;
+}
+
+p a:hover {
+  color: white;
+}
+
 .page-title {
   /* border: 2px solid yellow; */
   font-size: 50px;
