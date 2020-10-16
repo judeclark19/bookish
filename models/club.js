@@ -11,6 +11,8 @@ module.exports = function (sequelize, DataTypes) {
             }
         }
 
+        // userId: DataTypes.Integer
+
     
 });
         Club.associate = function(models) {

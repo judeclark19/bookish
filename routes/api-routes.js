@@ -62,11 +62,11 @@ module.exports = function (app) {
 
   // POST rout to create clubs and store the data
   app.post("/api/create-new-club", function (req, res) {
-    console.log(req.body);
+    console.log(req.session.userId);
     db.Club.create({
       club_name: req.body.club_name,
       book_name: req.body.book_name,
-      userId: req.sessions.userId
+      // userId: req.sessions.userId
       // add club members?
     }).then(function () {
       console.log(req.body);
@@ -91,7 +91,7 @@ module.exports = function (app) {
       password: req.body.password,
     })
       .then(function () {
-        console.log(req.body);
+        // console.log(req.body);
         res.redirect("/login");
       })
       .catch(function (err) {
@@ -101,7 +101,7 @@ module.exports = function (app) {
 
   // route to log users in
   app.post("/api/login", function (req, res) {
-    console.log(req.body);
+    // console.log(req.body);
     db.User.findOne({
       where:
         { email: req.body.email }

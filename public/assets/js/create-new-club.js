@@ -1,6 +1,6 @@
 $(function () {
     // connect with the create club form
-    $(".club-create-form").on("submit", function (event) {
+    $(".club-create-form").on("click", function (event) {
       event.preventDefault();
       // create a newClub variable to store the information
       newClub = {
@@ -15,13 +15,13 @@ $(function () {
       console.log("New Club route to be hit!");
       console.log("newClub information: ", newClub);
   
-      // Send POST request to create new user
+      // Send POST request to create new club
       $.ajax("/api/create-new-club", {
         type: "POST",
         data: newClub,
       })
         .then(function (result) {
-        
+        //   window.location.replace("/active-clubs");
         console.log(result);
           console.log("Successfully sent POST request for new club");
         })
