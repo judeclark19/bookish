@@ -222,7 +222,7 @@ footer a:hover {
   padding-top: 45px;
 } */
 
-#signup-card {
+.centered-card {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -245,9 +245,9 @@ footer a:hover {
 
 /* LOGIN.HANDLEBARS
 =========================================================================== */
-#login-header {
+/* #login-header {
   padding-top: 45px;
-}
+} */
 
 .login {
   text-align: center;
@@ -275,8 +275,8 @@ footer a:hover {
 #ptag-signup {
   font-weight: bolder;
   font-size: large;
-  color: #292929;
-  margin-top: 25px;
+  /* color: #292929; */
+  /* margin-top: 25px; */
 }
 
 /* ALL CLUBS
