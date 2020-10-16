@@ -294,3 +294,11 @@ footer a:hover {
   padding: 20px;
   overflow: auto;
 }
+
+/* Books
+================================================================ */
+
+.table,
+.table th {
+  color: white;
+}
