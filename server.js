@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const exphbs = require("express-handlebars");
 const handlebars = require("handlebars");
-const cookieParser = require("cookie-parser");
+// const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const db = require("./models");
 const axios = require("axios");
@@ -15,15 +15,15 @@ const PORT = process.env.PORT || 8080;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
-app.use(cookieParser());
+// app.use(cookieParser());
 app.use(session({
   key: 'user_sid',
   secret: 'moonwalking',
   resave: false,
   saveUninitialized: false,
-  cookie:{
-    expires: 600000
-  }
+  // cookie:{
+  //   expires: 600000
+  // }
 }));
 
 //log for search by Author
