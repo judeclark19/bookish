@@ -8,7 +8,7 @@ Title: {{title}}
     <div class="body-mat">
         <div id="search-results-heading">
             <h1 class="page-title">Search Results</h1>
-            <p>You searched {{#each books}} {{@index}}: {{author.name}} {{/each}}
+            <p>Results for {{books.0.author.name}}
             </p>
         </div>
         <div id="div-for-padding">
@@ -46,38 +46,13 @@ Title: {{title}}
                             </tbody>
                         </table>
                     </div>
-
-                    <div class="column clubs-reading-this search-results-column">
-                        <p>Clubs currently reading this book:</p>
-                        <div class="clubs-list-container">
-                            <table class="table">
-                                <tbody>
-                                    <tr>
-                                        <td>a club name</td>
-                                        <td>join button</td>
-                                    </tr>
-                                    <tr>
-                                        <td>a club name</td>
-                                        <td>join button</td>
-                                    </tr>
-                                    <tr>
-                                        <td>a club name</td>
-                                        <td>join button</td>
-                                    </tr>
-                                    <tr>
-                                        <td>a club name</td>
-                                        <td>join button</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        {{!-- a button to add a new club. We need only turn this on if we can prepopulate the create-a-club form with a specific book. --}}
-                        {{!-- <button class="button bookish-primary">hello
+                    {{!-- a button to add a new club. We need only turn this on if we can prepopulate the create-a-club form with a specific book. --}}
+                    {{!-- <button class="button bookish-primary">hello
                     world</button> --}}
-                    </div>
+                </div>
 
 
-                </div>{{/each}}
-            </div>
+            </div>{{/each}}
         </div>
     </div>
+</div>
