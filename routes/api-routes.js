@@ -79,17 +79,21 @@ module.exports = function (app) {
   // display clubs and all users
   app.get("/api/display-clubs", function(req,res){
     db.Club.findAll().then(function(result){
-      console.log(result[1].dataValues);
+      console.log(result);
       // loop through the pulled club results and identify the name
       for (let i = 0; i < result.length; i++){
         
         let clubNames = result[i].dataValues.club_name;
+        let clubBook = result[i].dataValues.book_name;
         let clubIdNumbers = result[i].dataValues.id;
 
-        console.log("club names: " + clubNames);
-        console.log("club id's: " + clubIdNumbers);
+        console.log("club name: " + clubNames);
+        console.log("club book name: " + clubBook);
+        console.log("club id: " + clubIdNumbers);
       }
 
+    }).catch((err) =>{
+      if(err) throw err;
     })
   })
 
@@ -133,7 +137,7 @@ module.exports = function (app) {
           req.session.userId = foundUser.id
           res.redirect("/my-account");
           console.log("Succesfully logged in user!");
-          console.log(req.session);
+          // console.log(req.session);
         } else {
           res.redirect("/api/login");
           console.log("Invalid email or password");

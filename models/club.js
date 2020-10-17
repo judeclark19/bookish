@@ -9,27 +9,27 @@ module.exports = function (sequelize, DataTypes) {
             validate: {
                 len: [2, 16],
             }
-        }
+        },
 
-        // book_name: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false,
-        //     unique: true,
-        //     validate: {
-        //         len: [2, 16],
-        //     }
-        // }
+        book_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true,
+            validate: {
+                len: [2, 16],
+            }
+        }
         // userId: DataTypes.Integer
 
-    
-});
-        Club.associate = function(models) {
-            // Associating Author with Posts
-            // When an Author is deleted, also delete any associated Posts
-            Club.hasMany(models.User, {
-              onDelete: "cascade"
-            });
-        }
 
-        return Club;
+    });
+    Club.associate = function (models) {
+        // Associating Author with Posts
+        // When an Author is deleted, also delete any associated Posts
+        Club.hasMany(models.User, {
+            onDelete: "cascade"
+        });
+    }
+
+    return Club;
 }
