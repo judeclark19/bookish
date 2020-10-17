@@ -68,6 +68,7 @@ module.exports = function (app) {
     // console.log("User ID: " + req.session.userId);
     // console.log("Who's logged in?: " + req.session.username)
     // console.log(req.body);
+<<<<<<< HEAD
     db.Club.create({
       club_name: req.body.club_name,
       book_name: req.body.book_name,
@@ -109,6 +110,41 @@ module.exports = function (app) {
         if (err) throw err;
       });
   });
+=======
+    if (!req.body.club_name && !req.body.book_name) {
+      
+      return; 
+    } else {
+      db.Club.create({
+        club_name: req.body.club_name,
+        book_name: req.body.book_name
+        // userId: req.sessions.userId
+        // add club members?
+      }).then(function (result) {
+        res.json(result)
+        console.log(result)
+        console.log("Successfully created new club!")
+      }).catch(function (err) {
+        res.status(401).json(err);
+      });
+    }
+  })
+
+  // display clubs and all users
+  app.get("/api/active-clubs", function (req, res) {
+    db.Club.findAll().then(function (result) {
+      // console.log(result);
+      // loop through the pulled club results and identify name, book and id
+      for (let i = 0; i < result.length; i++) {
+        // let clubNames = result[i].dataValues.club_name;
+        // let clubBook = result[i].dataValues.book_name;
+        // let clubIdNumbers = result[i].dataValues.id;
+      }
+    }).catch((err) => {
+      if (err) throw err;
+    })
+  })
+>>>>>>> 4c0a25209620cf6d04303967b6832cdbe84a6ef5
 
   // add users to clubs
   // app.put()
