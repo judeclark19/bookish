@@ -86,6 +86,19 @@
   place-items: center;
 }
 
+.body-wrapper-bgcolor {
+  color: white;
+  min-height: calc(100vh - 90px - 72px);
+  background-color: rgb(176, 162, 149);
+  background-size: cover;
+  position: relative;
+  font-family: "Roboto Slab", serif;
+  min-height: calc(100vh - 90px - 72px);
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
 .title {
   color: white !important;
 }
