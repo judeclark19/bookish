@@ -31,53 +31,29 @@ module.exports = function (app) {
       .then(function (result) {
         // console.log(result);
 
-<<<<<<< HEAD
-        //create a new array for the club names
-        let clubArrayNames = result.map(function (value) {
-          return value.club_name;
-        });
-        // create a new array for the matching books
-        let clubArrayBooks = result.map(function (value) {
-          return value.book_name;
-        });
-        console.log(clubArrayNames);
-        console.log(clubArrayBooks);
-        // render the data onto the handlebars page
-        res.render("active-clubs", {
-          names: clubArrayNames,
-          books: clubArrayBooks,
-        });
+        clubArray = [];
+        for (let i = 0; i < result.length; i++) {
+          let newClubObj = {
+            name: result[i].dataValues.club_name,
+            book: result[i].dataValues.book_name,
+            id: result[i].dataValues.id,
+          };
+          clubArray.push(newClubObj);
+          topArray = clubArray.reverse();
+        }
+        console.log(topArray);
+
+        // render the data onto the active-clubs handlebars page
+        res.render("active-clubs", { topArray });
       })
       .catch((err) => {
         if (err) throw err;
       });
-=======
-      clubArray = [];
-      for (let i = 0; i < result.length; i++) {
-       
-        let newClubObj = {
-          name: result[i].dataValues.club_name,
-          book: result[i].dataValues.book_name,
-          id: result[i].dataValues.id
-        }
-        clubArray.push(newClubObj);
-        topArray = clubArray.reverse();
-       
-      }
-      console.log(topArray);
-     
-      // render the data onto the active-clubs handlebars page 
-      res.render("active-clubs", { topArray });
-
-    }).catch((err) => {
-      if (err) throw err;
-    })
->>>>>>> 4c0a25209620cf6d04303967b6832cdbe84a6ef5
   });
 
   app.get("/my-club", function (req, res) {
     // db.User.findAll({
-    //   where: 
+    //   where:
     // })
     res.render("my-club");
   });
