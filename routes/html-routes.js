@@ -19,9 +19,7 @@ module.exports = function (app) {
   });
 
   app.get("/signup", function (req, res) {
-    res.render("signup", {
-      blah: "this is a test",
-    });
+    res.render("signup", {});
   });
 
   app.get("/all-clubs", function (req, res) {
@@ -29,34 +27,33 @@ module.exports = function (app) {
   });
 
   app.get("/active-clubs", function (req, res) {
-    db.Club.findAll().then(function (result) {
-      // console.log(result);
+    db.Club.findAll()
+      .then(function (result) {
+        // console.log(result);
 
-      clubArray = [];
-      for (let i = 0; i < result.length; i++) {
-       
-        let newClubObj = {
-          name: result[i].dataValues.club_name,
-          book: result[i].dataValues.book_name,
-          id: result[i].dataValues.id
+        clubArray = [];
+        for (let i = 0; i < result.length; i++) {
+          let newClubObj = {
+            name: result[i].dataValues.club_name,
+            book: result[i].dataValues.book_name,
+            id: result[i].dataValues.id,
+          };
+          clubArray.push(newClubObj);
+          topArray = clubArray.reverse();
         }
-        clubArray.push(newClubObj);
-        topArray = clubArray.reverse();
-       
-      }
-      console.log(topArray);
-     
-      // render the data onto the active-clubs handlebars page 
-      res.render("active-clubs", { topArray });
+        console.log(topArray);
 
-    }).catch((err) => {
-      if (err) throw err;
-    })
+        // render the data onto the active-clubs handlebars page
+        res.render("active-clubs", { topArray });
+      })
+      .catch((err) => {
+        if (err) throw err;
+      });
   });
 
   app.get("/my-club", function (req, res) {
     // db.User.findAll({
-    //   where: 
+    //   where:
     // })
     res.render("my-club");
   });

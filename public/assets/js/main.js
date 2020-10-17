@@ -1,7 +1,12 @@
+let userSearchParam;
+
 document.addEventListener("DOMContentLoaded", () => {
   $("#nav-search-btn").click(function () {
     console.log("clicked search button");
+    userSearchParam = $("#newSearchValue").val().trim();
+    console.log(userSearchParam);
     window.location.replace("/search-results");
+    $("#userSearchParam").text(userSearchParam);
   });
 
   $("#get-started-btn").click(function () {
