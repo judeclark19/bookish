@@ -63,17 +63,7 @@
   cursor: auto;
 }
 
-.body-wrapper-no-mat {
-  color: white;
-  min-height: calc(100vh - 90px - 72px);
-  background-image: url("../img/pexels-janko-ferlic-590493.jpg");
-  background-size: cover;
-  position: relative;
-  font-family: "Roboto Slab", serif;
-  min-height: calc(100vh - 90px - 72px);
-  position: relative;
-}
-.body-wrapper-with-mat {
+.body-wrapper {
   color: white;
   min-height: calc(100vh - 90px - 72px);
   background-image: url("../img/pexels-janko-ferlic-590493.jpg");
@@ -86,7 +76,8 @@
   place-items: center;
 }
 
-.title {
+.title,
+.subtitle {
   color: white !important;
 }
 
@@ -121,15 +112,11 @@ p a:hover {
 
 /* INDEX.HANDLEBARS
 =========================================================================== */
-.index-columns {
-  width: 100%;
-  margin: 0 !important;
-  padding: 0 !important;
-  align-self: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
+.index-column {
+  /* border: 2px solid yellow; */
+  display: grid;
+  place-items: center;
 }
 
 #landing-sign-up {
@@ -142,22 +129,20 @@ p a:hover {
 .transparent-gray-card {
   right: 0;
   background-color: rgba(54, 54, 54, 0.6);
-  padding: 50px;
+  padding: 75px;
   border-radius: 10px;
-  min-height: 300px;
-  max-width: 700px;
+  /* min-height: 300px;
+  max-width: 700px; */
   display: flex;
   flex-direction: column;
   box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 1);
   color: white;
 }
 
-#value-prop-title {
-  color: white;
-}
-
-#value-prop-body {
-  color: white;
+#get-started-card {
+  width: 85%;
+  padding-top: 90px;
+  padding-bottom: 90px;
 }
 
 #get-started-btn {
@@ -178,6 +163,7 @@ p a:hover {
 
 #carousel {
   margin: auto;
+  border-radius: 10px;
   width: 80%;
   box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 1);
 }
