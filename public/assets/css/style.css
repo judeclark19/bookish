@@ -63,22 +63,7 @@
   cursor: auto;
 }
 
-.body-wrapper-no-mat {
-  color: white;
-  min-height: calc(100vh - 90px - 72px);
-  background-image: url("../img/pexels-janko-ferlic-590493.jpg");
-  background-size: cover;
-  position: relative;
-  font-family: "Roboto Slab", serif;
-  min-height: calc(100vh - 90px - 72px);
-  position: relative;
-}
-
-.display-grid {
-  display: grid;
-  place-items: center;
-}
-.body-wrapper-with-mat {
+.body-wrapper {
   color: white;
   min-height: calc(100vh - 90px - 72px);
   background-image: url("../img/pexels-janko-ferlic-590493.jpg");
@@ -139,7 +124,7 @@ p a:hover {
 } */
 
 .index-column {
-  border: 2px solid yellow;
+  /* border: 2px solid yellow; */
   display: grid;
   place-items: center;
 }
@@ -154,14 +139,20 @@ p a:hover {
 .transparent-gray-card {
   right: 0;
   background-color: rgba(54, 54, 54, 0.6);
-  padding: 50px;
+  padding: 75px;
   border-radius: 10px;
-  min-height: 300px;
-  max-width: 700px;
+  /* min-height: 300px;
+  max-width: 700px; */
   display: flex;
   flex-direction: column;
   box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 1);
   color: white;
+}
+
+#get-started-card {
+  width: 85%;
+  padding-top: 90px;
+  padding-bottom: 90px;
 }
 
 #get-started-btn {
@@ -390,12 +381,12 @@ footer a:hover {
   display: grid;
   place-items: center;
 } */
-/* 
+
 .index-column {
-  border: 2px solid yellow;
+  /* border: 2px solid yellow; */
   display: grid;
   place-items: center;
-} */
+}
 /* Books
 ================================================================ */
 

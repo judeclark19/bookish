@@ -51,9 +51,6 @@ module.exports = function (app) {
   app.get("/test", function (req, res) {
     res.render("test");
   });
-  app.get("/test2", function (req, res) {
-    res.render("test2");
-  });
 
   // app.get("/search-results", function (req, res) {
   //   // res.render("search-results", {
