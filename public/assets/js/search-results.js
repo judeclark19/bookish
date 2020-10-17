@@ -1,4 +1,7 @@
-$(function () {
+$(document).ready(function () {
+  console.log("search results ready");
+  console.log(userSearchInput);
+  $("#search-term").text(userSearchInput);
   // connect with the search form to capture values on 'submit'
   //   $("#nav-search-btn").on("click", function (event) {
   //     event.preventDefault();

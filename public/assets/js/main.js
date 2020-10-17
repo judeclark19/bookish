@@ -1,7 +1,13 @@
+let userSearchInput;
+
 document.addEventListener("DOMContentLoaded", () => {
   $("#nav-search-btn").click(function () {
     console.log("clicked search button");
-    window.location.replace("/search-results");
+
+    userSearchInput = $("#newSearchValue").val();
+    console.log(userSearchInput);
+
+    // window.location.replace("/search-results");
   });
 
   $("#get-started-btn").click(function () {
