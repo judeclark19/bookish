@@ -11,8 +11,9 @@ $(function () {
       if (!newClub.club_name || !newClub.book_name) {
         alert("Please enter valid information");
         return;
-      } else {
-        console.log("New Club route to be hit!");
+      } 
+  
+      console.log("New Club route to be hit!");
       console.log("newClub information: ", newClub);
   
       // Send POST request to create new club
@@ -28,7 +29,5 @@ $(function () {
         .catch((err) => {
           if (err) throw err;
         });
-      }
-  
     });
   });

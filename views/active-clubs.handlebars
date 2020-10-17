@@ -1,44 +1,33 @@
 <div class="body-wrapper">
     <div class="body-mat">
         <h1 class="page-title">All Clubs</h1>
+        {{#each topArray}}
         <div id="club-card-container">
+            <div class="club-card columns">
+                
+                <div class="column is-one-fourth book-info-div"><img class="book-cover"
+                        src="https://via.placeholder.com/450x720.png">
+                    <p class="book-title">{{this.book}}</p>
+                    <p class="book-author">Author</p>
+                    <p class="book-genre">Genre</p>
+                    <p class="book-year">Year</p>
 
-            {{!-- {{#each books}}
-                <div class="club-card columns">
-                    
-                    <div class="column is-one-fourth book-info-div"><img class="book-cover"
-                            src="https://via.placeholder.com/450x720.png">
-                        <p class="book-title">{{ log this}}</p>
-                        <p class="book-author">Author</p>
-                        <p class="book-genre">Genre</p>
-                        <p class="book-year">Year</p>
-                    
-                    </div>
-            {{/each}}
-            {{#each names}}
-                    <div class="column club-info-div">
-                        <p class="club-name">{{ log this}}</p>
-                        <p class="progress-bar-label">Progress bar label</p>
-                        <progress class="progress" value="20" max="100">Progress
-                        </progress>
-                        <p>This row is hard coded. Remove before deployment.</p>
-                    </div>
-
-                    <div class="column is-one-fifth join-club-div"><button class="button">Join Club</button>
-                    </div>
                 </div>
-              {{/each}}   --}}
 
-              <ul>
-                  {{#each topArray}}
-                  <li> Club name: <button id="test-button" class="button">{{this.name}}</button></li>
-                  <li>Club book: {{this.book}}</li>
-                  <li>Club id: {{this.id}}</li>
-                  {{/each}}
-              </ul>
+                <div class="column club-info-div">
+                    <p class="club-name">Club name: {{this.name}}</p>
+                    <p class="club-name">Club Id: {{this.id}}</p>
+                    <p class="progress-bar-label">Progress bar label</p>
+                    <progress class="progress" value="20" max="100">Progress
+                    </progress>
+                    <p>This row is hard coded. Remove before deployment.</p>
+                </div>
+
+                <div class="column is-one-fifth join-club-div"><button class="button">Join Club</button>
+                </div>
+            </div>
 
         </div>
-
-
+        {{/each}}
     </div>
 </div>
