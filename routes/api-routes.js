@@ -70,17 +70,6 @@ module.exports = function (app) {
       book_name: req.body.book_name
       // userId: req.sessions.userId
       // add club members?
-<<<<<<< HEAD
-    })
-      .then(function () {
-        console.log(req.body);
-        console.log("Successfully created new club!");
-      })
-      .catch(function (err) {
-        res.status(401).json(err);
-      });
-  });
-=======
     }).then(function (result) {
       res.json(result)
       console.log(result)
@@ -89,7 +78,6 @@ module.exports = function (app) {
       res.status(401).json(err);
     });
   })
->>>>>>> 5c289c0dd3c678778f0eef69178aded72e3c3d1e
 
   // display clubs and all users
   app.get("/api/active-clubs", function (req, res) {
@@ -188,7 +176,6 @@ module.exports = function (app) {
           res.redirect("/api/login");
           console.log("Invalid email or password");
         }
->>>>>>> 5c289c0dd3c678778f0eef69178aded72e3c3d1e
       })
       .catch((err) => {
         if (err) throw err;
