@@ -73,6 +73,11 @@
   min-height: calc(100vh - 90px - 72px);
   position: relative;
 }
+
+.display-grid {
+  display: grid;
+  place-items: center;
+}
 .body-wrapper-with-mat {
   color: white;
   min-height: calc(100vh - 90px - 72px);
@@ -86,7 +91,8 @@
   place-items: center;
 }
 
-.title {
+.title,
+.subtitle {
   color: white !important;
 }
 
@@ -121,7 +127,7 @@ p a:hover {
 
 /* INDEX.HANDLEBARS
 =========================================================================== */
-.index-columns {
+/* .index-columns {
   width: 100%;
   margin: 0 !important;
   padding: 0 !important;
@@ -130,6 +136,12 @@ p a:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+} */
+
+.index-column {
+  border: 2px solid yellow;
+  display: grid;
+  place-items: center;
 }
 
 #landing-sign-up {
@@ -152,14 +164,6 @@ p a:hover {
   color: white;
 }
 
-#value-prop-title {
-  color: white;
-}
-
-#value-prop-body {
-  color: white;
-}
-
 #get-started-btn {
   background-color: #a85e4a;
   color: white;
@@ -178,6 +182,7 @@ p a:hover {
 
 #carousel {
   margin: auto;
+  border-radius: 10px;
   width: 80%;
   box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 1);
 }
@@ -378,6 +383,19 @@ footer a:hover {
   padding-bottom: 150px;
 }
 
+/* TEST2.HANDLEBARS
+================================================================ */
+/* #test-2-wrapper {
+  border: 2px solid green;
+  display: grid;
+  place-items: center;
+} */
+/* 
+.index-column {
+  border: 2px solid yellow;
+  display: grid;
+  place-items: center;
+} */
 /* Books
 ================================================================ */
 
