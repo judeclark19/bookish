@@ -9,25 +9,25 @@ $(function () {
     };
     console.log(newClub);
     if (!newClub.club_name || !newClub.book_name) {
+      alert("Please enter valid information");
       return;
-    }
+    } else {
+      console.log("New Club route to be hit!");
+      console.log("newClub information: ", newClub);
 
-    console.log("New Club route to be hit!");
-    console.log("newClub information: ", newClub);
-
-    // Send POST request to create new club
-    $.ajax("/api/create-new-club", {
-      type: "POST",
-      data: newClub,
-    })
-      .then(function (result) {
-        // TODO: uncomment?
-        //   window.location.replace("/active-clubs");
-        console.log(result);
-        console.log("Successfully sent POST request for new club");
+      // Send POST request to create new club
+      $.ajax("/api/create-new-club", {
+        type: "POST",
+        data: newClub,
       })
-      .catch((err) => {
-        if (err) throw err;
-      });
+        .then(function (result) {
+          //   window.location.replace("/active-clubs");
+          console.log(result);
+          console.log("Successfully sent POST request for new club");
+        })
+        .catch((err) => {
+          if (err) throw err;
+        });
+    }
   });
 });
