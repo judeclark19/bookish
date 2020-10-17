@@ -17,9 +17,7 @@ module.exports = function (app) {
   });
 
   app.get("/signup", function (req, res) {
-    res.render("signup", {
-      blah: "this is a test",
-    });
+    res.render("signup", {});
   });
 
   app.get("/all-clubs", function (req, res) {
@@ -27,28 +25,29 @@ module.exports = function (app) {
   });
 
   app.get("/active-clubs", function (req, res) {
-    db.Club.findAll().then(function (result) {
-      // console.log(result);
+    db.Club.findAll()
+      .then(function (result) {
+        // console.log(result);
 
-      //create a new array for the club names
-      let clubArrayNames = result.map(function(value){
-        return value.club_name;
-      })
-      // create a new array for the matching books
-      let clubArrayBooks = result.map(function(value){
-        return value.book_name;
-      })
-      console.log(clubArrayNames);
-      console.log(clubArrayBooks);
-      // render the data onto the handlebars page 
-      res.render("active-clubs", { 
+        //create a new array for the club names
+        let clubArrayNames = result.map(function (value) {
+          return value.club_name;
+        });
+        // create a new array for the matching books
+        let clubArrayBooks = result.map(function (value) {
+          return value.book_name;
+        });
+        console.log(clubArrayNames);
+        console.log(clubArrayBooks);
+        // render the data onto the handlebars page
+        res.render("active-clubs", {
           names: clubArrayNames,
-          books: clubArrayBooks
+          books: clubArrayBooks,
+        });
+      })
+      .catch((err) => {
+        if (err) throw err;
       });
-
-    }).catch((err) => {
-      if (err) throw err;
-    })
   });
 
   app.get("/my-club", function (req, res) {

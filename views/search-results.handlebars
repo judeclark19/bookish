@@ -8,7 +8,7 @@ Title: {{title}}
     <div class="body-mat">
         <div id="search-results-heading">
             <h1 class="page-title">Search Results</h1>
-            <p>You searched for: SEARCH TERM</p>
+            <p>You searched for: {{name}}</p>
         </div>
         <div id="div-for-padding">
             {{#each books}}
@@ -16,9 +16,9 @@ Title: {{title}}
 
 
                 <div class="column book-info-div search-results-column"><img class="book-cover" src="{{image_url}}">
-                    <p class="book-title">{{title}}</p>
-                    <p class="book-author">{{author.name}}</p>
-                    <p class="book-year">{{original_publication_year}}</p>
+                    <p class="book-title">Title: {{title}}</p>
+                    <p class="book-author">Author: {{author.name}}</p>
+                    <p class="book-year">Publication Year: {{original_publication_year}}</p>
                 </div>
 
                 <div class="column clubs-reading-this search-results-column">
