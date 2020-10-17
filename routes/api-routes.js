@@ -67,44 +67,45 @@ module.exports = function (app) {
     // console.log(req.body);
     db.Club.create({
       club_name: req.body.club_name,
-      book_name: req.body.book_name
+      book_name: req.body.book_name,
       // userId: req.sessions.userId
       // add club members?
-    }).then(function (result) {
-      res.json(result)
-      console.log(result)
-      console.log("Successfully created new club!")
-    }).catch(function (err) {
-      res.status(401).json(err);
-    });
-  })
+    })
+      .then(function (result) {
+        res.json(result);
+        console.log(result);
+        console.log("Successfully created new club!");
+      })
+      .catch(function (err) {
+        res.status(401).json(err);
+      });
+  });
 
   // display clubs and all users
   app.get("/api/active-clubs", function (req, res) {
-    db.Club.findAll().then(function (result) {
-      console.log(result);
-      // loop through the pulled club results and identify name, book and id
-      for (let i = 0; i < result.length; i++) {
+    db.Club.findAll()
+      .then(function (result) {
+        console.log(result);
+        // loop through the pulled club results and identify name, book and id
+        for (let i = 0; i < result.length; i++) {
+          let clubNames = result[i].dataValues.club_name;
+          let clubBook = result[i].dataValues.book_name;
+          let clubIdNumbers = result[i].dataValues.id;
 
-        let clubNames = result[i].dataValues.club_name;
-        let clubBook = result[i].dataValues.book_name;
-        let clubIdNumbers = result[i].dataValues.id;
+          // console.log("club name: " + clubNames);
+          // console.log("club book name: " + clubBook);
+          // console.log("club id: " + clubIdNumbers);
 
-        // console.log("club name: " + clubNames);
-        // console.log("club book name: " + clubBook);
-        // console.log("club id: " + clubIdNumbers);
-
-        ClubInfo = [{clubNames}, {clubBook}, {clubIdNumbers}];
-        console.log(ClubInfo);
-        // res.render("active-clubs", ClubInfo[0]);
-      }
-      // res.render("active-clubs", { clubber: result[0].dataValues.club_name});
-     
-
-    }).catch((err) => {
-      if (err) throw err;
-    })
-  })
+          ClubInfo = [{ clubNames }, { clubBook }, { clubIdNumbers }];
+          console.log(ClubInfo);
+          // res.render("active-clubs", ClubInfo[0]);
+        }
+        // res.render("active-clubs", { clubber: result[0].dataValues.club_name});
+      })
+      .catch((err) => {
+        if (err) throw err;
+      });
+  });
 
   // add users to clubs
   // app.put()
@@ -130,7 +131,6 @@ module.exports = function (app) {
   app.post("/api/login", function (req, res) {
     // console.log(req.body);
     db.User.findOne({
-<<<<<<< HEAD
       where: { email: req.body.email },
     })
       .then(function (foundUser) {
@@ -148,34 +148,12 @@ module.exports = function (app) {
               req.session.userId = foundUser.id;
               res.redirect("/my-account");
               console.log("Succesfully logged in user!");
-              console.log(req.session);
+              // console.log(req.session);
             } else {
               res.redirect("/api/login");
               console.log("Invalid email or password");
             }
           });
-=======
-      where:
-        { email: req.body.email }
-    }).then(function (foundUser) {
-      console.log(foundUser.id);
-      console.log(foundUser.dataValues.email);
-      // compare the saved/hashed password with the password put in on the page 
-      bcrypt.compare(req.body.password, foundUser.password).then(function (result) {
-
-        if (foundUser.email === req.body.email && result === true) {
-          // create a route for logged in users to be sent to (what happens next?)
-          // think through which routes should be accessible for the users -- 'My account' page?
-          req.session.loggedin = true;
-          req.session.username = foundUser.email;
-          req.session.userId = foundUser.id
-          res.redirect("/my-account");
-          console.log("Succesfully logged in user!");
-          // console.log(req.session);
-        } else {
-          res.redirect("/api/login");
-          console.log("Invalid email or password");
-        }
       })
       .catch((err) => {
         if (err) throw err;

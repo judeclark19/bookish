@@ -1,25 +1,10 @@
-<<<<<<< HEAD
-<li>
-    <div class="myclubs-body-wrapper">
-        <div class="body-mat">
-            {{#each books}}
-            <h3>
-                Title: {{title}}
-                <p class="centered">
-                    <button class="buttons bookish-primary">Add to Favorites List</button></p>
-            </h3>
-            {{/each}}
-        </div>
-    </div>
-</li>
-=======
 {{!-- {{#each books}}
 
 Title: {{title}}
 
 {{/each}} --}}
 
-<div class="body-wrapper">
+<div class="body-wrapper-with-mat">
     <div class="body-mat">
         <div id="search-results-heading">
             <h1 class="page-title">Search Results</h1>
@@ -30,12 +15,10 @@ Title: {{title}}
             <div class="columns search-results-columns">
 
 
-                <div class="column book-info-div search-results-column"><img class="book-cover"
-                        src="https://via.placeholder.com/450x720.png">
+                <div class="column book-info-div search-results-column"><img class="book-cover" src="{{image_url}}">
                     <p class="book-title">{{title}}</p>
-                    <p class="book-author">Author</p>
-                    <p class="book-genre">Genre</p>
-                    <p class="book-year">Year</p>
+                    <p class="book-author">{{author.name}}</p>
+                    <p class="book-year">{{original_publication_year}}</p>
                 </div>
 
                 <div class="column clubs-reading-this search-results-column">
@@ -72,4 +55,3 @@ Title: {{title}}
         </div>
     </div>
 </div>
->>>>>>> 61b807f957c4d01c8fa9c365a03f0cad9335076e
