@@ -108,7 +108,7 @@ p a:hover {
 }
 
 .body-mat {
-  border: 1px dashed gray;
+  border: 1px dashed gold;
   width: 70%;
   margin-left: auto;
   margin-right: auto;
@@ -347,6 +347,37 @@ footer a:hover {
 #trending-body-mat {
   padding-bottom: 150px;
 }
+
+/* TEST.HANDLEBARS
+================================================================ */
+#search-results-heading {
+  border: 1px dashed blue;
+  padding-bottom: 20px;
+}
+
+.search-results-columns {
+  margin-top: 30px;
+  border: 1px dashed gray;
+  width: 94%;
+  margin: auto;
+}
+
+.search-results-column {
+  border: 1px dashed hotpink;
+}
+
+.clubs-list-container {
+  border: 1px solid green;
+  width: 88%;
+  max-height: 180px;
+  margin: auto;
+  overflow: scroll;
+}
+
+#div-for-padding {
+  padding-bottom: 150px;
+}
+
 /* Books
 ================================================================ */
 
