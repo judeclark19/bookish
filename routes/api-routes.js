@@ -23,7 +23,7 @@ module.exports = function (app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
 
   app.post("/search-results", function (req, res) {
-    console.log(req.body);
+    // console.log(req.body);
     axios({
       method: "get",
       url: `https://v1.nocodeapi.com/alikhan/gr/${process.env.GOODREADS_KEY}/searchAuthor?q=${req.body.name}`,
@@ -34,6 +34,9 @@ module.exports = function (app) {
         res.render("search-results", {
           books: response.data.results,
         });
+        // res.render("search-results", {
+        //   author: response.data.results.author.name,
+        // });
       })
       .catch(function (error) {
         // handle error
