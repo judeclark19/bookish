@@ -60,6 +60,30 @@ module.exports = function (app) {
   //     });
   // });
 
+  // POST rout to create clubs and store the data
+  app.post("/api/create-new-club", function (req, res) {
+    console.log(req.session.userId);
+    db.Club.create({
+      club_name: req.body.club_name,
+      book_name: req.body.book_name,
+      // userId: req.sessions.userId
+      // add club members?
+    })
+      .then(function () {
+        console.log(req.body);
+        console.log("Successfully created new club!");
+      })
+      .catch(function (err) {
+        res.status(401).json(err);
+      });
+  });
+
+  // display clubs and all users
+  // app.get()
+
+  // add users to clubs
+  // app.put()
+
   // route to create new users and store data in the db
   app.post("/api/signup", function (req, res) {
     // console.log(req.body);
@@ -69,7 +93,7 @@ module.exports = function (app) {
       password: req.body.password,
     })
       .then(function () {
-        console.log(req.body);
+        // console.log(req.body);
         res.redirect("/login");
       })
       .catch(function (err) {
@@ -79,9 +103,12 @@ module.exports = function (app) {
 
   // route to log users in
   app.post("/api/login", function (req, res) {
-    console.log(req.body);
-    db.User.findOne({ where: { email: req.body.email } })
+    // console.log(req.body);
+    db.User.findOne({
+      where: { email: req.body.email },
+    })
       .then(function (foundUser) {
+        console.log(foundUser.id);
         console.log(foundUser.dataValues.email);
         // compare the saved/hashed password with the password put in on the page
         bcrypt
@@ -92,6 +119,7 @@ module.exports = function (app) {
               // think through which routes should be accessible for the users -- 'My account' page?
               req.session.loggedin = true;
               req.session.username = foundUser.email;
+              req.session.userId = foundUser.id;
               res.redirect("/my-account");
               console.log("Succesfully logged in user!");
               console.log(req.session);

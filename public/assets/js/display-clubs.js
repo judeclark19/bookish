@@ -106,7 +106,9 @@ $(document).ready(function () {
       clubInfoDiv.append(clubName, progressBarLabel, progressBar);
 
       const joinClubDiv = $("<div class='column is-one-fifth join-club-div'>");
-      const joinClubButton = $("<button class='button'>").text("Join Club");
+      const joinClubButton = $("<button class='button bookish-primary'>").text(
+        "Join Club"
+      );
       const clubFullMsg = $("<p class='club-full-msg'>").text("Club FULL");
       const clubInactiveMsg = $("<p class='club-inactive-msg'>").text(
         "This club is inactive"
@@ -120,6 +122,7 @@ $(document).ready(function () {
       }
 
       clubCard.append(bookInfoDiv, clubInfoDiv, joinClubDiv);
+      $("#club-card-container").append(clubCard);
     }
   });
 });
