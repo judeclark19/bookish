@@ -62,14 +62,17 @@ module.exports = function (app) {
 
   // POST rout to create clubs and store the data
   app.post("/api/create-new-club", function (req, res) {
-    console.log(req.session.userId);
+    // console.log("User ID: " + req.session.userId);
+    // console.log("Who's logged in?: " + req.session.username)
+    // console.log(req.body);
     db.Club.create({
       club_name: req.body.club_name,
       book_name: req.body.book_name
       // userId: req.sessions.userId
       // add club members?
-    }).then(function () {
-      console.log(req.body);
+    }).then(function (result) {
+      res.json(result)
+      console.log(result)
       console.log("Successfully created new club!")
     }).catch(function (err) {
       res.status(401).json(err);
@@ -77,23 +80,29 @@ module.exports = function (app) {
   })
 
   // display clubs and all users
-  app.get("/api/display-clubs", function(req,res){
-    db.Club.findAll().then(function(result){
+  app.get("/api/active-clubs", function (req, res) {
+    db.Club.findAll().then(function (result) {
       console.log(result);
-      // loop through the pulled club results and identify the name
-      for (let i = 0; i < result.length; i++){
-        
+      // loop through the pulled club results and identify name, book and id
+      for (let i = 0; i < result.length; i++) {
+
         let clubNames = result[i].dataValues.club_name;
         let clubBook = result[i].dataValues.book_name;
         let clubIdNumbers = result[i].dataValues.id;
 
-        console.log("club name: " + clubNames);
-        console.log("club book name: " + clubBook);
-        console.log("club id: " + clubIdNumbers);
-      }
+        // console.log("club name: " + clubNames);
+        // console.log("club book name: " + clubBook);
+        // console.log("club id: " + clubIdNumbers);
 
-    }).catch((err) =>{
-      if(err) throw err;
+        ClubInfo = [{clubNames}, {clubBook}, {clubIdNumbers}];
+        console.log(ClubInfo);
+        // res.render("active-clubs", ClubInfo[0]);
+      }
+      res.render("active-clubs", { clubber: result[0].dataValues.club_name});
+      // console.log(ClubInfo);
+
+    }).catch((err) => {
+      if (err) throw err;
     })
   })
 
