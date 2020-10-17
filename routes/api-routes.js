@@ -77,7 +77,21 @@ module.exports = function (app) {
   })
 
   // display clubs and all users
-  // app.get()
+  app.get("/api/display-clubs", function(req,res){
+    db.Club.findAll().then(function(result){
+      console.log(result[1].dataValues);
+      // loop through the pulled club results and identify the name
+      for (let i = 0; i < result.length; i++){
+        
+        let clubNames = result[i].dataValues.club_name;
+        let clubIdNumbers = result[i].dataValues.id;
+
+        console.log("club names: " + clubNames);
+        console.log("club id's: " + clubIdNumbers);
+      }
+
+    })
+  })
 
   // add users to clubs 
   // app.put()
