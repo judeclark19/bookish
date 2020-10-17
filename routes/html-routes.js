@@ -41,10 +41,9 @@ module.exports = function (app) {
       console.log(clubArrayNames);
       console.log(clubArrayBooks);
       // render the data onto the handlebars page 
-      res.render("active-clubs", { clubInfo: {
+      res.render("active-clubs", { 
           names: clubArrayNames,
           books: clubArrayBooks
-      }
       });
 
     }).catch((err) => {
