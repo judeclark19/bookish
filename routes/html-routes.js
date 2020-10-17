@@ -25,12 +25,12 @@ module.exports = function (app) {
     res.render("all-clubs");
   });
 
-  // app.get("/active-clubs", function (req, res) {
-  //   console.log(req.body);
-  //   res.render("active-clubs", {
-  //     clubber: res.body
-  //   });
-  // });
+  app.get("/active-clubs", function (req, res) {
+    console.log(req.body);
+    res.render("active-clubs", {
+      clubber: res.body
+    });
+  });
 
   app.get("/my-club", function (req, res) {
     res.render("my-club");
