@@ -4,22 +4,47 @@ Title: {{title}}
 
 {{/each}} --}}
 
-<div class="body-wrapper">
+<div class="body-wrapper-with-mat">
     <div class="body-mat">
         <div id="search-results-heading">
             <h1 class="page-title">Search Results</h1>
-            <p>You searched for: {{author.name}}
-            <div id="div-for-padding">
-                {{#each books}}
-                <div class="columns search-results-columns">
+            <p>You searched {{#each books}} {{@index}}: {{author.name}} {{/each}}
+            </p>
+        </div>
+        <div id="div-for-padding">
+            {{#each books}}
+            <div class="columns search-results-columns">
 
 
-                    <div class="column book-info-div search-results-column"><img class="book-cover"
-                            src="https://via.placeholder.com/450x720.png">
-                        <p class="book-title">{{title}}</p>
-                        <p class="book-author">Author</p>
-                        <p class="book-genre">Genre</p>
-                        <p class="book-year">Year</p>
+                <div class="column book-info-div search-results-column"><img class="book-cover" src="{{image_url}}">
+                    <p class="book-title">Title: {{title}}</p>
+                    <p class="book-author">Author: {{author.name}}</p>
+                    <p class="book-year">Publication Year: {{original_publication_year}}</p>
+                </div>
+
+                <div class="column clubs-reading-this search-results-column">
+                    <p>Clubs currently reading this book:</p>
+                    <div class="clubs-list-container">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>a club name</td>
+                                    <td>join button</td>
+                                </tr>
+                                <tr>
+                                    <td>a club name</td>
+                                    <td>join button</td>
+                                </tr>
+                                <tr>
+                                    <td>a club name</td>
+                                    <td>join button</td>
+                                </tr>
+                                <tr>
+                                    <td>a club name</td>
+                                    <td>join button</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
 
                     <div class="column clubs-reading-this search-results-column">

@@ -19,9 +19,7 @@ module.exports = function (app) {
   });
 
   app.get("/signup", function (req, res) {
-    res.render("signup", {
-      blah: "this is a test",
-    });
+    res.render("signup", {});
   });
 
   app.get("/all-clubs", function (req, res) {

@@ -1,13 +1,12 @@
-let userSearchInput;
+let userSearchParam;
 
 document.addEventListener("DOMContentLoaded", () => {
   $("#nav-search-btn").click(function () {
     console.log("clicked search button");
-
-    userSearchInput = $("#newSearchValue").val();
-    console.log(userSearchInput);
-
-    // window.location.replace("/search-results");
+    userSearchParam = $("#newSearchValue").val().trim();
+    console.log(userSearchParam);
+    window.location.replace("/search-results");
+    $("#userSearchParam").text(userSearchParam);
   });
 
   $("#get-started-btn").click(function () {
