@@ -1,6 +1,8 @@
 const { response } = require("express");
 var db = require("../models");
 
+let clubArray = [];
+let topArray = [];
 module.exports = function (app) {
   app.get("/", function (req, res) {
     // If the user already has an account send them to the members page
@@ -30,21 +32,22 @@ module.exports = function (app) {
     db.Club.findAll().then(function (result) {
       // console.log(result);
 
-      //create a new array for the club names
-      let clubArrayNames = result.map(function(value){
-        return value.club_name;
-      })
-      // create a new array for the matching books
-      let clubArrayBooks = result.map(function(value){
-        return value.book_name;
-      })
-      console.log(clubArrayNames);
-      console.log(clubArrayBooks);
-      // render the data onto the handlebars page 
-      res.render("active-clubs", { 
-          names: clubArrayNames,
-          books: clubArrayBooks
-      });
+      clubArray = [];
+      for (let i = 0; i < result.length; i++) {
+       
+        let newClubObj = {
+          name: result[i].dataValues.club_name,
+          book: result[i].dataValues.book_name,
+          id: result[i].dataValues.id
+        }
+        clubArray.push(newClubObj);
+        topArray = clubArray.reverse();
+       
+      }
+      console.log(topArray);
+     
+      // render the data onto the active-clubs handlebars page 
+      res.render("active-clubs", { topArray });
 
     }).catch((err) => {
       if (err) throw err;
@@ -52,6 +55,9 @@ module.exports = function (app) {
   });
 
   app.get("/my-club", function (req, res) {
+    // db.User.findAll({
+    //   where: 
+    // })
     res.render("my-club");
   });
 
