@@ -65,7 +65,7 @@ module.exports = function (app) {
     console.log(req.session.userId);
     db.Club.create({
       club_name: req.body.club_name,
-      book_name: req.body.book_name,
+      book_name: req.body.book_name
       // userId: req.sessions.userId
       // add club members?
     }).then(function () {

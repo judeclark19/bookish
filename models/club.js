@@ -11,6 +11,14 @@ module.exports = function (sequelize, DataTypes) {
             }
         }
 
+        // book_name: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false,
+        //     unique: true,
+        //     validate: {
+        //         len: [2, 16],
+        //     }
+        // }
         // userId: DataTypes.Integer
 
     
