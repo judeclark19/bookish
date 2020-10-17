@@ -37,14 +37,14 @@ module.exports = function (app) {
     res.render("create-new-club");
   });
 
-  // app.get("/trending", function (req, res) {
-  //   res.render("trending");
-  // });
+  app.get("/trending", function (req, res) {
+    res.render("trending");
+  });
 
   app.get("/my-account", function (req, res) {
     console.log(req.session);
     res.render("my-account", {
-      email: req.session.username
+      email: req.session.username,
     });
   });
 
