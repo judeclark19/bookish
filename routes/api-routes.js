@@ -98,8 +98,8 @@ module.exports = function (app) {
         console.log(ClubInfo);
         // res.render("active-clubs", ClubInfo[0]);
       }
-      res.render("active-clubs", { clubber: result[0].dataValues.club_name});
-      // console.log(ClubInfo);
+      // res.render("active-clubs", { clubber: result[0].dataValues.club_name});
+     
 
     }).catch((err) => {
       if (err) throw err;

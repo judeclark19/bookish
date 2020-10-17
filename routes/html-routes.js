@@ -1,4 +1,5 @@
 const { response } = require("express");
+var db = require("../models");
 
 module.exports = function (app) {
   app.get("/", function (req, res) {
@@ -26,10 +27,18 @@ module.exports = function (app) {
   });
 
   app.get("/active-clubs", function (req, res) {
-    console.log(req.body);
-    res.render("active-clubs", {
-      clubber: res.body
-    });
+    db.Club.findAll().then(function (result) {
+      console.log(result);
+    
+      // information populated for the first book club in /active-clubs
+      res.render("active-clubs", { 
+        clubber: result[0].dataValues.club_name,
+        book: result[0].dataValues.book_name
+      });
+
+    }).catch((err) => {
+      if (err) throw err;
+    })
   });
 
   app.get("/my-club", function (req, res) {
