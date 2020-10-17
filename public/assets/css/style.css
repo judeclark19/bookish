@@ -112,16 +112,6 @@ p a:hover {
 
 /* INDEX.HANDLEBARS
 =========================================================================== */
-/* .index-columns {
-  width: 100%;
-  margin: 0 !important;
-  padding: 0 !important;
-  align-self: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-} */
 
 .index-column {
   /* border: 2px solid yellow; */
@@ -374,19 +364,6 @@ footer a:hover {
   padding-bottom: 150px;
 }
 
-/* TEST2.HANDLEBARS
-================================================================ */
-/* #test-2-wrapper {
-  border: 2px solid green;
-  display: grid;
-  place-items: center;
-} */
-
-.index-column {
-  /* border: 2px solid yellow; */
-  display: grid;
-  place-items: center;
-}
 /* Books
 ================================================================ */
 
