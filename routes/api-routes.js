@@ -68,14 +68,14 @@ module.exports = function (app) {
   app.post("/api/club", function (req, res) {
     // console.log("User ID: " + req.session.userId);
     // console.log("Who's logged in?: " + req.session.username)
-    console.log(req.body);
+    console.log("INFO TO PULL FROM:", req.body);
     // if (!req.body.club_name) {
     //   return;
     //   console.log("Please enter a name");
     // } else {
     db.Club.create({
       club_name: req.body.club_name,
-      // book_image: req.body,
+      book_image: req.body.book_image,
       BookId: req.body.BookId,
       book_name: req.body.book_name
       // userId: req.sessions.userId
@@ -134,7 +134,7 @@ module.exports = function (app) {
     db.Book.create({
       // username: req.body.username,
       goodReads: req.body.goodReads,
-      // image: req.body.
+      image: req.body.image,
       title: req.body.title,
       author: req.body.author,
       year: req.body.year,

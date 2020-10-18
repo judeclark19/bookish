@@ -18,6 +18,8 @@ $(function () {
       author: this.dataset.author,
       year: this.dataset.year,
     };
+
+    // console.log(newBook);
     bookId = this.id;
     tempBook = this.dataset.title.trim();
     console.log("SEARCHRESULTS.JS");
@@ -43,13 +45,15 @@ $(function () {
     // window.location.replace("/create-new-club");
     // console.log(newTempBook);
   });
+
   function createClub(result) {
     console.log(result);
     const renameMeToo = prompt("Name of new club?");
     newClub = {
       club_name: renameMeToo,
       BookId: result.goodReads,
-      book_name: result.title
+      book_name: result.title,
+      book_image: result.image
     };
     // console.log(
     //   `${renameMeToo} will begin reading ${this.dataset.title.trim()}`

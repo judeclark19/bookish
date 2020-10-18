@@ -35,6 +35,7 @@ module.exports = function (app) {
         for (let i = 0; i < result.length; i++) {
           let newClubObj = {
             name: result[i].dataValues.club_name,
+            image: result[i].dataValues.book_image,
             book: result[i].dataValues.book_name,
             bookId: result[i].dataValues.BookId,
             id: result[i].dataValues.id,
