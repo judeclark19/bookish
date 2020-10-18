@@ -267,8 +267,11 @@ footer a:hover {
 
 /* ALL CLUBS
 ================================================================ */
-#club-card-container {
-  padding-bottom: 170px;
+#active-clubs-padding {
+  padding-bottom: 150px;
+}
+.club-card-container {
+  padding-bottom: 20px;
 }
 
 .club-card {
