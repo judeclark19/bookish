@@ -52,10 +52,10 @@ module.exports = function (app) {
   });
 
   app.get("/my-club", function (req, res) {
-    // db.User.findAll({
-    //   where:
-    // })
-    res.render("my-club");
+   // inject email name of logged in user 
+    res.render("my-club", {
+      email: req.session.username,
+    });
   });
 
   app.get("/create-new-club", function (req, res) {
