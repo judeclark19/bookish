@@ -76,11 +76,7 @@ module.exports = function (app) {
     db.Club.create({
       club_name: req.body.club_name,
       book_image: req.body.book_image,
-<<<<<<< HEAD
-      BookId: req.body.BookId,
-=======
       BookGoodReads: req.body.BookId,
->>>>>>> b16530905c0f057d64121968ffdfaaff32f48138
       book_name: req.body.book_name,
       // userId: req.sessions.userId
       // add club members?
@@ -113,16 +109,25 @@ module.exports = function (app) {
       });
   });
 
-  app.get("/api/active-clubs", function (req, res) {
-    db.filter_by(Club.id == id);
-    console
-      .log(id)
-      .delete()
+  // app.del("/api/active-clubs/:club/:id"),
+  //   function (req, res, next) {
+  //     req.club_name.removeById(req.params.id, function (err, output) {
+  //       if (err) {
+  //         return next(err);
+  //       }
+  //       res.send(output === 1 ? { mes: "Club Deleted!" } : { msg: "error" });
+  //     });
+  //   };
+  // app.get("/api/active-clubs", function (req, res) {
+  //   db.filter_by(Club.id == id);
+  //   console
+  //     .log(id)
+  //     .delete()
 
-      .catch((err) => {
-        if (err) throw err;
-      });
-  });
+  //     .catch((err) => {
+  //       if (err) throw err;
+  //     });
+  // });
 
   // add users to clubs
   // app.put()
