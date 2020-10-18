@@ -109,21 +109,32 @@ module.exports = function (app) {
       });
   });
 
+  app.delete("/api/delete-club", function (req, res) {
+    // console.log(req.body);
+
+    db.Club.destroy({
+      where: { id: req.body.ClubId },
+    }).then(function (result) {
+      // console.log("SUCCESS DELETING CLUB");
+      // console.log(result);
+    });
+  });
+
   // add users to clubs
   app.put("/api/join-club", function (req, res) {
-console.log(req.body);
-// console.log(res);
-console.log(req.session.userId);
-console.log("hit the PUT route for joining a club");
+    // console.log(req.body);
+    // console.log(req.session);
+    // console.log(res);
+    console.log(req.session.userId);
+    console.log("hit the PUT route for joining a club");
 
-db.User.update( req.body, {
-  where: {id: req.session.userId},
-}).then(function(result){
-  console.log("SUCCESS IN UPDATING USER");
-  console.log(result);
-})
-
-  })
+    db.User.update(req.body, {
+      where: { id: req.session.userId },
+    }).then(function (result) {
+      console.log("SUCCESS IN UPDATING USER");
+      console.log(result);
+    });
+  });
 
   // route to create new users and store data in the db
   app.post("/api/signup", function (req, res) {

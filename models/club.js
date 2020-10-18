@@ -15,7 +15,7 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: new Date(),
-    }
+    },
   });
 
   //   Club.associate = function (models) {
