@@ -117,7 +117,6 @@ p a:hover {
 }
 
 .body-mat {
-  border: 1px dashed gold;
   width: 70%;
   margin-left: auto;
   margin-right: auto;
@@ -132,7 +131,6 @@ p a:hover {
 =========================================================================== */
 
 .index-column {
-  /* border: 2px solid yellow; */
   display: grid;
   place-items: center;
 }
@@ -149,8 +147,6 @@ p a:hover {
   background-color: rgba(54, 54, 54, 0.6);
   padding: 75px;
   border-radius: 10px;
-  /* min-height: 300px; */
-  /* max-width: 700px; */
   display: flex;
   flex-direction: column;
   box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 1);
@@ -185,9 +181,7 @@ p a:hover {
   width: 80%;
   box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 1);
 }
-/* .carousel-item {
-  /* object-fit: contain; */
-/* }  */
+
 .carousel-img {
   border-radius: 10px;
   max-height: 400px;
@@ -279,6 +273,7 @@ footer a:hover {
 .club-card-container {
   padding-bottom: 20px;
 }
+
 .club-card {
   border: 2px dashed antiquewhite;
   width: 90%;
@@ -311,7 +306,7 @@ footer a:hover {
 }
 
 .club-column {
-  border: 2px dashed gray;
+  border: 2px dashed antiquewhite;
 }
 
 .members-table,
@@ -333,7 +328,7 @@ footer a:hover {
 #new-message-div {
   width: 70%;
   margin: auto;
-  border: 2px dashed gray;
+  /* border: 2px dashed gray; */
 }
 
 #messages-container {
@@ -343,7 +338,6 @@ footer a:hover {
 }
 
 #new-message-div {
-  /* border: 2px dashed gray; */
   margin-top: 20px;
 }
 
@@ -360,19 +354,17 @@ footer a:hover {
 /* TEST.HANDLEBARS
 ================================================================ */
 #search-results-heading {
-  border: 1px dashed blue;
   padding-bottom: 20px;
 }
 
 .search-results-columns {
   margin-top: 30px;
-  border: 1px dashed gray;
   width: 94%;
   margin: auto;
 }
 
 .search-results-column {
-  border: 1px dashed hotpink;
+  border: 2px dashed antiquewhite;
 }
 
 .clubs-list-container {
