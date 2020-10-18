@@ -41,13 +41,13 @@ module.exports = function (sequelize, DataTypes) {
     );
   });
 
-  User.associate = function(models) {
+  User.associate = function (models) {
     // We're saying that a Post should belong to an Author
     // A Post can't be created without an Author due to the foreign key constraint
     User.belongsTo(models.Club, {
       foreignKey: {
-        allowNull: true
-      }
+        allowNull: true,
+      },
     });
   };
 
