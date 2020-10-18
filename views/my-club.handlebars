@@ -1,7 +1,7 @@
-<div class="body-wrapper">
+<div class="body-wrapper-color">
     <div class="body-mat">
         {{!-- this can be dynamically populated with the club name --}}
-        <h1 class="page-title">My club</h1>
+        <h1 class="page-title">My Club</h1>
 
         <div class="columns club-columns">
             <div class="column club-column"><img class="book-cover" src="https://via.placeholder.com/450x720.png">
@@ -25,7 +25,7 @@
                         <thead>
                             <tr>
                                 <th>Member Name</th>
-                                <th>something else... poke?</th>
+                                <th>Contact? Could link to email, maybe?</th>
                             </tr>
                         </thead>
                         <tr>
@@ -39,7 +39,7 @@
 
                     </tbody>
                 </table>
-                <button class="button hidden" id="invite-btn">Invite new member</button>
+                <button class="button hidden bookish-primary" id="invite-btn">Invite new member</button>
             </div>
         </div>
         <div class="columns club-columns myclub-bottom-section">
@@ -61,8 +61,9 @@
                 </div>
                 <div id="new-message-div">Post a new message<textarea class="textarea" id="new-msg-body"
                         placeholder="Type your message here"></textarea>
+                    </br>
                     <div class="control">
-                        <button class="button" id="submit-message-btn">Submit</button>
+                        <button class="button bookish-primary" id="submit-message-btn">Submit</button>
                     </div>
                 </div>
 
