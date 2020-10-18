@@ -1,30 +1,7 @@
-<<<<<<< HEAD
-<div class="body-wrapper-bgcolor">
-    <div class="body-mat" id="clubs-body-mat">
-=======
 <div class="body-wrapper">
     <div class="body-mat">
->>>>>>> a5920a06de413871ac224e9c6db8644412483404
         <h1 class="page-title">All Clubs</h1>
         <div id="club-card-container">
-<<<<<<< HEAD
-            <div class="club-card columns">
-                <div class="column is-one-fourth book-info-div"><img class="book-cover"
-                        src="https://via.placeholder.com/450x720.png">
-                    <p class="book-title">Title</p>
-                    <p class="book-author">Author</p>
-                    <p class="book-genre">Genre</p>
-                    <p class="book-year">Year</p>
-                </div>
-                <div class="column club-info-div">
-                    <p class="club-name">Club name will go here</p>
-                    <p class="progress-bar-label">Progress bar label</p>
-                    <progress class="progress" value="20" max="100">Progress
-                    </progress>
-                    <p>This row is hard coded. Remove before deployment.</p>
-                </div>
-                <div class="column is-one-fifth join-club-div"><button class="button bookish-primary">Join Club</button>
-=======
 
             {{!-- {{#each books}}
                 <div class="club-card columns">
@@ -49,17 +26,16 @@
 
                     <div class="column is-one-fifth join-club-div"><button class="button">Join Club</button>
                     </div>
->>>>>>> a5920a06de413871ac224e9c6db8644412483404
                 </div>
               {{/each}}   --}}
 
-              <ul>
-                  {{#each topArray}}
-                  <li> Club name: <button id="test-button" class="button">{{this.name}}</button></li>
-                  <li>Club book: {{this.book}}</li>
-                  <li>Club id: {{this.id}}</li>
-                  {{/each}}
-              </ul>
+            <ul>
+                {{#each topArray}}
+                <li> Club name: <button id="test-button" class="button">{{this.name}}</button></li>
+                <li>Club book: {{this.book}}</li>
+                <li>Club id: {{this.id}}</li>
+                {{/each}}
+            </ul>
 
         </div>
 
