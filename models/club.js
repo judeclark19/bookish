@@ -15,15 +15,7 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: new Date(),
-    },
-    // BookId: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    //   references: {
-    //     model: "Books",
-    //     key: "goodReads",
-    //   },
-    // },
+    }
   });
 
   //   Club.associate = function (models) {

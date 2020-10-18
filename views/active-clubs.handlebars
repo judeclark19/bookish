@@ -1,33 +1,35 @@
 <div class="body-wrapper-color">
     <div class="body-mat">
         <h1 class="page-title">All Clubs</h1>
-        {{#each reversedClubArray}}
-        <div id="club-card-container">
-            <div class="club-card columns">
+        <div id="active-clubs-padding">
+            {{#each reversedClubArray}}
+            <div class="club-card-container">
+                <div class="club-card columns">
 
-                <div class="column is-one-fourth book-info-div"><img class="book-cover" src="{{this.image}}">
-                    <p class="book-title">Book Title: {{this.bookTitle}}</p>
-                    <br>
-                    <p class="book-title">Book Id: {{this.bookId}}</p>
-                    <br>
-                    <p class="book-author">Author: {{this.bookAuthor}}</p>
+                    <div class="column is-one-fourth book-info-div"><img class="book-cover" src="{{this.image}}">
+                        <p class="book-title">Book Title: {{this.bookTitle}}</p>
+                        <br>
+                        <p class="book-title">Book Id: {{this.bookId}}</p>
+                        <br>
+                        <p class="book-author">Author: {{this.bookAuthor}}</p>
 
-                    <p class="book-year">Year: {{this.bookYear}}</p>
+                        <p class="book-year">Year: {{this.bookYear}}</p>
 
+                    </div>
+
+                    <div class="column club-info-div">
+                        <p class="club-name">Club name: {{this.clubName}}</p>
+                        <br>
+                        <p class="club-name">Club Id: {{this.id}}</p>
+
+                    </div>
+
+                    <div class="column is-one-fifth join-club-div"><button data-id="{{this.id}}"
+                            class="button join-club-button">Join Club</button>
+                    </div>
                 </div>
 
-                <div class="column club-info-div">
-                    <p class="club-name">Club name: {{this.clubName}}</p>
-                    <br>
-                    <p class="club-name">Club Id: {{this.id}}</p>
-
-                </div>
-
-                <div class="column is-one-fifth join-club-div"><button data-id="{{this.id}}" class="button join-club-button">Join Club</button>
-                </div>
             </div>
-
-        </div>
-        {{/each}}
+            {{/each}}</div>
     </div>
 </div>
