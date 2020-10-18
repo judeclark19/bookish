@@ -32,7 +32,7 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: new Date(),
-    },
+    }
   });
 
   //   Book.associate = function (models) {
