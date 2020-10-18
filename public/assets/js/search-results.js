@@ -47,7 +47,7 @@ $(function () {
   });
 
   function createClub(result) {
-    console.log(result);
+    // console.log(result);
     const renameMeToo = prompt("Name of new club?");
     newClub = {
       club_name: renameMeToo,
@@ -65,7 +65,7 @@ $(function () {
       data: newClub,
     })
       .then(function (data) {
-        console.log(data);
+        // console.log(data);
         console.log("Club successfully created");
         window.location.replace("/active-clubs");
       })
