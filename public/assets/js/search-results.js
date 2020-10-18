@@ -13,6 +13,7 @@ $(function () {
     // create a loggedInUser variable to store the information
     let newBook = {
       goodReads: this.id,
+      image: this.dataset.image,
       title: this.dataset.title.trim(),
       author: this.dataset.author,
       year: this.dataset.year,
