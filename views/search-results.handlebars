@@ -8,7 +8,7 @@ Title: {{title}}
     <div class="body-mat">
         <div id="search-results-heading">
             <h1 class="page-title">Search Results</h1>
-            <p>You searched {{#each books}} {{@index}}: {{author.name}} {{/each}}
+            <p>Results for {{books.0.author.name}}
             </p>
         </div>
         <div id="div-for-padding">
@@ -19,12 +19,16 @@ Title: {{title}}
                 <div class="column book-info-div search-results-column"><img class="book-cover" src="{{image_url}}">
                     <p class="book-title">Title: {{title}}</p>
                     <p class="book-author">Author: {{author.name}}</p>
-                    <p class="book-year">Publication Year: {{original_publication_year}}</p>
+                    <p class="book-year">Year: {{original_publication_year}}</p>
+                    <p class="goodreads-id">{{obj_id}}</p>
                 </div>
 
                 <div class="column clubs-reading-this search-results-column">
                     <p>Clubs currently reading this book:</p>
-                    <div class="clubs-list-container">
+                    <button class="button create-club-by-book" id="{{obj_id}}" data-author="{{author.name}}" data-title="
+                        {{title}}" data-year="{{original_publication_year}}">Create a
+                        club</button>
+                    {{!-- <div class="clubs-list-container">
                         <table class="table">
                             <tbody>
                                 <tr>
@@ -45,7 +49,7 @@ Title: {{title}}
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
+                    </div> --}}
                     {{!-- a button to add a new club. We need only turn this on if we can prepopulate the create-a-club form with a specific book. --}}
                     {{!-- <button class="button bookish-primary">hello
                     world</button> --}}
