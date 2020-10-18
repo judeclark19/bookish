@@ -23,14 +23,14 @@ module.exports = function (app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
 
   app.post("/search-results", function (req, res) {
-    console.log(req.body);
+    // console.log(req.body);
     axios({
       method: "get",
       url: `https://v1.nocodeapi.com/alikhan/gr/${process.env.GOODREADS_KEY}/searchAuthor?q=${req.body.name}`,
       params: { q: "<q>" },
     })
       .then(function (response) {
-        console.log(response.data);
+        // console.log(response.data);
         // handle success
         res.render("search-results", {
           books: response.data.results,
@@ -68,7 +68,7 @@ module.exports = function (app) {
   app.post("/api/club", function (req, res) {
     // console.log("User ID: " + req.session.userId);
     // console.log("Who's logged in?: " + req.session.username)
-    console.log("INFO TO PULL FROM:", req.body);
+    // console.log("INFO TO PULL FROM:", req.body);
     // if (!req.body.club_name) {
     //   return;
     //   console.log("Please enter a name");
@@ -110,7 +110,20 @@ module.exports = function (app) {
   });
 
   // add users to clubs
-  // app.put()
+  app.put("/api/join-club", function (req, res) {
+console.log(req.body);
+// console.log(res);
+console.log(req.session.userId);
+console.log("hit the PUT route for joining a club");
+
+db.User.update( req.body, {
+  where: {id: req.session.userId},
+}).then(function(result){
+  console.log("SUCCESS IN UPDATING USER");
+  console.log(result);
+})
+
+  })
 
   // route to create new users and store data in the db
   app.post("/api/signup", function (req, res) {
@@ -130,7 +143,7 @@ module.exports = function (app) {
   });
 
   app.post("/api/book", function (req, res) {
-    console.log(req.body);
+    // console.log(req.body);
     db.Book.create({
       // username: req.body.username,
       goodReads: req.body.goodReads,
