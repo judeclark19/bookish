@@ -1,5 +1,8 @@
 const { response } = require("express");
+var db = require("../models");
 
+let clubArray = [];
+let topArray = [];
 module.exports = function (app) {
   app.get("/", function (req, res) {
     // If the user already has an account send them to the members page
@@ -16,9 +19,7 @@ module.exports = function (app) {
   });
 
   app.get("/signup", function (req, res) {
-    res.render("signup", {
-      blah: "this is a test",
-    });
+    res.render("signup", {});
   });
 
   app.get("/all-clubs", function (req, res) {
@@ -26,10 +27,34 @@ module.exports = function (app) {
   });
 
   app.get("/active-clubs", function (req, res) {
-    res.render("active-clubs");
+    db.Club.findAll()
+      .then(function (result) {
+        // console.log(result);
+
+        clubArray = [];
+        for (let i = 0; i < result.length; i++) {
+          let newClubObj = {
+            name: result[i].dataValues.club_name,
+            book: result[i].dataValues.book_name,
+            id: result[i].dataValues.id,
+          };
+          clubArray.push(newClubObj);
+          topArray = clubArray.reverse();
+        }
+        console.log(topArray);
+
+        // render the data onto the active-clubs handlebars page
+        res.render("active-clubs", { topArray });
+      })
+      .catch((err) => {
+        if (err) throw err;
+      });
   });
 
   app.get("/my-club", function (req, res) {
+    // db.User.findAll({
+    //   where:
+    // })
     res.render("my-club");
   });
 

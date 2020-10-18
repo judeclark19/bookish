@@ -23,7 +23,7 @@ module.exports = function (app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
 
   app.post("/search-results", function (req, res) {
-    console.log(req.body);
+    // console.log(req.body);
     axios({
       method: "get",
       url: `https://v1.nocodeapi.com/alikhan/gr/${process.env.GOODREADS_KEY}/searchAuthor?q=${req.body.name}`,
@@ -34,6 +34,9 @@ module.exports = function (app) {
         res.render("search-results", {
           books: response.data.results,
         });
+        // res.render("search-results", {
+        //   author: response.data.results.author.name,
+        // });
       })
       .catch(function (error) {
         // handle error
@@ -62,24 +65,47 @@ module.exports = function (app) {
 
   // POST rout to create clubs and store the data
   app.post("/api/create-new-club", function (req, res) {
-    console.log(req.session.userId);
-    db.Club.create({
-      club_name: req.body.club_name,
-      book_name: req.body.book_name,
-      // userId: req.sessions.userId
-      // add club members?
-    }).then(function () {
-      console.log(req.body);
-      console.log("Successfully created new club!")
-    }).catch(function (err) {
-      res.status(401).json(err);
-    });
-  })
+    // console.log("User ID: " + req.session.userId);
+    // console.log("Who's logged in?: " + req.session.username)
+    // console.log(req.body);
+    if (!req.body.club_name && !req.body.book_name) {
+      return;
+    } else {
+      db.Club.create({
+        club_name: req.body.club_name,
+        book_name: req.body.book_name,
+        // userId: req.sessions.userId
+        // add club members?
+      })
+        .then(function (result) {
+          res.json(result);
+          console.log(result);
+          console.log("Successfully created new club!");
+        })
+        .catch(function (err) {
+          res.status(401).json(err);
+        });
+    }
+  });
 
   // display clubs and all users
-  // app.get()
+  app.get("/api/active-clubs", function (req, res) {
+    db.Club.findAll()
+      .then(function (result) {
+        // console.log(result);
+        // loop through the pulled club results and identify name, book and id
+        for (let i = 0; i < result.length; i++) {
+          // let clubNames = result[i].dataValues.club_name;
+          // let clubBook = result[i].dataValues.book_name;
+          // let clubIdNumbers = result[i].dataValues.id;
+        }
+      })
+      .catch((err) => {
+        if (err) throw err;
+      });
+  });
 
-  // add users to clubs 
+  // add users to clubs
   // app.put()
 
   // route to create new users and store data in the db
@@ -103,35 +129,34 @@ module.exports = function (app) {
   app.post("/api/login", function (req, res) {
     // console.log(req.body);
     db.User.findOne({
-      where:
-        { email: req.body.email }
-    }).then(function (foundUser) {
-      console.log(foundUser.id);
-      console.log(foundUser.dataValues.email);
-      // compare the saved/hashed password with the password put in on the page 
-      bcrypt.compare(req.body.password, foundUser.password).then(function (result) {
-
-        if (foundUser.email === req.body.email && result === true) {
-          // create a route for logged in users to be sent to (what happens next?)
-          // think through which routes should be accessible for the users -- 'My account' page?
-          req.session.loggedin = true;
-          req.session.username = foundUser.email;
-          req.session.userId = foundUser.id
-          res.redirect("/my-account");
-          console.log("Succesfully logged in user!");
-          console.log(req.session);
-        } else {
-          res.redirect("/api/login");
-          console.log("Invalid email or password");
-        }
+      where: { email: req.body.email },
+    })
+      .then(function (foundUser) {
+        console.log(foundUser.id);
+        console.log(foundUser.dataValues.email);
+        // compare the saved/hashed password with the password put in on the page
+        bcrypt
+          .compare(req.body.password, foundUser.password)
+          .then(function (result) {
+            if (foundUser.email === req.body.email && result === true) {
+              // create a route for logged in users to be sent to (what happens next?)
+              // think through which routes should be accessible for the users -- 'My account' page?
+              req.session.loggedin = true;
+              req.session.username = foundUser.email;
+              req.session.userId = foundUser.id;
+              res.redirect("/my-account");
+              console.log("Succesfully logged in user!");
+              // console.log(req.session);
+            } else {
+              res.redirect("/api/login");
+              console.log("Invalid email or password");
+            }
+          });
       })
-
-    }).catch((err) => {
-      if (err) throw err;
-
-    });
+      .catch((err) => {
+        if (err) throw err;
+      });
   });
-
 
   // Route for logging user out
   app.get("/logout", function (req, res) {
