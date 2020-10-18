@@ -69,17 +69,17 @@ module.exports = function (app) {
     // console.log("LOOK HERE! Session user id:");
     // console.log(req.session.userId);
     db.User.findOne({
-      include: [
-        {
-          model: [db.Club],
-          include: [db.Book],
+      include: {
+        model: db.Club,
+        include: {
+          model: db.Book,
         },
-      ],
+      },
       where: { id: req.session.userId },
     })
       .then(function (result) {
         console.log("LOOK HERE!===========>");
-        console.log("The logged in user WITH CLUB");
+        console.log("The logged in user WITH CLUB and book");
         console.log(result);
         // console.log(db.Club);
       })
