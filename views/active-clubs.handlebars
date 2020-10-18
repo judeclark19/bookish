@@ -29,13 +29,13 @@
                 </div>
               {{/each}}   --}}
 
-              <ul>
-                  {{#each topArray}}
-                  <li> Club name: <button id="test-button" class="button">{{this.name}}</button></li>
-                  <li>Club book: {{this.book}}</li>
-                  <li>Club id: {{this.id}}</li>
-                  {{/each}}
-              </ul>
+            <ul>
+                {{#each reversedClubArray}}
+                <li> Club name: <button id="test-button" class="button">{{this.name}}</button></li>
+                <li>Club book: {{this.book}}</li>
+                <li>Club id: {{this.id}}</li>
+                {{/each}}
+            </ul>
 
         </div>
 
