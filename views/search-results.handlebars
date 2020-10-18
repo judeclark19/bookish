@@ -20,11 +20,13 @@ Title: {{title}}
                     <p class="book-title">Title: {{title}}</p>
                     <p class="book-author">Author: {{author.name}}</p>
                     <p class="book-year">Year: {{original_publication_year}}</p>
+                    <p class="goodreads-id">{{obj_id}}</p>
                 </div>
 
                 <div class="column clubs-reading-this search-results-column">
                     <p>Clubs currently reading this book:</p>
-                    <div class="clubs-list-container">
+                    <button class="button create-club-by-book" id="{{obj_id}}">Create a club</button>
+                    {{!-- <div class="clubs-list-container">
                         <table class="table">
                             <tbody>
                                 <tr>
@@ -45,7 +47,7 @@ Title: {{title}}
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
+                    </div> --}}
                     {{!-- a button to add a new club. We need only turn this on if we can prepopulate the create-a-club form with a specific book. --}}
                     {{!-- <button class="button bookish-primary">hello
                     world</button> --}}

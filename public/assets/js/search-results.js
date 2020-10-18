@@ -1,9 +1,12 @@
-// $(function () {
-//   // connect with the search form to capture values on 'submit'
-//   //   $("#nav-search-btn").on("click", function (event) {
-//   //     event.preventDefault();
-//   //     console.log("Clicked!");
-//   //     // create a newSearch
-//   const authorName = $("#newSearchValue").val();
+$(function () {
+  $(document).on("click", ".create-club-by-book", function (event) {
+    console.log("hello world ccbb");
+    //   });
 
-// });
+    //   $(".login-form").on("submit", function(event){
+    // event.preventDefault();
+    // create a loggedInUser variable to store the information
+    thisBookGrId = this.id;
+    console.log(thisBookGrId);
+  });
+});

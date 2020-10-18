@@ -30,6 +30,7 @@ module.exports = function (app) {
       params: { q: "<q>" },
     })
       .then(function (response) {
+        // console.log(response.data.results[0]);
         // handle success
         res.render("search-results", {
           books: response.data.results,

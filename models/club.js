@@ -20,15 +20,10 @@ module.exports = function (sequelize, DataTypes) {
       defaultValue: new Date(),
     },
 
-    // book_id: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    //   unique: true,
-    //   validate: {
-    //     len: [2, 35],
-    //   },
-    // },
-    // userId: DataTypes.Integer
+    BookId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   });
 
   // Club.associate = function (models) {
