@@ -9,6 +9,16 @@ module.exports = function (sequelize, DataTypes) {
         len: [2, 35],
       },
     },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: new Date(),
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: new Date(),
+    },
 
     // book_id: {
     //   type: DataTypes.STRING,
@@ -21,14 +31,14 @@ module.exports = function (sequelize, DataTypes) {
     // userId: DataTypes.Integer
   });
 
-  Club.associate = function (models) {
-    // Associating user with clubs
-    // When a user is deleted, also delete any associated clubs
-    // TODO: I don't think we need to cascade delete these
-    Club.hasMany(models.User, {
-      onDelete: "cascade",
-    });
-  };
+  // Club.associate = function (models) {
+  //   // Associating user with clubs
+  //   // When a user is deleted, also delete any associated clubs
+  //   // TODO: I don't think we need to cascade delete these
+  //   Club.hasMany(models.User, {
+  //     // onDelete: "cascade",
+  //   });
+  // };
 
   return Club;
 };

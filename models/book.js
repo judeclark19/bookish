@@ -1,11 +1,10 @@
 // generate a Club model for the db
 module.exports = function (sequelize, DataTypes) {
   const Book = sequelize.define("Book", {
-    gr_id: {
+    goodReads: {
       type: DataTypes.STRING,
       allowNull: false,
       //this comes from GoodReads
-      primaryKey: true,
     },
     title: {
       type: DataTypes.STRING,
@@ -19,13 +18,23 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: new Date(),
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: new Date(),
+    },
   });
 
-  Book.associate = function (models) {
-    Book.hasMany(models.Club, {
-      //   onDelete: "cascade",
-    });
-  };
+  //   Book.associate = function (models) {
+  //     Book.hasMany(models.Club, {
+  //       //   onDelete: "cascade",
+  //     });
+  //   };
 
   return Book;
 };

@@ -44,6 +44,7 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 //ASSOCIATIONS
-// db.Book.hasMany = hasMany;
+db.Book.hasMany(db.Club);
+db.Club.hasMany(db.User);
 
 module.exports = db;

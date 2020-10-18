@@ -3,13 +3,6 @@ var bcrypt = require("bcryptjs");
 // Creating our User model
 module.exports = function (sequelize, DataTypes) {
   var User = sequelize.define("User", {
-    // id: {
-    //   type: DataTypes.INTEGER,
-    //   autoIncrement: true,
-    //   allowNull: FALSE,
-    //   primaryKey: true,
-    // },
-
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -18,10 +11,19 @@ module.exports = function (sequelize, DataTypes) {
         isEmail: true,
       },
     },
-    // The password cannot be null
     password: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: new Date(),
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: new Date(),
     },
   });
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
@@ -38,14 +40,14 @@ module.exports = function (sequelize, DataTypes) {
     );
   });
 
-  User.associate = function (models) {
-    // We're saying that a User should belong to a Club
-    User.belongsTo(models.Club, {
-      foreignKey: {
-        allowNull: true,
-      },
-    });
-  };
+  // User.associate = function (models) {
+  //   // We're saying that a User should belong to a Club
+  //   User.belongsTo(models.Club, {
+  //     foreignKey: {
+  //       allowNull: true,
+  //     },
+  //   });
+  // };
 
   return User;
 };
