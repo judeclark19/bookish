@@ -10,7 +10,7 @@ module.exports = function (sequelize, DataTypes) {
       },
     },
 
-    book_name: {
+    book_id: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
