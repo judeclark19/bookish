@@ -7,6 +7,10 @@ module.exports = function (sequelize, DataTypes) {
       primaryKey: true,
       //this comes from GoodReads
     },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     title: {
       type: DataTypes.STRING,
       allowNull: false,

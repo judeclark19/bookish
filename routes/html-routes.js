@@ -29,13 +29,15 @@ module.exports = function (app) {
   app.get("/active-clubs", function (req, res) {
     db.Club.findAll()
       .then(function (result) {
-        // console.log(result);
+        console.log(result);
 
         clubArray = [];
         for (let i = 0; i < result.length; i++) {
           let newClubObj = {
             name: result[i].dataValues.club_name,
+            image: result[i].dataValues.book_image,
             book: result[i].dataValues.book_name,
+            bookId: result[i].dataValues.BookId,
             id: result[i].dataValues.id,
           };
           clubArray.push(newClubObj);
