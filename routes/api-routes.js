@@ -68,7 +68,7 @@ module.exports = function (app) {
   app.post("/api/club", function (req, res) {
     // console.log("User ID: " + req.session.userId);
     // console.log("Who's logged in?: " + req.session.username)
-    // console.log(req.body);
+    console.log(req.body);
     // if (!req.body.club_name) {
     //   return;
     //   console.log("Please enter a name");
@@ -76,6 +76,7 @@ module.exports = function (app) {
     db.Club.create({
       club_name: req.body.club_name,
       BookId: req.body.BookId,
+      book_name: req.body.book_name
       // userId: req.sessions.userId
       // add club members?
     })

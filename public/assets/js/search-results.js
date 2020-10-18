@@ -43,10 +43,12 @@ $(function () {
     // console.log(newTempBook);
   });
   function createClub(result) {
+    console.log(result);
     const renameMeToo = prompt("Name of new club?");
     newClub = {
       club_name: renameMeToo,
       BookId: result.goodReads,
+      book_name: result.title
     };
     // console.log(
     //   `${renameMeToo} will begin reading ${this.dataset.title.trim()}`

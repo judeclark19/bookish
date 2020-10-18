@@ -6,6 +6,11 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
       unique: true,
     },
+    book_name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+      },
     createdAt: {
       type: DataTypes.DATE,
       allowNull: false,
