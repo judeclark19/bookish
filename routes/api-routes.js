@@ -77,7 +77,7 @@ module.exports = function (app) {
       club_name: req.body.club_name,
       book_image: req.body.book_image,
       BookId: req.body.BookId,
-      book_name: req.body.book_name
+      book_name: req.body.book_name,
       // userId: req.sessions.userId
       // add club members?
     })
@@ -104,6 +104,17 @@ module.exports = function (app) {
           // let clubIdNumbers = result[i].dataValues.id;
         }
       })
+      .catch((err) => {
+        if (err) throw err;
+      });
+  });
+
+  app.get("/api/active-clubs", function (req, res) {
+    db.filter_by(Club.id == id);
+    console
+      .log(id)
+      .delete()
+
       .catch((err) => {
         if (err) throw err;
       });

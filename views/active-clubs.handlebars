@@ -4,9 +4,8 @@
         {{#each reversedClubArray}}
         <div id="club-card-container">
             <div class="club-card columns">
-                
-                <div class="column is-one-fourth book-info-div"><img class="book-cover"
-                        src="{{image}}">
+
+                <div class="column is-one-fourth book-info-div"><img class="book-cover" src="{{image}}">
                     <p class="book-title">Book Title: {{this.book}}</p>
                     <br>
                     <p class="book-title">Book Id: {{this.bookId}}</p>
@@ -28,10 +27,14 @@
                 </div>
 
                 <div class="column is-one-fifth join-club-div"><button class="button">Join Club</button>
+                    <div class="column is-one-fifth destroy" href="delete/{{club.id}}"><button class="button">Delete
+                            Club</button>
+                    </div>
                 </div>
+
             </div>
 
+
+            {{/each}}
         </div>
-        {{/each}}
     </div>
-</div>
