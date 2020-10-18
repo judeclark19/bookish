@@ -65,28 +65,29 @@ module.exports = function (app) {
   // });
 
   // POST rout to create clubs and store the data
-  app.post("/api/create-new-club", function (req, res) {
+  app.post("/api/club", function (req, res) {
     // console.log("User ID: " + req.session.userId);
     // console.log("Who's logged in?: " + req.session.username)
     // console.log(req.body);
-    if (!req.body.club_name && !req.body.book_name) {
-      return;
-    } else {
-      db.Club.create({
-        club_name: req.body.club_name,
-        book_name: req.body.book_name,
-        // userId: req.sessions.userId
-        // add club members?
+    // if (!req.body.club_name) {
+    //   return;
+    //   console.log("Please enter a name");
+    // } else {
+    db.Club.create({
+      club_name: req.body.club_name,
+      BookId: req.body.BookId,
+      // userId: req.sessions.userId
+      // add club members?
+    })
+      .then(function (result) {
+        console.log(result);
+        console.log("Successfully created new club!");
+        res.json(result);
       })
-        .then(function (result) {
-          res.json(result);
-          console.log(result);
-          console.log("Successfully created new club!");
-        })
-        .catch(function (err) {
-          res.status(401).json(err);
-        });
-    }
+      .catch(function (err) {
+        res.json(err.message);
+      });
+    // }
   });
 
   // display clubs and all users
@@ -134,7 +135,19 @@ module.exports = function (app) {
       title: req.body.title,
       author: req.body.author,
       year: req.body.year,
+<<<<<<< HEAD
     });
+=======
+    })
+      .then(function (book) {
+        res.json(book);
+        // res.redirect("/login");
+      })
+      .catch(function (err) {
+        res.status(401).json(err);
+      });
+  });
+>>>>>>> 659324f7b029c0a340efdd477d412d88965f61f0
 
     // console.log(req.body);
 

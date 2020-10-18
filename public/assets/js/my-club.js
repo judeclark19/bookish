@@ -33,8 +33,8 @@ $(function () {
   dummyMembers.forEach((member) => {
     const tableRow = $("<tr>");
     const memberNameCell = $("<td>").text(member);
-    const pokeCell = $("<td>").text("Poke");
-    tableRow.append(memberNameCell, pokeCell);
+    const contactCell = $("<td>").text("contact");
+    tableRow.append(memberNameCell, contactCell);
 
     $("#member-table-body").append(tableRow);
   });
