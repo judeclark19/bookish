@@ -4,6 +4,7 @@ module.exports = function (sequelize, DataTypes) {
     goodReads: {
       type: DataTypes.STRING,
       allowNull: false,
+      primaryKey: true,
       //this comes from GoodReads
     },
     title: {
