@@ -80,12 +80,12 @@ module.exports = function (app) {
       // add club members?
     })
       .then(function (result) {
-        res.json(result);
         console.log(result);
         console.log("Successfully created new club!");
+        res.json(result);
       })
       .catch(function (err) {
-        res.status(401).json(err);
+        res.json(err.message);
       });
     // }
   });

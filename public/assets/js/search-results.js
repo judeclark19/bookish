@@ -48,9 +48,9 @@ $(function () {
       club_name: renameMeToo,
       BookId: result.goodReads,
     };
-    console.log(
-      `${renameMeToo} will begin reading ${this.dataset.title.trim()}`
-    );
+    // console.log(
+    //   `${renameMeToo} will begin reading ${this.dataset.title.trim()}`
+    // );
     console.log("new club:");
     console.log(newClub);
     $.ajax("/api/club", {
@@ -61,7 +61,7 @@ $(function () {
         console.log("Club successfully created");
       })
       .catch((err) => {
-        if (err) throw err;
+        console.log(err.message);
       });
   }
   //   });
