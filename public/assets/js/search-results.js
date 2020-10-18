@@ -1,4 +1,6 @@
 let tempBook = "tempbook before";
+let newClub = "newclub before";
+let bookId = "bookId before";
 
 $(function () {
   $(document).on("click", ".create-club-by-book", function (event) {
@@ -15,7 +17,7 @@ $(function () {
       author: this.dataset.author,
       year: this.dataset.year,
     };
-
+    bookId = this.id;
     tempBook = this.dataset.title.trim();
     console.log("SEARCHRESULTS.JS");
     console.log(this.id);
@@ -30,36 +32,37 @@ $(function () {
       data: newBook,
     })
       .then(function (result) {
-        console.log(result);
+        console.log("result ", result);
         console.log("Successfully sent POST request for new book");
+        createClub(result);
       })
       .catch((err) => {
-        if (err) throw err;
+        console.log(err.message);
       });
     // window.location.replace("/create-new-club");
     // console.log(newTempBook);
+  });
+  function createClub(result) {
     const renameMeToo = prompt("Name of new club?");
-    let newClub = {
+    newClub = {
       club_name: renameMeToo,
-      BookId: this.id,
+      BookId: result.goodReads,
     };
     console.log(
       `${renameMeToo} will begin reading ${this.dataset.title.trim()}`
     );
     console.log("new club:");
     console.log(newClub);
-
     $.ajax("/api/club", {
       type: "POST",
       data: newClub,
     })
-      .then(function (result) {
-        //   window.location.replace("/active-clubs");
-        console.log(result);
-        console.log("Successfully sent POST request for new club");
+      .then(function (data) {
+        console.log("Club successfully created");
       })
       .catch((err) => {
         if (err) throw err;
       });
-  });
+  }
+  //   });
 });

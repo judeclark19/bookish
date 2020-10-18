@@ -136,8 +136,8 @@ module.exports = function (app) {
       author: req.body.author,
       year: req.body.year,
     })
-      .then(function () {
-        console.log(req.body);
+      .then(function (book) {
+        res.json(book);
         // res.redirect("/login");
       })
       .catch(function (err) {
