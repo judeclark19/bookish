@@ -126,6 +126,24 @@ module.exports = function (app) {
       });
   });
 
+  app.post("/api/book", function (req, res) {
+    // console.log(req.body);
+    db.Book.create({
+      // username: req.body.username,
+      goodReads: req.body.goodReads,
+      title: req.body.title,
+      author: req.body.author,
+      year: req.body.year,
+    })
+      .then(function () {
+        console.log(req.body);
+        // res.redirect("/login");
+      })
+      .catch(function (err) {
+        res.status(401).json(err);
+      });
+  });
+
   // route to log users in
   app.post("/api/login", function (req, res) {
     // console.log(req.body);

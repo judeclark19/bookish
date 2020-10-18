@@ -19,7 +19,6 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
       defaultValue: new Date(),
     },
-
     BookId: {
       type: DataTypes.INTEGER,
       allowNull: false,

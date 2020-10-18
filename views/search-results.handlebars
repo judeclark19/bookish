@@ -25,7 +25,9 @@ Title: {{title}}
 
                 <div class="column clubs-reading-this search-results-column">
                     <p>Clubs currently reading this book:</p>
-                    <button class="button create-club-by-book" id="{{obj_id}}">Create a club</button>
+                    <button class="button create-club-by-book" id="{{obj_id}}" data-author="{{author.name}}" data-title="
+                        {{title}}" data-year="{{original_publication_year}}">Create a
+                        club</button>
                     {{!-- <div class="clubs-list-container">
                         <table class="table">
                             <tbody>
