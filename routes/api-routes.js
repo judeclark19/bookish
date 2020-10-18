@@ -134,67 +134,62 @@ module.exports = function (app) {
       title: req.body.title,
       author: req.body.author,
       year: req.body.year,
-    })
-      .then(function () {
-        console.log(req.body);
-        // res.redirect("/login");
-      })
-      .catch(function (err) {
-        res.status(401).json(err);
-      });
-  });
+    });
 
-  // route to log users in
-  app.post("/api/login", function (req, res) {
     // console.log(req.body);
-    db.User.findOne({
-      where: { email: req.body.email },
-    })
-      .then(function (foundUser) {
-        console.log(foundUser.id);
-        console.log(foundUser.dataValues.email);
-        // compare the saved/hashed password with the password put in on the page
-        bcrypt
-          .compare(req.body.password, foundUser.password)
-          .then(function (result) {
-            if (foundUser.email === req.body.email && result === true) {
-              // create a route for logged in users to be sent to (what happens next?)
-              // think through which routes should be accessible for the users -- 'My account' page?
-              req.session.loggedin = true;
-              req.session.username = foundUser.email;
-              req.session.userId = foundUser.id;
-              res.redirect("/my-account");
-              console.log("Succesfully logged in user!");
-              // console.log(req.session);
-            } else {
-              res.redirect("/api/login");
-              console.log("Invalid email or password");
-            }
-          });
+
+    // route to log users in
+    app.post("/api/login", function (req, res) {
+      // console.log(req.body);
+      db.User.findOne({
+        where: { email: req.body.email },
       })
-      .catch((err) => {
-        if (err) throw err;
-      });
-  });
+        .then(function (foundUser) {
+          console.log(foundUser.id);
+          console.log(foundUser.dataValues.email);
+          // compare the saved/hashed password with the password put in on the page
+          bcrypt
+            .compare(req.body.password, foundUser.password)
+            .then(function (result) {
+              if (foundUser.email === req.body.email && result === true) {
+                // create a route for logged in users to be sent to (what happens next?)
+                // think through which routes should be accessible for the users -- 'My account' page?
+                req.session.loggedin = true;
+                req.session.username = foundUser.email;
+                req.session.userId = foundUser.id;
+                res.redirect("/my-account");
+                console.log("Succesfully logged in user!");
+                // console.log(req.session);
+              } else {
+                res.redirect("/api/login");
+                console.log("Invalid email or password");
+              }
+            });
+        })
+        .catch((err) => {
+          if (err) throw err;
+        });
+    });
 
-  // Route for logging user out
-  app.get("/logout", function (req, res) {
-    req.logout();
-    res.redirect("/");
-  });
+    // Route for logging user out
+    app.get("/logout", function (req, res) {
+      req.logout();
+      res.redirect("/");
+    });
 
-  // Route for getting some data about our user to be used client side
-  app.get("/api/user_data", function (req, res) {
-    if (!req.user) {
-      // The user is not logged in, send back an empty object
-      res.json({});
-    } else {
-      // Otherwise send back the user's email and id
-      // Sending back a password, even a hashed password, isn't a good idea
-      res.json({
-        email: req.user.email,
-        id: req.user.id,
-      });
-    }
+    // Route for getting some data about our user to be used client side
+    app.get("/api/user_data", function (req, res) {
+      if (!req.user) {
+        // The user is not logged in, send back an empty object
+        res.json({});
+      } else {
+        // Otherwise send back the user's email and id
+        // Sending back a password, even a hashed password, isn't a good idea
+        res.json({
+          email: req.user.email,
+          id: req.user.id,
+        });
+      }
+    });
   });
 };

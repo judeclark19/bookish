@@ -1,17 +1,14 @@
 $(function () {
   // connect with the create club form
-  $("#create-new-club-btn").on("click", function (event) {
+  $(".create-club-by-book").on("click", function (event) {
     event.preventDefault();
-    console.log("Inputs:");
-    console.log($("#new-club-input").val());
-    console.log($("#book-name-input").val());
-    if (!$("#new-club-input").val() || !$("#book-name-input").val()) {
-      alert("Please enter valid information");
-      return;
-      // create a newClub variable to store the information
-    } else {
+    {
+      let newClubName = $(
+        "<p>What would you like to name this club?</p>"
+      ).prompt(() => {});
+
       newClub = {
-        club_name: $("#new-club-input").val().trim(),
+        club_name: $(newClubName).val().trim(),
         book_name: $("#book-name-input").val().trim(),
       };
       // console.log(newClub);
