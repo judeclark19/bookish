@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const exphbs = require("express-handlebars");
 const handlebars = require("handlebars");
+const bodyParser = require("body-parser");
 // const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const db = require("./models");
@@ -16,15 +17,17 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 // app.use(cookieParser());
-app.use(session({
-  key: 'user_sid',
-  secret: 'moonwalking',
-  resave: true,
-  saveUninitialized: true,
-  // cookie:{
-  //   expires: 600000
-  // }
-}));
+app.use(
+  session({
+    key: "user_sid",
+    secret: "moonwalking",
+    resave: true,
+    saveUninitialized: true,
+    // cookie:{
+    //   expires: 600000
+    // }
+  })
+);
 
 // //log for search by Author
 // axios({
