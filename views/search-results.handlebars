@@ -8,7 +8,7 @@ Title: {{title}}
     <div class="body-mat">
         <div id="search-results-heading">
             <h1 class="page-title">Search Results</h1>
-            <p>You searched {{#each books}} {{@index}}: {{author.name}} {{/each}}
+            <p>You searched {{books.0.author.name}}
             </p>
         </div>
         <div id="div-for-padding">
