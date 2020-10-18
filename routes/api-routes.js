@@ -23,14 +23,14 @@ module.exports = function (app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
 
   app.post("/search-results", function (req, res) {
-    // console.log(req.body);
+    console.log(req.body);
     axios({
       method: "get",
       url: `https://v1.nocodeapi.com/alikhan/gr/${process.env.GOODREADS_KEY}/searchAuthor?q=${req.body.name}`,
       params: { q: "<q>" },
     })
       .then(function (response) {
-        // console.log(response.data.results[0]);
+        console.log(response.data);
         // handle success
         res.render("search-results", {
           books: response.data.results,
@@ -68,14 +68,16 @@ module.exports = function (app) {
   app.post("/api/club", function (req, res) {
     // console.log("User ID: " + req.session.userId);
     // console.log("Who's logged in?: " + req.session.username)
-    // console.log(req.body);
+    console.log("INFO TO PULL FROM:", req.body);
     // if (!req.body.club_name) {
     //   return;
     //   console.log("Please enter a name");
     // } else {
     db.Club.create({
       club_name: req.body.club_name,
+      book_image: req.body.book_image,
       BookId: req.body.BookId,
+      book_name: req.body.book_name
       // userId: req.sessions.userId
       // add club members?
     })
@@ -128,10 +130,11 @@ module.exports = function (app) {
   });
 
   app.post("/api/book", function (req, res) {
-    // console.log(req.body);
+    console.log(req.body);
     db.Book.create({
       // username: req.body.username,
       goodReads: req.body.goodReads,
+      image: req.body.image,
       title: req.body.title,
       author: req.body.author,
       year: req.body.year,
