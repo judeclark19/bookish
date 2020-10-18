@@ -109,9 +109,21 @@ module.exports = function (app) {
       });
   });
 
+  app.delete("/api/delete-club", function (req, res) {
+    // console.log(req.body);
+
+    db.Club.destroy({
+      where: { id: req.body.ClubId },
+    }).then(function (result) {
+      // console.log("SUCCESS DELETING CLUB");
+      // console.log(result);
+    });
+  });
+
   // add users to clubs
   app.put("/api/join-club", function (req, res) {
-    console.log(req.body);
+    // console.log(req.body);
+    // console.log(req.session);
     // console.log(res);
     console.log(req.session.userId);
     console.log("hit the PUT route for joining a club");
