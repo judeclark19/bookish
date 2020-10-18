@@ -1,8 +1,13 @@
-/* global stuff */
+/* global */
 /* ======================================================================= */
 
 .hidden {
   display: none;
+}
+
+h1 {
+  font-family: "Abril Fatface", cursive;
+  color: white;
 }
 
 /* MAIN.HANDLEBARS */
@@ -76,6 +81,19 @@
   place-items: center;
 }
 
+.body-wrapper-color {
+  color: white;
+  min-height: calc(100vh - 90px - 72px);
+  background-color: rgb(250, 235, 215);
+  background-size: cover;
+  position: relative;
+  font-family: "Roboto Slab", serif;
+  min-height: calc(100vh - 90px - 72px);
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
 .title,
 .subtitle {
   color: white !important;
@@ -131,8 +149,8 @@ p a:hover {
   background-color: rgba(54, 54, 54, 0.6);
   padding: 75px;
   border-radius: 10px;
-  /* min-height: 300px;
-  max-width: 700px; */
+  /* min-height: 300px; */
+  /* max-width: 700px; */
   display: flex;
   flex-direction: column;
   box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 1);
@@ -167,7 +185,9 @@ p a:hover {
   width: 80%;
   box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 1);
 }
-
+/* .carousel-item {
+  /* object-fit: contain; */
+/* }  */
 .carousel-img {
   border-radius: 10px;
   max-height: 400px;

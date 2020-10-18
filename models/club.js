@@ -1,36 +1,38 @@
-
-// generate a Club model for the db 
+// generate a Club model for the db
 module.exports = function (sequelize, DataTypes) {
-    const Club = sequelize.define("Club", {
-        club_name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-            validate: {
-                len: [2, 35],
-            }
-        },
+  const Club = sequelize.define("Club", {
+    club_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        len: [2, 35],
+      },
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: new Date(),
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: new Date(),
+    },
+    BookId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+  });
 
-        book_name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-            validate: {
-                len: [2, 35],
-            }
-        }
-        // userId: DataTypes.Integer
+  // Club.associate = function (models) {
+  //   // Associating user with clubs
+  //   // When a user is deleted, also delete any associated clubs
+  //   // TODO: I don't think we need to cascade delete these
+  //   Club.hasMany(models.User, {
+  //     // onDelete: "cascade",
+  //   });
+  // };
 
-
-    });
-
-    Club.associate = function (models) {
-        // Associating Author with Posts
-        // When an Author is deleted, also delete any associated Posts
-        Club.hasMany(models.User, {
-            onDelete: "cascade"
-        });
-    }
-
-    return Club;
-}
+  return Club;
+};

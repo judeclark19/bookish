@@ -1,7 +1,12 @@
+let userSearchParam;
+
 document.addEventListener("DOMContentLoaded", () => {
   $("#nav-search-btn").click(function () {
     console.log("clicked search button");
+    userSearchParam = $("#newSearchValue").val().trim();
+    console.log(userSearchParam);
     window.location.replace("/search-results");
+    $("#userSearchParam").text(userSearchParam);
   });
 
   $("#get-started-btn").click(function () {
@@ -12,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   $("#create-new-club-btn").click(function (event) {
     event.preventDefault();
     console.log("clicked create button");
-    window.location.replace("/active-clubs");
+    // window.location.replace("/active-clubs");
   });
 
   // hamburger toggle, code from Bulma
