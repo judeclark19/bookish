@@ -5,6 +5,11 @@
   display: none;
 }
 
+h1 {
+  font-family: "Abril Fatface", cursive;
+  color: white;
+}
+
 /* MAIN.HANDLEBARS */
 /* ======================================================================= */
 #nav-login-btn {
