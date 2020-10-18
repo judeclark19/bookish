@@ -31,9 +31,9 @@ module.exports = function (app) {
       include: [db.Book],
     })
       .then(function (result) {
-        console.log("LOOK HERE!");
-        console.log(result);
-        console.log("---->", result[0].dataValues.Book);
+        // console.log("LOOK HERE!");
+        // console.log(result);
+        // console.log("---->", result[0].dataValues.Book);
         clubArray = [];
         for (let i = 0; i < result.length; i++) {
           let newClubObj = {
