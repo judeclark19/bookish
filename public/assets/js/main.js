@@ -1,5 +1,5 @@
 let userSearchParam;
-
+// let tempBook = "tempBook before";
 document.addEventListener("DOMContentLoaded", () => {
   $("#nav-search-btn").click(function () {
     console.log("clicked search button");
