@@ -268,7 +268,7 @@ footer a:hover {
 /* ALL CLUBS
 ================================================================ */
 #club-card-container {
-  padding-bottom: 20px;
+  padding-bottom: 170px;
 }
 
 .club-card {
@@ -325,6 +325,7 @@ footer a:hover {
 #new-message-div {
   width: 70%;
   margin: auto;
+  /* border: 2px dashed gray; */
 }
 
 #messages-container {
@@ -350,19 +351,17 @@ footer a:hover {
 /* TEST.HANDLEBARS
 ================================================================ */
 #search-results-heading {
-  border: 1px dashed blue;
   padding-bottom: 20px;
 }
 
 .search-results-columns {
   margin-top: 30px;
-  border: 1px dashed gray;
   width: 94%;
   margin: auto;
 }
 
 .search-results-column {
-  border: 1px dashed hotpink;
+  border: 2px dashed antiquewhite;
 }
 
 .clubs-list-container {
