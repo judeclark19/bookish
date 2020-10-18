@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   $("#create-new-club-btn").click(function (event) {
     event.preventDefault();
     console.log("clicked create button");
-    window.location.replace("/active-clubs");
+    // window.location.replace("/active-clubs");
   });
 
   // hamburger toggle, code from Bulma

@@ -2,7 +2,7 @@ const { response } = require("express");
 var db = require("../models");
 
 let clubArray = [];
-let topArray = [];
+let reversedClubArray = [];
 module.exports = function (app) {
   app.get("/", function (req, res) {
     // If the user already has an account send them to the members page
@@ -39,12 +39,12 @@ module.exports = function (app) {
             id: result[i].dataValues.id,
           };
           clubArray.push(newClubObj);
-          topArray = clubArray.reverse();
+          reversedClubArray = clubArray.reverse();
         }
-        console.log(topArray);
+        console.log(reversedClubArray);
 
         // render the data onto the active-clubs handlebars page
-        res.render("active-clubs", { topArray });
+        res.render("active-clubs", { reversedClubArray });
       })
       .catch((err) => {
         if (err) throw err;
