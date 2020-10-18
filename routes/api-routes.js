@@ -76,7 +76,11 @@ module.exports = function (app) {
     db.Club.create({
       club_name: req.body.club_name,
       book_image: req.body.book_image,
+<<<<<<< HEAD
       BookId: req.body.BookId,
+=======
+      BookGoodReads: req.body.BookId,
+>>>>>>> b16530905c0f057d64121968ffdfaaff32f48138
       book_name: req.body.book_name,
       // userId: req.sessions.userId
       // add club members?
