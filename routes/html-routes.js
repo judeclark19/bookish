@@ -27,23 +27,28 @@ module.exports = function (app) {
   });
 
   app.get("/active-clubs", function (req, res) {
-    db.Club.findAll()
+    db.Club.findAll({
+      include: [db.Book],
+    })
       .then(function (result) {
+        console.log("LOOK HERE!");
         console.log(result);
-
+        console.log("---->", result[0].dataValues.Book);
         clubArray = [];
         for (let i = 0; i < result.length; i++) {
           let newClubObj = {
-            name: result[i].dataValues.club_name,
-            image: result[i].dataValues.book_image,
-            book: result[i].dataValues.book_name,
-            bookId: result[i].dataValues.BookId,
+            clubName: result[i].dataValues.club_name,
+            image: result[i].dataValues.Book.dataValues.image,
+            bookTitle: result[i].dataValues.Book.dataValues.title,
+            bookId: result[i].dataValues.BookGoodReads,
+            bookAuthor: result[i].dataValues.Book.dataValues.author,
+            bookYear: result[i].dataValues.Book.dataValues.year,
             id: result[i].dataValues.id,
           };
           clubArray.push(newClubObj);
           reversedClubArray = clubArray.reverse();
         }
-        console.log(reversedClubArray);
+        // console.log(reversedClubArray);
 
         // render the data onto the active-clubs handlebars page
         res.render("active-clubs", { reversedClubArray });
@@ -54,7 +59,7 @@ module.exports = function (app) {
   });
 
   app.get("/my-club", function (req, res) {
-   // inject email name of logged in user 
+    // inject email name of logged in user
     res.render("my-club", {
       email: req.session.username,
     });
@@ -69,7 +74,7 @@ module.exports = function (app) {
   });
 
   app.get("/my-account", function (req, res) {
-    console.log(req.session);
+    // console.log(req.session);
     res.render("my-account", {
       email: req.session.username,
     });

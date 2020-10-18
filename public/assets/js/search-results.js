@@ -53,7 +53,7 @@ $(function () {
       club_name: renameMeToo,
       BookId: result.goodReads,
       book_name: result.title,
-      book_image: result.image
+      book_image: result.image,
     };
     // console.log(
     //   `${renameMeToo} will begin reading ${this.dataset.title.trim()}`
@@ -67,6 +67,7 @@ $(function () {
       .then(function (data) {
         // console.log(data);
         console.log("Club successfully created");
+        window.location.replace("/active-clubs");
       })
       .catch((err) => {
         console.log(err.message);
