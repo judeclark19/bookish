@@ -5,37 +5,30 @@
         <div id="club-card-container">
             <div class="club-card columns">
 
-<<<<<<< HEAD
                 <div class="column is-one-fourth book-info-div"><img class="book-cover" src="{{image}}">
                     <p class="book-title">Book Title: {{this.book}}</p>
-=======
-                <div class="column is-one-fourth book-info-div"><img class="book-cover" src="{{this.image}}">
-                    <p class="book-title">Book Title: {{this.bookTitle}}</p>
->>>>>>> b16530905c0f057d64121968ffdfaaff32f48138
                     <br>
                     <p class="book-title">Book Id: {{this.bookId}}</p>
                     <br>
-                    <p class="book-author">Author: {{this.bookAuthor}}</p>
-
-                    <p class="book-year">Year: {{this.bookYear}}</p>
+                    <p class="book-author">Author</p>
+                    <p class="book-genre">Genre</p>
+                    <p class="book-year">Year</p>
 
                 </div>
-
                 <div class="column club-info-div">
-                    <p class="club-name">Club name: {{this.clubName}}</p>
+                    <p class="club-name">Club name: {{this.name}}</p>
                     <br>
                     <p class="club-name">Club Id: {{this.id}}</p>
-
+                    <p class="progress-bar-label">Progress bar label</p>
+                    <progress class="progress" value="20" max="100">Progress
+                    </progress>
+                    <p>This row is hard coded. Remove before deployment.</p>
                 </div>
 
-<<<<<<< HEAD
                 <div class="column is-one-fifth join-club-div"><button class="button">Join Club</button>
                     <div class="column is-one-fifth destroy" href="delete/{{club.id}}"><button class="button">Delete
                             Club</button>
                     </div>
-=======
-                <div class="column is-one-fifth join-club-div"><button data-id="{{this.id}}" class="button join-club-button">Join Club</button>
->>>>>>> 280da17758beac3bf5e4a0bbc1e8305ebef52d3f
                 </div>
 
             </div>
