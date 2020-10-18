@@ -58,6 +58,7 @@ $(function () {
       data: newClub,
     })
       .then(function (data) {
+        console.log(data);
         console.log("Club successfully created");
       })
       .catch((err) => {
