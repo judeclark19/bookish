@@ -1,13 +1,14 @@
 <div class="body-wrapper-color">
     <div class="body-mat">
         <h1 class="page-title">All Clubs</h1>
-        {{#each topArray}}
+        {{#each reversedClubArray}}
         <div id="club-card-container">
             <div class="club-card columns">
                 
                 <div class="column is-one-fourth book-info-div"><img class="book-cover"
                         src="https://via.placeholder.com/450x720.png">
-                    <p class="book-title">{{this.book}}</p>
+                    <p class="book-title">NEED THIS{{this.book}}</p>
+                    <p class="book-title">BOOK ID{{this.bookId}}</p>
                     <p class="book-author">Author</p>
                     <p class="book-genre">Genre</p>
                     <p class="book-year">Year</p>
