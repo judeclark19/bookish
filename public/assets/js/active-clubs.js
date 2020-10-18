@@ -1,8 +1,6 @@
 // Dummy data
 // ===============================================================================================================
 
-
-
 // const allClubs = [
 //   {
 //     id: 1,
@@ -79,6 +77,8 @@
 // ];
 
 // $(document).ready(function () {
+//   Clubs.findAll({ include: [User] });
+
 //   //   var br = document.createElement("br");
 // // $("#club-card-container").empty();
 //   allClubs.forEach((club) => {
