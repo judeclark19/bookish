@@ -30,7 +30,9 @@ $(function () {
     const tableRow = $("<tr>");
     const memberNameCell = $("<td>").text(member);
     const contactCell = $("<td>");
-    const contactBtn = $("<button class='button'>").text("contact Member");
+    const contactBtn = $("<button class='button bookish-primary'>").text(
+      "Contact Member"
+    );
     contactCell.append(contactBtn);
     tableRow.append(memberNameCell, contactCell);
     $("#member-table-body").append(tableRow);
