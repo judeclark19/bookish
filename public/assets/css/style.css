@@ -10,6 +10,10 @@ h1 {
   color: white;
 }
 
+h2 {
+  font-weight: bold;
+}
+
 /* MAIN.HANDLEBARS */
 /* ======================================================================= */
 #nav-login-btn {
