@@ -1,16 +1,15 @@
 <div class="body-wrapper-color">
     <div class="body-mat">
         {{!-- this can be dynamically populated with the club name --}}
-        <h1 class="page-title">My Club</h1>
-        <p>{{email}}</p>
+        <h1 class="page-title">{{clubName}}</h1>
+        <p>Logged in as: {{email}}</p>
         <br>
         <div class="columns club-columns">
-            <div class="column club-column"><img class="book-cover" src="https://via.placeholder.com/450x720.png">
+            <div class="column club-column"><img class="book-cover" src="{{image}}">
                 <h2>Currently reading:</h2>
-                <p class="book-title">Title</p>
-                <p class="book-author">Author</p>
-                <p class="book-genre">Genre</p>
-                <p class="book-year">Year</p>
+                <p class="book-title">{{bookTitle}}</p>
+                <p class="book-author">by: {{author}}</p>
+                <p class="book-year">Year: {{year}}</p>
             </div>
             <div class="column club-column">
                 <h2>Meeting info</h2>
