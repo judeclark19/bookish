@@ -1,5 +1,4 @@
 let userSearchParam;
-// let tempBook = "tempBook before";
 document.addEventListener("DOMContentLoaded", () => {
   $("#nav-search-btn").click(function () {
     console.log("clicked search button");
@@ -17,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
   $("#create-new-club-btn").click(function (event) {
     event.preventDefault();
     console.log("clicked create button");
-    // window.location.replace("/active-clubs");
   });
 
   // hamburger toggle, code from Bulma
