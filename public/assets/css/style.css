@@ -10,6 +10,10 @@ h1 {
   color: white;
 }
 
+h2 {
+  font-weight: bold;
+}
+
 /* MAIN.HANDLEBARS */
 /* ======================================================================= */
 #nav-login-btn {
@@ -295,6 +299,11 @@ footer a:hover {
 
 .progress-bar-label {
   margin-bottom: 20px;
+}
+
+.delete-club-button {
+  margin-top: 20px;
+  max-width: 105px;
 }
 
 /* MY CLUB
