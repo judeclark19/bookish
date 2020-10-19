@@ -66,8 +66,6 @@ module.exports = function (app) {
   });
 
   app.get("/my-club", function (req, res) {
-    // console.log("LOOK HERE! Session user id:");
-    // console.log(req.session.userId);
     db.User.findOne({
       include: {
         model: db.Club,
@@ -78,9 +76,9 @@ module.exports = function (app) {
       where: { id: req.session.userId },
     })
       .then(function (result) {
-        console.log("LOOK HERE!===========>");
-        console.log("Book Title");
-        console.log(result.dataValues.Club.dataValues.Book.dataValues.title);
+        // console.log("LOOK HERE!===========>");
+        // console.log("Book Title");
+        // console.log(result.dataValues.Club.dataValues.Book.dataValues.title);
         let mcpClubName = result.dataValues.Club.dataValues.club_name;
         let mcpBookImage =
           result.dataValues.Club.dataValues.Book.dataValues.image;
