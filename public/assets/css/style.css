@@ -318,6 +318,11 @@ footer a:hover {
   border: 2px dashed antiquewhite;
 }
 
+#launch-meeting a {
+  color: yellow;
+  font-weight: bold;
+}
+
 .members-table,
 .members-table th {
   color: white !important;
