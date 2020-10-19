@@ -21,11 +21,12 @@
                         <br>
                         <p class="club-name">Club Id: {{this.id}}</p>
                     </div>
-                    <div class="column is-one-fifth join-club-div"><button class="button bookish-primary">Join
-                            Club</button><button data-id="{{this.id}}" class="button delete-club-button">Delete
+                    <div class="column is-one-fifth">
+                        <button class="button bookish-primary join-club-button"
+                            data-id="{{this.id}}">Join
+                            Club</button><button data-id="{{this.id}}" class="button delete-club-button" onClick="window.location.reload();">Delete
                             Club</button>
-                        {{!-- <div class="column is-one-fifth delete-club-div">
-                        </div> --}}
+                      
                     </div>
 
                 </div>

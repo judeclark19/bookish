@@ -37,6 +37,7 @@ $(function () {
     })
       .then(function (data) {
         console.log("Successfully deleted clicked club");
+        window.location.reload("/active-clubs");
       })
       .catch((err) => {
         if (err) throw err;
