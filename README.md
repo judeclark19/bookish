@@ -1,15 +1,15 @@
   # Bookish
 
-	/aur/last-modified/:packageName /github/languages/count/:user/:repo /github/issues-raw/:user/:repo
+[![GitHub issues](https://img.shields.io/github/issues/Naereen/StrapDown.js.svg)](https://GitHub.com/Naereen/StrapDown.js/issues/) [![GitHub contributors](https://img.shields.io/github/contributors/Naereen/StrapDown.js.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/contributors/)   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
   ## Description  
 
 This app serves to connect book lovers to other readers who would like to participate in a virtual book club experience together. Bookish users connect in “clubs”, where they commit to reading a specific book within a specified timeframe. Users can find the club they want to join by searching for a book by author; once found, Bookish will display a list of clubs that are currently reading said book. The user can choose to join one of those clubs, or start their own. In order to keep users on track to and to mimic the cozy, intimate feeling of in-person book clubs, discussion groups will be limited to a maximum of 10 users. 
 
-AS A book reader
-I WANT to find new and exciting books to read. 
-WHEN I find a book I'm interested in,
-I WANT to join a club as well 
+AS A book reader  
+I WANT to find new and exciting books to read.   
+WHEN I find a book I'm interested in,  
+I WANT to join a club as well   
 SO THAT I can discuss the book with other readers.
   
 ![Screen Shot 2020-10-18 at 4 58 41 PM](https://user-images.githubusercontent.com/69770137/96387123-e1109580-116d-11eb-9647-629175df1be1.png)
@@ -37,18 +37,18 @@ SO THAT I can discuss the book with other readers.
 
   ### Usage
 
-
+Due to the challenges we faced and the limited time we had to create this project, Bookish is currently functioning by utilizing a "happy path," wherein users will need to begin by clicking on the "get started" button on the homepage. From there, a prompt to create a new account will appear. After creating an account, users will need to log in and can then begin their search for a book. Once a desirable book has been found, users may also choose to join an existing book club or create a new one. By navigating to the "My Club" page, users can see information such as the next meeting, a list of members, and a message board. 
+  
   ******
 
   ### Credits
   
-
+  A huge thank you to our dedicated instructional staff!
+  
   ******
 
   #### License
   
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
     Permission is hereby granted, free of charge, to any person obtaining a copy of 
     this software and associated documentation files (the "Software"), to deal in the 
     Software without restriction, including without limitation the rights to use, copy, 
