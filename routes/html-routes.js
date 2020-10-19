@@ -4,6 +4,12 @@ var db = require("../models");
 let clubArray = [];
 let reversedClubArray = [];
 let returnedUser;
+let returnedClub;
+
+// let mcpEmail;
+// let mcpClubName;
+// let myClubPageData = [];
+
 module.exports = function (app) {
   app.get("/", function (req, res) {
     // If the user already has an account send them to the members page
@@ -60,30 +66,42 @@ module.exports = function (app) {
   });
 
   app.get("/my-club", function (req, res) {
-    // console.log("LOOK HERE! Session user id:");
-    // console.log(req.session.userId);
-    db.User.findAll({
-      include: [db.Club],
-    }).then(function (result) {
-      result.forEach((user) => {
-        if (user.dataValues.id === req.session.userId) {
-          returnedUser = user;
-        }
+    db.User.findOne({
+      include: {
+        model: db.Club,
+        include: {
+          model: db.Book,
+        },
+      },
+      where: { id: req.session.userId },
+    })
+      .then(function (result) {
+        // console.log("LOOK HERE!===========>");
+        // console.log("Book Title");
+        // console.log(result.dataValues.Club.dataValues.Book.dataValues.title);
+        let mcpClubName = result.dataValues.Club.dataValues.club_name;
+        let mcpBookImage =
+          result.dataValues.Club.dataValues.Book.dataValues.image;
+        let mcpBookTitle =
+          result.dataValues.Club.dataValues.Book.dataValues.title;
+        let mcpBookAuthor =
+          result.dataValues.Club.dataValues.Book.dataValues.author;
+        let mcpBookYear =
+          result.dataValues.Club.dataValues.Book.dataValues.year;
+        res.render("my-club", {
+          email: req.session.username,
+          clubName: mcpClubName,
+          image: mcpBookImage,
+          bookTitle: mcpBookTitle,
+          author: mcpBookAuthor,
+          year: mcpBookYear,
+        });
+      })
+      .catch((err) => {
+        if (err) throw err;
       });
-      console.log("LOOK HERE!===========>");
-      console.log("This is the returned user:");
-      console.log(returnedUser);
-      // console.log("this is the user id:");
-      // console.log(result[0].dataValues.id);
-      // console.log("this is the club id on the user table:");
-      // console.log(result[0].dataValues.ClubId);
-      // console.log("this is the club info from club table:");
-      // console.log(result[0].dataValues.Club);
-    });
+
     // inject email name of logged in user
-    res.render("my-club", {
-      email: req.session.username,
-    });
   });
 
   app.get("/create-new-club", function (req, res) {
