@@ -8,7 +8,7 @@ let returnedClub;
 
 // let mcpEmail;
 // let mcpClubName;
-let myClubPageData = [];
+// let myClubPageData = [];
 
 module.exports = function (app) {
   app.get("/", function (req, res) {
@@ -79,16 +79,31 @@ module.exports = function (app) {
     })
       .then(function (result) {
         console.log("LOOK HERE!===========>");
-        console.log("The logged in user WITH CLUB and book");
-        console.log(result);
-        // console.log(db.Club);
+        console.log("Book Title");
+        console.log(result.dataValues.Club.dataValues.Book.dataValues.title);
+        let mcpClubName = result.dataValues.Club.dataValues.club_name;
+        let mcpBookImage =
+          result.dataValues.Club.dataValues.Book.dataValues.image;
+        let mcpBookTitle =
+          result.dataValues.Club.dataValues.Book.dataValues.title;
+        let mcpBookAuthor =
+          result.dataValues.Club.dataValues.Book.dataValues.author;
+        let mcpBookYear =
+          result.dataValues.Club.dataValues.Book.dataValues.year;
+        res.render("my-club", {
+          email: req.session.username,
+          clubName: mcpClubName,
+          image: mcpBookImage,
+          bookTitle: mcpBookTitle,
+          author: mcpBookAuthor,
+          year: mcpBookYear,
+        });
       })
       .catch((err) => {
         if (err) throw err;
       });
 
     // inject email name of logged in user
-    res.render("my-club", myClubPageData);
   });
 
   app.get("/create-new-club", function (req, res) {
