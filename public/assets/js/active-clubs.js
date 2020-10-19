@@ -18,6 +18,7 @@ $(function () {
       .catch((err) => {
         if (err) throw err;
       });
+    window.location.replace("/my-club");
   });
 });
 
@@ -42,5 +43,6 @@ $(function () {
       .catch((err) => {
         if (err) throw err;
       });
+    window.location.reload();
   });
 });

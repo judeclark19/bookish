@@ -33,7 +33,9 @@ $(function () {
   dummyMembers.forEach((member) => {
     const tableRow = $("<tr>");
     const memberNameCell = $("<td>").text(member);
-    const contactCell = $("<td>").text("contact");
+    const contactCell = $("<td>");
+    const contactBtn = $("<button class='button'>").text("contact Member");
+    contactCell.append(contactBtn);
     tableRow.append(memberNameCell, contactCell);
 
     $("#member-table-body").append(tableRow);
