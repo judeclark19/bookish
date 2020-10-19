@@ -303,7 +303,7 @@ footer a:hover {
 
 .delete-club-button {
   margin-top: 20px;
-  max-width: 105px;
+  /* max-width: 105px; */
 }
 
 /* MY CLUB
@@ -316,6 +316,12 @@ footer a:hover {
 
 .club-column {
   border: 2px dashed antiquewhite;
+  padding: 40px;
+}
+
+#launch-meeting a {
+  color: yellow;
+  font-weight: bold;
 }
 
 .members-table,
@@ -330,7 +336,7 @@ footer a:hover {
 
 #my-club-discussion {
   margin-bottom: 70px;
-  padding: 20px;
+  padding: 40px;
 }
 
 #messages-container,
