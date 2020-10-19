@@ -7,29 +7,32 @@
                 <div class="club-card columns">
 
                     <div class="column is-one-fourth book-info-div"><img class="book-cover" src="{{this.image}}">
-                        <p class="book-title">{{this.bookTitle}}</p>
+                        <p class="book-title">Book Title: {{this.bookTitle}}</p>
+                        <br>
                         <br>
                         <p class="book-author">Author: {{this.bookAuthor}}</p>
 
                         <p class="book-year">Year: {{this.bookYear}}</p>
 
                     </div>
-
                     <div class="column club-info-div">
-                        <p class="club-name">
-                        <h2>Club name:
-                            {{this.clubName}}
-                        </h2>
-                        </p>
+                        <p class="club-name">Club name: {{this.clubName}}</p>
                         <br>
+                        <p class="club-name">Club Id: {{this.id}}</p>
+                    </div>
+                    <div class="column is-one-fifth join-club-div"><button
+                            class="button bookish-primary join-club-button" data-id="{{this.id}}">Join
+                            Club</button><button data-id="{{this.id}}"
+                            class="button delete-club-button bookish-primary">Delete
+                            Club</button>
+                        {{!-- <div class="column is-one-fifth delete-club-div">
+                        </div> --}}
                     </div>
 
-                    <div class="column is-one-fifth join-club-div"><button data-id="{{this.id}}"
-                            class="button join-club-button bookish-primary">Join Club</button>
-                    </div>
                 </div>
 
             </div>
-            {{/each}}</div>
+            {{/each}}
+        </div>
     </div>
 </div>

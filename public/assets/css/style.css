@@ -301,6 +301,11 @@ footer a:hover {
   margin-bottom: 20px;
 }
 
+.delete-club-button {
+  margin-top: 20px;
+  max-width: 105px;
+}
+
 /* MY CLUB
 ================================================================ */
 
