@@ -6,23 +6,13 @@ let reversedClubArray = [];
 let returnedUser;
 let returnedClub;
 
-// let mcpEmail;
-// let mcpClubName;
-// let myClubPageData = [];
-
 module.exports = function (app) {
   app.get("/", function (req, res) {
-    // If the user already has an account send them to the members page
     res.render("index");
   });
 
   app.get("/login", function (req, res) {
-    // If the user already has an account send them to the members page
     res.render("login");
-    // if (req.user) {
-    //   res.redirect("/members");
-    // }
-    // res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
   app.get("/signup", function (req, res) {
@@ -38,9 +28,6 @@ module.exports = function (app) {
       include: [db.Book],
     })
       .then(function (result) {
-        // console.log("LOOK HERE!");
-        // console.log(result);
-        // console.log("---->", result[0].dataValues.Book);
         clubArray = [];
         for (let i = 0; i < result.length; i++) {
           let newClubObj = {
@@ -55,7 +42,6 @@ module.exports = function (app) {
           clubArray.push(newClubObj);
           reversedClubArray = clubArray.reverse();
         }
-        // console.log(reversedClubArray);
 
         // render the data onto the active-clubs handlebars page
         res.render("active-clubs", { reversedClubArray });
@@ -76,9 +62,6 @@ module.exports = function (app) {
       where: { id: req.session.userId },
     })
       .then(function (result) {
-        // console.log("LOOK HERE!===========>");
-        // console.log("Book Title");
-        // console.log(result.dataValues.Club.dataValues.Book.dataValues.title);
         let mcpClubName = result.dataValues.Club.dataValues.club_name;
         let mcpBookImage =
           result.dataValues.Club.dataValues.Book.dataValues.image;
@@ -88,6 +71,7 @@ module.exports = function (app) {
           result.dataValues.Club.dataValues.Book.dataValues.author;
         let mcpBookYear =
           result.dataValues.Club.dataValues.Book.dataValues.year;
+
         res.render("my-club", {
           email: req.session.username,
           clubName: mcpClubName,
@@ -100,8 +84,6 @@ module.exports = function (app) {
       .catch((err) => {
         if (err) throw err;
       });
-
-    // inject email name of logged in user
   });
 
   app.get("/create-new-club", function (req, res) {
@@ -113,7 +95,6 @@ module.exports = function (app) {
   });
 
   app.get("/my-account", function (req, res) {
-    // console.log(req.session);
     res.render("my-account", {
       email: req.session.username,
     });
@@ -122,18 +103,4 @@ module.exports = function (app) {
   app.get("/test", function (req, res) {
     res.render("test");
   });
-
-  // app.get("/search-results", function (req, res) {
-  //   // res.render("search-results", {
-  //   //   books: response.data.results,
-  //   //   testprop: "This is a test",
-  //   // });
-  //   res.render("search-results");
-  // });
-
-  // // Here we've add our isAuthenticated middleware to this route.
-  // // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  // app.get("/members", isAuthenticated, function(req, res) {
-  //   res.sendFile(path.join(__dirname, "../public/members.html"));
-  // });
 };

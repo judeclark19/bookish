@@ -30,56 +30,22 @@ module.exports = function (app) {
       params: { q: "<q>" },
     })
       .then(function (response) {
-        // console.log(response.data);
-        // handle success
         res.render("search-results", {
           books: response.data.results,
         });
-        // res.render("search-results", {
-        //   author: response.data.results.author.name,
-        // });
       })
       .catch(function (error) {
-        // handle error
         console.log(error);
       });
   });
 
-  // app.post("/api/search-results", function (req, res) {
-  //   console.log(req.body);
-  //   res.json(req.body);
-  //   axios({
-  //     method: "get",
-  //     url: `https://v1.nocodeapi.com/alikhan/gr/${process.env.GOODREADS_KEY}/search?q=${newSearchValue}`,
-  //     params: { q: "<q>" },
-  //   })
-  //     .then(function (response) {
-  //       // handle success
-  //       post(response.data);
-  //       console.log(res.data);
-  //     })
-  //     .catch(function (error) {
-  //       // handle error
-  //       console.log(error);
-  //     });
-  // });
-
   // POST rout to create clubs and store the data
   app.post("/api/club", function (req, res) {
-    // console.log("User ID: " + req.session.userId);
-    // console.log("Who's logged in?: " + req.session.username)
-    // console.log("INFO TO PULL FROM:", req.body);
-    // if (!req.body.club_name) {
-    //   return;
-    //   console.log("Please enter a name");
-    // } else {
     db.Club.create({
       club_name: req.body.club_name,
       book_image: req.body.book_image,
       BookGoodReads: req.body.BookId,
       book_name: req.body.book_name,
-      // userId: req.sessions.userId
-      // add club members?
     })
       .then(function (result) {
         console.log(result);
@@ -89,14 +55,13 @@ module.exports = function (app) {
       .catch(function (err) {
         res.json(err.message);
       });
-    // }
   });
 
   // display clubs and all users
+  //I don't think this does anything - Jude
   app.get("/api/active-clubs", function (req, res) {
     db.Club.findAll()
       .then(function (result) {
-        // console.log(result);
         // loop through the pulled club results and identify name, book and id
         for (let i = 0; i < result.length; i++) {
           // let clubNames = result[i].dataValues.club_name;
@@ -110,8 +75,6 @@ module.exports = function (app) {
   });
 
   app.delete("/api/delete-club", function (req, res) {
-    // console.log(req.body);
-
     db.Club.destroy({
       where: { id: req.body.ClubId },
     }).then(function (result) {
@@ -122,36 +85,34 @@ module.exports = function (app) {
 
   // add users to clubs
   app.put("/api/join-club", function (req, res) {
-    console.log(req.body);
-    // console.log(res);
-    console.log(req.session.userId);
-    console.log("hit the PUT route for joining a club");
+    // console.log(req.body);
+    // console.log(req.session.userId);
+    // console.log("hit the PUT route for joining a club");
+
+    //Why are there two of these? - Jude
+    db.User.update(req.body, {
+      where: { id: req.session.userId },
+    }).then(function (result) {
+      // console.log("SUCCESS IN UPDATING USER");
+      // console.log(result);
+    });
 
     db.User.update(req.body, {
       where: { id: req.session.userId },
     }).then(function (result) {
-      console.log("SUCCESS IN UPDATING USER");
-      console.log(result);
-    })
-
-    db.User.update(req.body, {
-      where: { id: req.session.userId },
-    }).then(function (result) {
-      console.log("SUCCESS IN UPDATING USER");
-      console.log(result);
+      // console.log("SUCCESS IN UPDATING USER");
+      // console.log(result);
     });
   });
 
   // route to create new users and store data in the db
   app.post("/api/signup", function (req, res) {
-    // console.log(req.body);
     db.User.create({
       // username: req.body.username,
       email: req.body.email,
       password: req.body.password,
     })
       .then(function () {
-        // console.log(req.body);
         res.redirect("/login");
       })
       .catch(function (err) {
@@ -160,7 +121,6 @@ module.exports = function (app) {
   });
 
   app.post("/api/book", function (req, res) {
-    // console.log(req.body);
     db.Book.create({
       // username: req.body.username,
       goodReads: req.body.goodReads,
@@ -171,7 +131,6 @@ module.exports = function (app) {
     })
       .then(function (book) {
         res.json(book);
-        // res.redirect("/login");
       })
       .catch(function (err) {
         res.status(401).json(err);
@@ -180,7 +139,6 @@ module.exports = function (app) {
 
   // route to log users in
   app.post("/api/login", function (req, res) {
-    // console.log(req.body);
     db.User.findOne({
       where: { email: req.body.email },
     })
@@ -198,8 +156,7 @@ module.exports = function (app) {
               req.session.username = foundUser.email;
               req.session.userId = foundUser.id;
               res.redirect("/my-account");
-              console.log("Succesfully logged in user!");
-              // console.log(req.session);
+              console.log("Successfully logged in");
             } else {
               res.redirect("/api/login");
               console.log("Invalid email or password");

@@ -59,5 +59,4 @@ $("#submit-message-btn").click(function () {
 
   dummyMessages.push(newMsgObj);
   console.log(dummyMessages);
-  //   location.reload();
 });
