@@ -1,31 +1,27 @@
 const dummyMembers = [
-  "member 1",
-  "member 2",
-  "member 3",
-  "member 4",
-  "member 5",
-  "member 6",
-  "member 7",
-  "member 8",
-  //   "member 9",
-  //   "member 10",
+  "judeclark2019@gmail.com",
+  "codybonsma@gmail.com",
+  "icecicle04@gmail.com",
+  "amanda.fici@gmail.com",
+  "pgunwestin@gmail.com",
+  "cbanister812@gmail.com",
+  "cpicard17@gmail.com",
 ];
 
 const dummyMessages = [
   {
-    user: "User 1",
-    message:
-      "dales ut etiam sit amet. Montes nascetur ridiculus mus mauris vitae ultricies leo integer malesuada. Dictum non consectetur a erat nam at lectus urna. Consequat semper viverra nam libero justo laoreet. Leo vel orci porta non. Pulvinar etiam non quam lacus suspendisse. Condimentum mattis pellentesque id nibh tortor id aliquet lectus proin. Eget nunc scelerisque viverra mauris in aliquam sem fringilla. Et netus et malesuada fames ac turpis. Auctor nequ",
+    user: "amanda.fici@gmail.com",
+    message: "Can you believe what happened in chapter 14?!",
   },
   {
-    user: "User 2",
+    user: "judeclark2019@gmail.com",
     message:
-      "met facilisis magna etiam tempor orci. Sed tempus urna et pharetra pharetra. Accumsan in nisl nisi scelerisque eu ultrices. Ut eu sem integer vitae justo eget. Tempus imperdiet nulla malesuada pellentesque elit eget gravida. Donec massa sapien faucibus et molestie ac feugiat. Condimentum id venenatis a co",
+      "Possible spoiler but I am literally on the edge of my seat after page 203. WHAT!",
   },
   {
-    user: "User 3",
+    user: "cpicard17@gmail.com",
     message:
-      "Habitant morbi tristique senectus et netus et malesuada fames. Risus ultricies tristique nulla aliquet enim tortor at auctor. Quam lacus suspendisse faucibus interdum posuere. Nulla facilisi nullam vehicula ipsum a arcu. Sit amet justo donec enim",
+      "Thoroughly enjoying this read so far. Can't wait for my new weekly ritual! See y'all on Wednesday :)",
   },
 ];
 
@@ -33,9 +29,8 @@ $(function () {
   dummyMembers.forEach((member) => {
     const tableRow = $("<tr>");
     const memberNameCell = $("<td>").text(member);
-    const contactCell = $("<td>").text("contact");
+    const contactCell = $("<td>").text("Email");
     tableRow.append(memberNameCell, contactCell);
-
     $("#member-table-body").append(tableRow);
   });
 
